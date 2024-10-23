@@ -1,0 +1,57 @@
+{
+    "User": {
+      "_id": "ObjectID",
+      "name": {
+        "LastName": "String",
+        "MFName": "String" 
+      },
+      "email": "String",
+      "LastLogin": "Date",
+      "role": "String", 
+      "updated_at": "Date",
+      "created_at": "Date",
+      "admin_info": { 
+        "admin_id": "ObjectID"
+      },
+      "student_info": { 
+        "student_id": "ObjectID",
+        "class_id": []
+      },
+      "teacher_info": { 
+        "teacher_id": "ObjectID",
+        "manage_class_id": []
+      }
+    },
+    "Class": {
+      "_id": "ObjectID", 
+      "class_name": "String",
+      "teacher_id": "ObjectID", 
+      "student_id": [], 
+      "created_at": "Date",
+      "updated_at": "Date",
+      "status": "String", 
+      "semester": "String",
+      "course_id": "ObjectID" 
+    },
+    "Course": {
+      "_id": "ObjectID", 
+      "course_name": "String",
+      "credit": "Number",
+      "class_id": [] 
+    },
+    "GradeSheet": {
+      "_id": "ObjectID", 
+      "student_id": "ObjectID",
+      "class_id": "ObjectID",
+      "status": "String", 
+      "grade": {
+        "final": "Number",
+        "midterm": "Number",
+        "assignment": [],
+        "exercise": []
+      },
+      "created_at": "Date",
+      "updated_at": "Date"
+    }
+  }
+  
