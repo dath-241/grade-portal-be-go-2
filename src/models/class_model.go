@@ -16,6 +16,6 @@ type Class struct {
 }
 
 func ClassModel() *mongo.Collection {
-	initModel("project", "class")
+	initModel("gradeDB", "class")
 	return collection
 }
