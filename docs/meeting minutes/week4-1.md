@@ -66,6 +66,8 @@
 
 - `Response` : sau khi `Controller` nhận data từ `model`, nó sẽ gửi phản hồi (responese) lại cho `client` thông qua các `route` ban đầu.
   Quá trình này
+### Gin 
+![gin](./gin%20guild.png)
 
 ### `Authentication`
 

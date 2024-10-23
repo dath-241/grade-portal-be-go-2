@@ -1,4 +1,4 @@
 package config
-func APIAdmin() string{
+func PrefixAdmin() string{
 	return "/admin"
 }

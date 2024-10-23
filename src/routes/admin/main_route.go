@@ -7,7 +7,7 @@ import (
 )
 
 func MainRoute(r *gin.Engine) {
-	apiAdmin := config.APIAdmin()
+	apiAdmin := config.PrefixAdmin()
 	
 	AuthRoutes(r.Group(apiAdmin))
 }
