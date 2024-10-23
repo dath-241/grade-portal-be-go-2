@@ -1,6 +1,6 @@
 # 1. Document Git
 ## Các thuật ngữ trong git
-![stupid](./stupid.png)  
+![stupid](./image/stupid.png)  
 Working directory(Thư mục làm việc):Khu vực chứa dự án mà chúng ta đang làm việc.  
 Staging area (Khu vực sắp xếp):Khu vực chứa thông tin thay đổi của các file.  
 Repository (Kho lưu trữ): Kho lưu trữ để lưu trữ dữ liệu, lịch sử các phiên bản.  
@@ -68,7 +68,7 @@ git reset --mixed commit_id
 ### Nhánh trong git
 Các nhánh đại diện cho các phiên bản của một kho lưu trữ tách ra từ dự án chính.
 Nhánh master là nhánh chính, để sau này deploy lên server.  
-![branch](./branch.png)
+![branch](./image/branch.png)
 Xem danh sách các nhánh
 ```bash
 git branch

@@ -67,14 +67,14 @@
 - `Response` : sau khi `Controller` nhận data từ `model`, nó sẽ gửi phản hồi (responese) lại cho `client` thông qua các `route` ban đầu.
   Quá trình này
 ### Gin 
-![gin](./gin%20guild.png)
+![gin](./image/gin%20guild.png)
 
 ### `Authentication`
 
 #### Cách hoạt động của Oauth2
 
-![oauth2](Oauth2.jpeg)
+![oauth2](./image/Oauth2.jpeg)
 
 ### JWT
 
-![jwt](./jwt.png)
+![jwt](./image/jwt.png)
