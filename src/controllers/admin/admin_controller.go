@@ -3,26 +3,28 @@ package controllers_admin
 import (
 	"be-go-2/models"
 	"context"
+	"net/http"
+	"strings"
+	"time"
 
 	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 type IAdminCreate struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
-	Name     string `json:"name"`
-	Faculty  string `json:"faculty"`
-	Role     string `json:"role"`
+	Name struct {
+		LastName string `json:"LastName"`
+		MFName   string `json:"MFName"`
+	} `json:"name"`
+	Email string `json:"email"`
 }
 
-func IsAdminExist(collection *mongo.Collection, email string, passowrd string, name string) (bool, error) {
+func IsAdminExist(collection *mongo.Collection, email string) (bool, error) {
 
 	filter := bson.M{
-		"email":    email,
-		"password": passowrd,
-		"name":     name,
+		"email": email,
 	}
 
 	var result bson.M
@@ -38,11 +40,12 @@ func IsAdminExist(collection *mongo.Collection, email string, passowrd string, n
 
 func CreateAdmin(c *gin.Context) {
 
-	var body IAdminCreate // body là biến mang cấu trúc của IAdminCreate
+	var body IAdminCreate
+	var data User
 
-	// Kiểm tra request body
-	if err := c.BindJSON(&body); err != nil { // Nếu request body có cấu trúc không đúng với IAdminCreate
-		c.JSON(400, gin.H{ // Response lỗi dữ liệu không hợp lệ
+	// Kiểm tra cấu trúc dữ liệu
+	if err := c.ShouldBindJSON(&body); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
 			"success": false,
 			"message": "Dữ liệu không hợp lệ",
 			"data":    nil,
@@ -50,58 +53,92 @@ func CreateAdmin(c *gin.Context) {
 		return
 	}
 
-	// Request body đã đúng cấu trúc
-	// Truy suất vào collection
+	// Kiểm tra các trường bắt buộc: FirstName, MFName, Email
+	if strings.TrimSpace(body.Name.LastName) == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"success": false,
+			"message": "Họ không được để trống",
+			"data":    nil,
+		})
+		return
+	}
+
+	if strings.TrimSpace(body.Name.MFName) == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"success": false,
+			"message": "Tên không được để trống",
+			"data":    nil,
+		})
+		return
+	}
+
+	if strings.TrimSpace(body.Email) == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"success": false,
+			"message": "Email không được để trống",
+			"data":    nil,
+		})
+		return
+	}
+
+	// Kiểm tra Email có hậu tố `@hcmut.edu.vn`
+	if !strings.HasSuffix(body.Email, "@hcmut.edu.vn") {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"success": false,
+			"message": "Email phải là @hcmut.edu.vn",
+			"data":    nil,
+		})
+		return
+	}
+
 	collection := models.AdminModel()
 
-	// Kiểm tra trùng email, password, name
-	isExis, err := IsAdminExist(collection, body.Email, body.Password, body.Name)
+	// Kiểm tra trùng Email
+	isExist, err := IsAdminExist(collection, body.Email)
 
 	if err != nil {
-		c.JSON(500, gin.H{ // Response lỗi khi kiểm tra trùng
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
 			"message": "Đã có lỗi xảy ra",
 			"data":    nil,
 		})
 		return
 	}
-	if isExis {
-		c.JSON(500, gin.H{ // Response lỗi dữ liệu đã tồn tại
+
+	if isExist {
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
-			"message": "Admin đã tồn tại",
+			"message": "Email đã được sử dụng",
 			"data":    nil,
 		})
 		return
 	}
 
-	// Thêm nếu không có các lỗi trên
-	_, err = collection.InsertOne(context.TODO(), bson.M{
-		"email":    body.Email,
-		"password": body.Password,
-		"name":     body.Name,
-		"faculty":  body.Faculty,
-		"role":     body.Role,
-	})
+	// Thêm Admin
+	data.ID = primitive.NewObjectID().Hex()
+	data.Name.LastName = body.Name.LastName
+	data.Name.MFName = body.Name.MFName
+	data.Email = body.Email
+	data.Role = "Admin"
+	data.CreatedAt = time.Now()
+	data.UpdatedAt = time.Now()
+	data.AdminInfo = &AdminInfo{
+		AdminID: data.ID,
+	}
 
+	_, err = collection.InsertOne(context.TODO(), data)
 	if err != nil {
-		c.JSON(500, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
-			"message": "Đã có lỗi xảy ra khi tạo Admin",
+			"message": "Đã có lỗi xảy ra khi thêm Admin",
 			"data":    nil,
 		})
 		return
 	}
 
-	// Tạo Admin thành công
-	c.JSON(200, gin.H{
+	c.JSON(http.StatusCreated, gin.H{
 		"success": true,
 		"message": "Thêm Admin thành công",
-		"data": IAdminCreate{
-			Email:    body.Email,
-			Password: body.Password,
-			Name:     body.Name,
-			Faculty:  body.Faculty,
-			Role:     body.Role,
-		},
+		"data":    data,
 	})
 }

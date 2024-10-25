@@ -5,14 +5,14 @@ import (
 )
 
 type User struct {
-	ID         string      `json:"_id" bson:"_id"`
-	Name       Name        `json:"name"`
-	Email      string      `json:"email"`
-	LastLogin  time.Time   `json:"LastLogin"`
-	Role       string      `json:"role"`
-	UpdatedAt  time.Time   `json:"updated_at"`
-	CreatedAt  time.Time   `json:"created_at"`
-	AdminInfo  *AdminInfo  `json:"admin_info,omitempty"`   // tồn tại nếu là admin
+	ID          string       `json:"_id" bson:"_id"`
+	Name        Name         `json:"name"`
+	Email       string       `json:"email"`
+	LastLogin   time.Time    `json:"LastLogin"`
+	Role        string       `json:"role"`
+	UpdatedAt   time.Time    `json:"updated_at"`
+	CreatedAt   time.Time    `json:"created_at"`
+	AdminInfo   *AdminInfo   `json:"admin_info,omitempty"`   // tồn tại nếu là admin
 	StudentInfo *StudentInfo `json:"student_info,omitempty"` // tồn tại nếu là student
 	TeacherInfo *TeacherInfo `json:"teacher_info,omitempty"` // tồn tại nếu là teacher
 }
@@ -32,37 +32,37 @@ type StudentInfo struct {
 }
 
 type TeacherInfo struct {
-	TeacherID      string   `json:"teacher_id" bson:"teacher_id"`
-	ManageClassID  []string `json:"manage_class_id" bson:"manage_class_id"` // danh sách ID lớp quản lý
+	TeacherID     string   `json:"teacher_id" bson:"teacher_id"`
+	ManageClassID []string `json:"manage_class_id" bson:"manage_class_id"` // danh sách ID lớp quản lý
 }
 
 type Class struct {
-	ID          string    `json:"_id" bson:"_id"`
-	ClassName   string    `json:"class_name" bson:"class_name"`
-	TeacherID   string    `json:"teacher_id" bson:"teacher_id"`
-	StudentID   []string  `json:"student_id" bson:"student_id"` // danh sách ID sinh viên
-	CreatedAt   time.Time `json:"created_at" bson:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at" bson:"updated_at"`
-	Status      string    `json:"status" bson:"status"` // open, close
-	Semester    string    `json:"semester" bson:"semester"`
-	CourseID    string    `json:"course_id" bson:"course_id"`
+	ID        string    `json:"_id" bson:"_id"`
+	ClassName string    `json:"class_name" bson:"class_name"`
+	TeacherID string    `json:"teacher_id" bson:"teacher_id"`
+	StudentID []string  `json:"student_id" bson:"student_id"` // danh sách ID sinh viên
+	CreatedAt time.Time `json:"created_at" bson:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" bson:"updated_at"`
+	Status    string    `json:"status" bson:"status"` // open, close
+	Semester  string    `json:"semester" bson:"semester"`
+	CourseID  string    `json:"course_id" bson:"course_id"`
 }
 
 type Course struct {
-	ID       string   `json:"_id" bson:"_id"`
-	CourseName string  `json:"course_name" bson:"course_name"`
-	Credit   float32  `json:"credit" bson:"credit"`
-	ClassID  []string `json:"class_id" bson:"class_id"` // danh sách ID lớp học
+	ID         string   `json:"_id" bson:"_id"`
+	CourseName string   `json:"course_name" bson:"course_name"`
+	Credit     float32  `json:"credit" bson:"credit"`
+	ClassID    []string `json:"class_id" bson:"class_id"` // danh sách ID lớp học
 }
 
 type GradeSheet struct {
-	ID         string    `json:"_id" bson:"_id"`
-	StudentID  string    `json:"student_id" bson:"student_id"`
-	ClassID    string    `json:"class_id" bson:"class_id"`
-	Status     string    `json:"status" bson:"status"` // open, close
-	Grade      Grade     `json:"grade" bson:"grade"`
-	CreatedAt  time.Time `json:"created_at" bson:"created_at"`
-	UpdatedAt  time.Time `json:"updated_at" bson:"updated_at"`
+	ID        string    `json:"_id" bson:"_id"`
+	StudentID string    `json:"student_id" bson:"student_id"`
+	ClassID   string    `json:"class_id" bson:"class_id"`
+	Status    string    `json:"status" bson:"status"` // open, close
+	Grade     Grade     `json:"grade" bson:"grade"`
+	CreatedAt time.Time `json:"created_at" bson:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" bson:"updated_at"`
 }
 
 type Grade struct {
