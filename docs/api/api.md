@@ -21,17 +21,31 @@
 - __Body__ :
 ```bash
 {
-    "email":    string,    
-    "password": string, 
-    "name":     string,     
-    "faculty":  string,  
-    "role":     string     
+    "name": {
+        "LastName": string,
+        "MFName": string
+    },
+    "email": string
 }
 ```
 - __Response__ :
 ```bash
 {
-    "data": null | object,
+    "data": {
+        "_id": string,
+        "name": {
+            "LastName": string,
+            "MFName": string
+        },
+        "email": string, // @hcmut.edu.vn
+        "LastLogin": Date,
+        "role": "Admin",
+        "updated_at": Date,
+        "created_at": Date,
+        "admin_info": {
+            "admin_id": string
+        }
+    } | null,
     "message": string,
     "success": boolean
 }
