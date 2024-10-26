@@ -14,6 +14,27 @@
 - __LOGOUT__ 
 - __API__ : `admin/logout`
     - __Yêu cầu__ : xóa cookie và session trên máy người dùng.
+### CHỨC NĂNG : Tạo `Student`
+- __API__ : `admin/student/create`
+- __Mô tả__ : Tạo mới một sinh viên.
+- __Body__ :
+```bash
+{
+    "lastName": string,
+    "mfName": string,
+    "email": string, // abc@hcmut.edu.vn
+    "studentID": string,
+    "classID": []
+}
+```
+- __Response__ :
+```bash
+{
+    "data": object,
+    "message": string,
+    "success": boolean
+}
+```
 ---
 ### `GET`, `PUT`, `DELETE`
 ---
