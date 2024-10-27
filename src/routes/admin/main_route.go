@@ -8,6 +8,8 @@ import (
 
 func MainRoute(r *gin.Engine) {
 	apiAdmin := config.PrefixAdmin()
-	
+
 	AuthRoutes(r.Group(apiAdmin))
+
+	AdminRoutes(r.Group(apiAdmin))
 }

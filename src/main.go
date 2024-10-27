@@ -20,11 +20,6 @@ func main() {
 
 	routes_admin.MainRoute(app)
 
-	// AdminRoutes
-	router := gin.Default()
-	routes_admin.AdminRoutes(router)
-	router.Run(":8080")
-
 	fmt.Println("Server is running on port :", os.Getenv("PORT"))
 	app.Run(":" + os.Getenv("PORT"))
 }
