@@ -8,7 +8,8 @@ import (
 type Class struct {
 	ID            bson.ObjectID `bson:"_id,omitempty"`
 	Name          string        `bson:"name"` 
-	CourseId      string        `bson:"course_id"`
+	CourseId      bson.ObjectID `bson:"course_id"`
+	Semester      string        `bson:"semester"`
 	ListStudentId []string      `bson:"listStudent_id"`
 	TeacherId     bson.ObjectID `bson:"teacher_id"`
 	CreatedBy     bson.ObjectID `bson:"createdBy"` 
