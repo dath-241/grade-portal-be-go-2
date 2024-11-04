@@ -5,6 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func AdminRoutes(r *gin.RouterGroup) {
-	r.POST("/teacher/create", controllers_admin.CreateTeacher)
+func TeacherRoutes(r *gin.RouterGroup) {
+	r.POST("/teacher", controllers_admin.CreateTeacher)
 }

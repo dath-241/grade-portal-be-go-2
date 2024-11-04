@@ -19,11 +19,9 @@ func CreateTeacher(c *gin.Context) {
 
 	// Gán giá trị bổ sung cho teacher
 	teacher.ID = primitive.NewObjectID()
-	teacher.LastLogin = time.Now()
 	teacher.Role = "teacher"
-	teacher.UpdatedAt = time.Now()
 	teacher.CreatedAt = time.Now()
-	teacher.TeacherID = primitive.NewObjectID()
+	teacher.ExpiredAt = time.Now()
 
 	// Truy xuất collection
 	teacherCollection := config.MongoClient.Database("grade-portal").Collection("teacher")

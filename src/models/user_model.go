@@ -6,19 +6,15 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Name struct {
-	LastName string `bson:"last_name" json:"LastName"`
-	MFName   string `bson:"mf_name" json:"MFName"`
-}
-
 type Teacher struct {
-	ID            primitive.ObjectID   `bson:"_id,omitempty" json:"_id"`
-	Name          Name                 `bson:"name" json:"name"`
-	Email         string               `bson:"email" json:"email"`
-	LastLogin     time.Time            `bson:"last_login" json:"LastLogin"`
-	Role          string               `bson:"role" json:"role"`
-	UpdatedAt     time.Time            `bson:"updated_at" json:"updated_at"`
-	CreatedAt     time.Time            `bson:"created_at" json:"created_at"`
-	TeacherID     primitive.ObjectID   `bson:"teacher_id" json:"teacher_id"`
-	ManageClassID []primitive.ObjectID `bson:"manage_class_id" json:"manage_class_id"`
+	ID        primitive.ObjectID `bson:"_id" json:"_id"`
+	Email     string             `bson:"email" json:"email"`
+	Password  string             `bson:"password" json:"password"`
+	Name      string             `bson:"name" json:"name"`
+	UID       string             `bson:"UID" json:"UID"`
+	Faculty   string             `bson:"faculty" json:"faculty"`
+	Role      string             `bson:"role" json:"role"`
+	CreatedBy primitive.ObjectID `bson:"createdBy" json:"createdBy"`
+	CreatedAt time.Time          `bson:"createdAt" json:"createdAt"`
+	ExpiredAt time.Time          `bson:"expiredAt" json:"expiredAt"`
 }

@@ -11,5 +11,5 @@ func MainRoute(r *gin.Engine) {
 
 	AuthRoutes(r.Group(apiAdmin))
 
-	AdminRoutes(r.Group(apiAdmin))
+	TeacherRoutes(r.Group(apiAdmin))
 }
