@@ -8,22 +8,24 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 type IStudentCreate struct {
-	Lastname  string        `json:"lastName"`
-	Mfname    string        `json:"mfName"`
-	Email     string        `json:"email"`
-	StudentID string        `json:"studentID"`
-	ClassID   []interface{} `json:"classID"`
+	Email    string        `json:"email"`
+	Password string        `json:"password"`
+	Name     string        `json:"name"`
+	UID      string        `json:"UID"`
+	Faculty  string        `json:"faculty"`
+	ClassID  []interface{} `json:"classID"`
 }
 
-func IsStudentExist(collection *mongo.Collection, StudentID string, Email string) (bool, error) {
+func IsStudentExist(collection *mongo.Collection, UID string, Email string) (bool, error) {
 	filter := bson.M{
 		"$or": []bson.M{
-			{"student_info.student_id": StudentID},
+			{"UID": UID},
 			{"email": Email},
 		},
 	}
@@ -63,7 +65,7 @@ func CreateStudent(c *gin.Context) {
 
 	collection := models.StudentModel()
 
-	isExist, err := IsStudentExist(collection, body.StudentID, body.Email)
+	isExist, err := IsStudentExist(collection, body.UID, body.Email)
 
 	if err != nil {
 		c.JSON(500, gin.H{
@@ -84,19 +86,15 @@ func CreateStudent(c *gin.Context) {
 	}
 
 	_, err = collection.InsertOne(context.TODO(), bson.M{
-		"name": bson.M{
-			"LastName": body.Lastname,
-			"MFName":   body.Mfname,
-		},
-		"email":      body.Email,
-		"LastLogin":  nil,
-		"role":       "student",
-		"updated_at": time.Now(),
-		"created_at": time.Now(),
-		"student_info": bson.M{
-			"student_id": body.StudentID,
-			"class_id":   body.ClassID,
-		},
+		"email":     body.Email,
+		"password":  body.Password,
+		"name":      body.Name,
+		"UID":       body.UID,
+		"faculty":   body.Faculty,
+		"role":      "student",
+		"createdBy": time.Now(),
+		"createdAt": time.Now(),
+		"expiredAt": time.Now(),
 	})
 
 	if err != nil {
@@ -112,19 +110,15 @@ func CreateStudent(c *gin.Context) {
 		"success": true,
 		"message": "Tạo thành công",
 		"data": bson.M{
-			"name": bson.M{
-				"LastName": body.Lastname,
-				"MFName":   body.Mfname,
-			},
-			"email":      body.Email,
-			"LastLogin":  nil,
-			"role":       "student",
-			"updated_at": time.Now(),
-			"created_at": time.Now(),
-			"student_info": bson.M{
-				"student_id": body.StudentID,
-				"class_id":   body.ClassID,
-			},
+			"email":     body.Email,
+			"password":  body.Password,
+			"name":      body.Name,
+			"UID":       body.UID,
+			"faculty":   body.Faculty,
+			"role":      "student",
+			"createdBy": primitive.NewObjectID(),
+			"createdAt": time.Now(),
+			"expiredAt": time.Now(),
 		},
 	})
 }

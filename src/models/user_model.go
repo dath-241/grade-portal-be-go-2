@@ -5,6 +5,12 @@ import (
 )
 
 type InterfaceStudent struct {
+	Email    string        `json:"email"`
+	Password string        `json:"password"`
+	Name     string        `json:"name"`
+	UID      string        `json:"UID"`
+	Faculty  string        `json:"faculty"`
+	ClassID  []interface{} `json:"classID"`
 }
 
 func StudentModel() *mongo.Collection {
