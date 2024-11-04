@@ -12,10 +12,8 @@ type InterfaceAdmin struct {
 	Email     string        `bson:"email"`
 	Password  string        `bson:"password"`
 	Name      string        `bson:"name"`
-	Faculty   string        `bson:"faculty"`
-	Role      string        `bson:"role"`
 	CreatedAt time.Time     `bson:"createdAt"`
-	ExpiredAt time.Time     `bson:"expiredAt"`
+	CreatedBy bson.ObjectID `bson:"createdBy"`
 }
 
 func AdminModel() *mongo.Collection {

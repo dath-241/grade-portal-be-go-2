@@ -8,24 +8,23 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 type IAdminCreate struct {
-	Name struct {
-		LastName string `json:"LastName"`
-		MFName   string `json:"MFName"`
-	} `json:"name"`
-	Email string `json:"email"`
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
-func IsAdminExist(collection *mongo.Collection, email string) (bool, error) {
+func IsAdminExist(collection *mongo.Collection, email string, password string) (bool, error) {
 
 	filter := bson.M{
-		"email": email,
-	}
+		"$or": []bson.M{
+			{"email": email},
+			{"password": password},
+		}}
 
 	var result bson.M
 	err := collection.FindOne(context.TODO(), filter).Decode(&result)
@@ -41,7 +40,6 @@ func IsAdminExist(collection *mongo.Collection, email string) (bool, error) {
 func CreateAdmin(c *gin.Context) {
 
 	var body IAdminCreate
-	var data User
 
 	// Kiểm tra cấu trúc dữ liệu
 	if err := c.ShouldBindJSON(&body); err != nil {
@@ -53,20 +51,20 @@ func CreateAdmin(c *gin.Context) {
 		return
 	}
 
-	// Kiểm tra các trường bắt buộc: FirstName, MFName, Email
-	if strings.TrimSpace(body.Name.LastName) == "" {
+	// Kiểm tra các trường bắt buộc: Name, Email, Password
+	if strings.TrimSpace(body.Name) == "" {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"success": false,
-			"message": "Họ không được để trống",
+			"message": "Họ và tên không được để trống",
 			"data":    nil,
 		})
 		return
 	}
 
-	if strings.TrimSpace(body.Name.MFName) == "" {
+	if strings.TrimSpace(body.Password) == "" {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"success": false,
-			"message": "Tên không được để trống",
+			"message": "Mật khẩu không được để trống",
 			"data":    nil,
 		})
 		return
@@ -93,8 +91,8 @@ func CreateAdmin(c *gin.Context) {
 
 	collection := models.AdminModel()
 
-	// Kiểm tra trùng Email
-	isExist, err := IsAdminExist(collection, body.Email)
+	// Kiểm tra trùng Email, Password
+	isExist, err := IsAdminExist(collection, body.Email, body.Password)
 
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
@@ -108,22 +106,19 @@ func CreateAdmin(c *gin.Context) {
 	if isExist {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
-			"message": "Email đã được sử dụng",
+			"message": "Email hoặc mật khẩu đã được sử dụng",
 			"data":    nil,
 		})
 		return
 	}
 
 	// Thêm Admin
-	data.ID = primitive.NewObjectID().Hex()
-	data.Name.LastName = body.Name.LastName
-	data.Name.MFName = body.Name.MFName
-	data.Email = body.Email
-	data.Role = "Admin"
-	data.CreatedAt = time.Now()
-	data.UpdatedAt = time.Now()
-	data.AdminInfo = &AdminInfo{
-		AdminID: data.ID,
+
+	var data = models.InterfaceAdmin{
+		Email:     body.Email,
+		Password:  body.Password,
+		Name:      body.Name,
+		CreatedAt: time.Now(),
 	}
 
 	_, err = collection.InsertOne(context.TODO(), data)
