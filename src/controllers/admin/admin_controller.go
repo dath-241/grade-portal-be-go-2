@@ -23,7 +23,6 @@ func IsAdminExist(collection *mongo.Collection, email string, password string) (
 	filter := bson.M{
 		"$or": []bson.M{
 			{"email": email},
-			{"password": password},
 		}}
 
 	var result bson.M
@@ -106,7 +105,7 @@ func CreateAdmin(c *gin.Context) {
 	if isExist {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
-			"message": "Email hoặc mật khẩu đã được sử dụng",
+			"message": "Email đã được sử dụng",
 			"data":    nil,
 		})
 		return
