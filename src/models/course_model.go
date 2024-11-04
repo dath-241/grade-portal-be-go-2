@@ -4,9 +4,11 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+// Course model describe the Course model uses for the database
 type Course struct {
-	Id          primitive.ObjectID `bson:"Id"`
-	Course_name string             `bson:"Course_name" binding:"required"`
-	Credit      int32              `bson:"Credit" binding:"required"`
-	Class_id    []string           `bson:"Class_id" binding:"required"`
+	CourseId    string             `bson:"courseId" binding:"required"`
+	CourseName  string             `bson:"courseName" binding:"required"`
+	Credit      int32              `bson:"credit" binding:"required"`
+	Description string             `bson:"description"`
+	CreatedBy   primitive.ObjectID `bson:"createdBy"`
 }

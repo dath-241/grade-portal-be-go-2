@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Main route include all routes use for the website?
 func MainRoute(r *gin.Engine) {
 	apiAdmin := config.PrefixAdmin()
 	AuthRoutes(r.Group(apiAdmin))

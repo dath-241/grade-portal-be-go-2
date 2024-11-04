@@ -11,5 +11,6 @@ func CourseRoutes(app *gin.Engine) {
 	api := app.Group("/course")
 	{
 		api.POST("/create", controllers_admin.CreateCourse)
+		// api.GET("/get/:id", controllers_admin.GetCourse)
 	}
 }
