@@ -15,17 +15,30 @@ func errResponse(err error) gin.H {
 }
 
 func CreateGradeSheet(c *gin.Context) {
+	courseIDStr := c.Param("courseID")
+	classIDStr := c.Param("classID")
+	// Convert string IDs to ObjectID
+	courseID, err := primitive.ObjectIDFromHex(courseIDStr)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, errResponse(err))
+		return
+	}
+
+	classID, err := primitive.ObjectIDFromHex(classIDStr)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, errResponse(err))
+		return
+	}
+
 	var gradeSheet models.GradeSheet
 
 	if err := c.ShouldBindJSON(&gradeSheet); err != nil {
 		c.JSON(http.StatusBadRequest, errResponse(err))
 		return
 	}
-
-	gradeSheet.StudentID = primitive.NewObjectID() // Create a new ObjectID
-	gradeSheet.ClassID = primitive.NewObjectID()   // Create a new ObjectID
-	gradeSheet.CreatedAt = time.Now()
-	gradeSheet.UpdatedAt = time.Now()
+	gradeSheet.CourseID = courseID
+	gradeSheet.ClassID = classID
+	gradeSheet.ExpiredAt = time.Now().AddDate(1, 0, 0)
 	collection := config.MongoClient.Database("School").Collection("GradeSheet")
 
 	if _, err := collection.InsertOne(c.Request.Context(), gradeSheet); err != nil {

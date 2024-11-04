@@ -7,17 +7,23 @@ import (
 )
 
 type GradeSheet struct {
-	StudentID primitive.ObjectID `bson:"student_id" json:"student_id"`
-	ClassID   primitive.ObjectID `bson:"class_id" json:"class_id"`
-	Status    string             `bson:"status" json:"status"` // open or close
-	Grade     GradeDetails       `bson:"grade" json:"grade"`
-	CreatedAt time.Time          `bson:"created_at" json:"created_at"`
-	UpdatedAt time.Time          `bson:"updated_at" json:"updated_at"`
+	ClassID   primitive.ObjectID `bson:"classID"`
+	CourseID  primitive.ObjectID `bson:"courseID"`
+	ExpiredAt time.Time          `bson:"expiredAt"`
+	CreatedBy primitive.ObjectID `bson:"createdBy"`
+	UpdatedBy primitive.ObjectID `bson:"updatedBy,omitempty"`
+	GradeData []StudentGrades    `bson:"gradeSheet,omitempty"`
 }
 
-type GradeDetails struct {
-	Final      float64   `bson:"final" json:"final"`
-	Midterm    float64   `bson:"midterm" json:"midterm"`
-	Assignment []float64 `bson:"assignment" json:"assignment"`
-	Exercise   []float64 `bson:"exercise" json:"exercise"`
+type StudentGrades struct {
+	StudentID string `bson:"studentID"`
+	Grades    Grades `bson:"grades"`
+}
+
+type Grades struct {
+	Homework   []float64 `bson:"Homework"`
+	Lab        []float64 `bson:"Lab"`
+	Assignment []float64 `bson:"Assignment"`
+	Midterm    float64   `bson:"Midterm"`
+	Final      float64   `bson:"Final"`
 }

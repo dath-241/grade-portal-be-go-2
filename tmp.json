@@ -1,0 +1,172 @@
+// Account
+[
+  {
+    "_id": { "$oid": "671251ede5534306db8a4f8f" },
+    "email": "eimi.fukada@hcmut.edu.vn",
+    "password": "eimiscute",
+    "name": "Eimi Fukada",
+    "UID": "2216969",
+    "faculty": "Biology",
+    "role": "student",
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" },
+    "createdAt": { "$date": "2024-10-19T14:51:39.974Z" },
+    "expiredAt": { "$date": "2029-10-18T12:17:49.499Z" }
+  },
+  {
+    "_id": { "$oid": "671275fbb086b436604f0f21" },
+    "email": "yua.mikami@hcmut.edu.vn",
+    "password": "yuakawaii",
+    "name": "Yua Mikami",
+    "UID": "9080100",
+    "faculty": "Computer Science",
+    "role": "teacher",
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" },
+    "createdAt": { "$date": "2024-10-19T14:51:39.974Z" },
+    "expiredAt": { "$date": "2029-10-18T14:51:39.974Z" }
+  }
+]
+
+
+// Admin
+[
+  {
+    "_id": { "$oid": "670de16d6fbedac9e3b8d00a" },
+    "email": "sakura.momo@hcmut.edu.vn",
+    "name": "Sakura Momo",vf 
+    "UID": "6666999"
+  },
+  {
+    "_id": { "$oid": "67113837f264e259af81a864" },
+    "email": "maria.ozawa@hcmut.edu.vn",
+    "name": "Maria Ozawa",
+    "UID": "4444444",
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" }
+  }
+]
+
+// Course
+[
+  {
+    "_id": { "$oid": "6709371c3253c4bcf9dbc460" },
+    "courseID": "CO2005",
+    "courseName": "DSA",
+    "credit": 4,
+    "description": "",
+    "createdBy": { "$oid": "6709364e3253c4bcf9dbc456" }
+  },
+  {
+    "_id": { "$oid": "67161b499bf8b9533f245f57" },
+    "courseID": "PH1005",
+    "courseName": "Introduction to Physics",
+    "credit": 3,
+    "description": "",
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" }
+  }
+]
+
+//GradeSheet
+[
+  {
+    "_id": { "$oid": "671285ece9256e2faa16b18f" },
+    "classID": "000000000000000000000000",
+    "expiredAt": { "$date": "2025-04-18T15:59:40.076Z" },
+    "createdBy": { "$oid": "67113837f264e259af81a864" },
+    "updatedBy": "",
+    "gradeSheet": null
+  },
+  {
+    "_id": { "$oid": "67167a8518c51cc0b1b0f6ae" },
+    "classID": { "$oid": "66f95884a2233f861b7d6a94" },
+    "expiredAt": { "$date": "2025-04-21T16:00:05.948Z" },
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" },
+    "updatedBy": "",
+    "gradeSheet": [
+      {
+        "studentID": "0000001",
+        "grades": {
+          "Homework": [10, 10, 10],
+          "Lab": [10, 10, 10, 10],
+          "Assignment": [10, 10],
+          "Midterm": 10,
+          "Final": 10
+        }
+      },
+      {
+        "studentID": "0000002",
+        "grades": {
+          "Homework": [6.9, 6.9, 6.9],
+          "Lab": [6.9, 6.9, 6.9, 6.9],
+          "Assignment": [6.9, 6.9],
+          "Midterm": 6.9,
+          "Final": 6.9
+        }
+      },
+      {
+        "studentID": "0000009",
+        "grades": {
+          "Homework": [0, 0, 0],
+          "Lab": [0, 0, 0, 0],
+          "Assignment": [0, 0],
+          "Midterm": 0,
+          "Final": 0
+        }
+      }
+    ]
+  }
+]
+
+// Class
+[
+  {
+    "_id": { "$oid": "671285ece9256e2faa16b18f" },
+    "classID": "000000000000000000000000",
+    "expiredAt": { "$date": "2025-04-18T15:59:40.076Z" },
+    "createdBy": { "$oid": "67113837f264e259af81a864" },
+    "updatedBy": "",
+    "gradeSheet": null
+  },
+  {
+    "_id": { "$oid": "67167a8518c51cc0b1b0f6ae" },
+    "classID": { "$oid": "66f95884a2233f861b7d6a94" },
+    "expiredAt": { "$date": "2025-04-21T16:00:05.948Z" },
+    "createdBy": { "$oid": "670de16d6fbedac9e3b8d00a" },
+    "updatedBy": "",
+    "gradeSheet": [
+      {
+        "studentID": "0000001",
+        "grades": {
+          "Homework": [10, 10, 10],
+          "Lab": [10, 10, 10, 10],
+          "Assignment": [10, 10],
+          "Midterm": 10,
+          "Final": 10
+        }
+      },
+      {
+        "studentID": "0000002",
+        "grades": {
+          "Homework": [6.9, 6.9, 6.9],
+          "Lab": [6.9, 6.9, 6.9, 6.9],
+          "Assignment": [6.9, 6.9],
+          "Midterm": 6.9,
+          "Final": 6.9
+        }
+      },
+      {
+        "studentID": "0000009",
+        "grades": {
+          "Homework": [0, 0, 0],
+          "Lab": [0, 0, 0, 0],
+          "Assignment": [0, 0],
+          "Midterm": 0,
+          "Final": 0
+        }
+      }
+    ]
+  }
+]
+
+
+
+
+  

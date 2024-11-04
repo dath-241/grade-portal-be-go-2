@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GradeSheet sets up the routes for handling grade sheets
 func GradeSheet(r *gin.RouterGroup) {
-	r.POST("/gradesheet/create", controllers_admin.CreateGradeSheet)
+	r.POST("/teacher/course/:courseID/class/:classID/upload", controllers_admin.CreateGradeSheet)
 }
