@@ -7,7 +7,7 @@ import (
 
 type Class struct {
 	ID            bson.ObjectID `bson:"_id,omitempty"`
-	Name          string        `bson:"name"` 
+	ClassName          string   `bson:"class_name"` 
 	CourseId      bson.ObjectID `bson:"course_id"`
 	Semester      string        `bson:"semester"`
 	ListStudentId []string      `bson:"listStudent_id"`
