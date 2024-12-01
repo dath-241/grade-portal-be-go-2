@@ -1,7 +1,7 @@
 package models
 
 import (
-	"be-go-2/config"
+	"Go2/config"
 	"log"
 
 	"go.mongodb.org/mongo-driver/v2/mongo"

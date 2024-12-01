@@ -1,6 +1,30 @@
 package main
 
 import (
+<<<<<<< HEAD
+	"be-go-2/config"
+	routes_admin "be-go-2/routes/admin"
+	"fmt"
+	"os"
+
+	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
+)
+
+func main() {
+	gin.SetMode(gin.ReleaseMode)
+
+	godotenv.Load()
+	config.ConnectMongoDB(os.Getenv("MONGODB_URL"))
+
+	app := gin.Default()
+
+	routes_admin.MainRoute(app)
+
+	fmt.Println("Server is running on port :", os.Getenv("PORT"))
+	app.Run(":" + os.Getenv("PORT"))
+}
+=======
     "Go2/config"
     routes_admin "Go2/routes/admin"
     routes_client "Go2/routes/client"
@@ -41,3 +65,4 @@ func main() {
     fmt.Println("Server đang chạy trên cổng", os.Getenv("PORT"))
     app.Run(":" + os.Getenv("PORT"))
 }
+>>>>>>> 6bfebbc4c1f06c7bc871229c29617513338352cd
