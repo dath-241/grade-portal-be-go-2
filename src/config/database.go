@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 	"time"
-	
+
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
 )
@@ -26,5 +26,6 @@ func ConnectMongoDB(uri string) {
 	if err != nil {
 		log.Fatal("Could not ping MongoDB: ", err)
 	}
+
 	log.Println("Connected to MongoDB")
 }

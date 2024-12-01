@@ -1,0 +1,34 @@
+name: go2
+on:
+  push:
+    branches: 
+    - main
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest  # Thay vì self-hosted, bạn dùng github-hosted runner
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+      - name: Build and Push DockerFile
+        run: |
+          echo "${{ secrets.DOCKERHUB_ACCESS_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          cd src/
+          sudo docker build -t go2 .
+          sudo docker push go2
+  deploy:
+    needs: docker 
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Pull docker image
+        run: sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/go2:latest
+      - name: Delete old container
+        run: sudo docker rm -f go2
+      - name: Run docker container
+        run: |
+          cd ~
+          sudo docker run -d -p 8080:8080 --name go2 --env-file .env go2

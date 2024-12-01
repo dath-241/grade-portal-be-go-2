@@ -1,20 +1,6 @@
 # ĐỒ ÁN TỔNG HỢP HK241
 
-### TÊN NHÓM : `GO GO GO`
-
-### Current week : `3`
-
-## THÔNG TIN NHÓM
-
-| STT | Tên                 | MSSV    | Vai Trò | 
-| --- | ------------------- | ------- | ------- | 
-| 1   | Chu Minh Tâm        | 2213009 | PO      | 
-| 2   | Nguyễn Trọng Kha    | 2211417 | Dev     |                                                  
-| 3   | Nguyễn Tiến Phát    | 2212527 | Dev     |                                                  
-| 4   | Nguyễn Ngọc Diệu Hà | 2210846 | Dev     |                                                  
-| 5   | Lê Hoàng Ngọc Hân   | 2210935 | Dev     |                                                  
-| 6   | Nguyễn Phúc Hưng    | 2211368 | Dev     |                                                  
-| 7   | Huỳnh Thanh Tâm     | 2213012 | Dev     |                                                  
+### TÊN NHÓM : `GO GO GO` ≽^• ˕ • ྀི≼
 
 # GIỚI THIỆU DỰ ÁN
 
@@ -25,28 +11,34 @@ Dự án phát triển Backend dành cho ứng dụng website tra cứu và thao
 
 ### CÔNG NGHỆ
 
-- `Gin`, `JWT-Go`, `Echo`, `Mgo` (Golang).
-- `MongoDB`.
-- `Docker`, `GitAction`.
-- `Postman`.
+ <img src="https://img.shields.io/badge/Golang-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Golang" />
+ <img src="https://img.shields.io/badge/Gin_Framework-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Gin" /> 
+ <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" /> 
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> 
+ <img src="https://img.shields.io/badge/GitFlow-F05032?style=for-the-badge&logo=git&logoColor=white" alt="GitFlow" />
 
-### TÍNH NĂNG
+## TÍNH NĂNG
 
-- `Admin` : Quản lý hệ thống, tạo và phân quyền cho giáo viên.
-- `Teacher` : Tạo môn học, tải lên file CSV chứa bảng điểm. Hệ thống tự động theo dõi và cập nhật điểm từ file CSV (nếu có phiên bản mới) trong vòng 6 tháng.
-- `Student` : Tra cứu điểm số.
-- `Hall of Fame` : Hiển thị danh sách top sinh viên có điểm cao nhất.
-  </br>
-  </br>
+- `Admin`
+  - Quản lý hệ thống, môn học, lớp học và phân quyền cho người dùng.
+- `Teacher`
+  - Chỉnh sửa lớp học, bảng điểm bằng cách đính kèm file CSV.
+- `Student`
+  - Tra cứu điểm số các môn học trong từng học kỳ.
+- `Hall of Fame`
+  - Hệ thống tự động cập nhật và hiển thị danh sách top sinh viên có điểm cao nhất theo kỳ, năm học.
+    </br>
+    </br>
+    </br>
 
-# HƯỚNG DẪN SỬ DỤNG
+## THÔNG TIN NHÓM
 
-</br>
-
-# TIẾN ĐỘ CÔNG VIỆC
-
-| Tuần | Công Việc                 | Mức Độ Hoàn Thành |
-| ---- | ------------------------- | ----------------- |
-| 1    | Plan + Rule               | 100%              |
-| 2    | Infrastructure + Use-case | 100%              |
-| 3    | Diagram + APIs Design     | 100%              |
+| STT | Họ và Tên           | MSSV    | Vai Trò       |
+| --- | ------------------- | ------- | ------------- |
+| 1   | Chu Minh Tâm        | 2213009 | Product Owner |
+| 2   | Nguyễn Trọng Kha    | 2211417 | Developer     |
+| 3   | Nguyễn Tiến Phát    | 2212527 | Developer     |
+| 4   | Nguyễn Ngọc Diệu Hà | 2210846 | Developer     |
+| 5   | Lê Hoàng Ngọc Hân   | 2210935 | Developer     |
+| 6   | Nguyễn Phúc Hưng    | 2211368 | Developer     |
+| 7   | Huỳnh Thanh Tâm     | 2213012 | Developer     |

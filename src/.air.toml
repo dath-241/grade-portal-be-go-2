@@ -1,0 +1,13 @@
+# .air.toml
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "tmp/main.exe"  
+  cmd = "go build -o tmp/main.exe ."  
+  include_ext = ["go"]  
+  exclude_dir = ["tmp", ".github", ".vscode", "actions-runner", "Git"] 
+  watch_dir = ["." ]
+
+[log]
+  level = "info"
