@@ -3,6 +3,7 @@ package controller_admin
 import (
 	"Go2/models"
 	"context"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/v2/bson"
@@ -10,8 +11,7 @@ import (
 
 // HandleCreateAccount xử lý việc tạo tài khoản mới.
 func HandleCreateAccount(c *gin.Context) {
-	createdBy, _ := c.Get("ID") // Get creator's ID
-
+	// createdBy, _ := c.Get("ID") // Get creator's ID
 	var newAccounts []InterfaceAccount
 
 	// Check if the body of the request is valid
@@ -54,12 +54,15 @@ func HandleCreateAccount(c *gin.Context) {
 	// Classify valid and invalid accounts
 	var validAccounts, invalidAccounts []InterfaceAccount
 	for _, account := range newAccounts {
-		if contains(emailSet, account.Email) || contains(idSet, account.Ms) {
+		// Check @hcmut.edu.vn, role and dupplicated
+		if contains(emailSet, account.Email) || contains(idSet, account.Ms) || CheckEmailAndRole(account.Email, account.Role) {
 			invalidAccounts = append(invalidAccounts, account)
 		} else {
 			validAccounts = append(validAccounts, account)
 		}
 	}
+
+	// Add field createdBy and ExpiredAt for valid accounts
 
 	// Add valid accounts to database
 	if len(validAccounts) > 0 {
@@ -90,7 +93,10 @@ func contains(slice []string, value string) bool {
 
 // CheckEmailAndRole kiểm tra đuôi email và role
 func CheckEmailAndRole(email string, role string) bool {
-	return true
+	if strings.HasSuffix(email, "@hcmut.edu.vn") && (role == "student" || role == "teacher") {
+		return true
+	}
+	return false
 }
 
 // HandleGetAccountByID xử lý việc lấy thông tin tài khoản theo ID.
