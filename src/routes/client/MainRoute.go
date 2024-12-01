@@ -18,11 +18,11 @@ func MainRoute(r *gin.Engine) {
 	protectedGroup.Use(middlewares_client.RequireUser)
 
 	// Route cho Hall of Fame
-	HallOfFameRoute(protectedGroup.Group("/HOF"))
+	// HallOfFameRoute(protectedGroup.Group("/HOF"))
 	// Route cho lớp học
-	ClassRoute(protectedGroup.Group("/class"))
+	// ClassRoute(protectedGroup.Group("/class"))
 	// Route cho khóa học
-	CourseRoute(protectedGroup.Group("/course"))
+	// CourseRoute(protectedGroup.Group("/course"))
 	// Route cho kết quả điểm
 	// ResultRoute(protectedGroup.Group("/result"))
 }
