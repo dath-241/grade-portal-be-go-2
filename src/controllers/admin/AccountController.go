@@ -4,6 +4,7 @@ import (
 	"Go2/models"
 	"context"
 	"strings"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/v2/bson"
@@ -11,7 +12,7 @@ import (
 
 // HandleCreateAccount xử lý việc tạo tài khoản mới.
 func HandleCreateAccount(c *gin.Context) {
-	// createdBy, _ := c.Get("ID") // Get creator's ID
+	createdBy, _ := c.Get("ID") // Get creator's ID
 	var newAccounts []InterfaceAccount
 
 	// Check if the body of the request is valid
@@ -22,6 +23,9 @@ func HandleCreateAccount(c *gin.Context) {
 		})
 		return
 	}
+
+	// Remove dupplicate object with ID and Email in newAccounts
+	newAccounts = removeDuplicates(newAccounts)
 
 	// Check dupplicate
 	accountCol := models.AccountModel()
@@ -55,14 +59,15 @@ func HandleCreateAccount(c *gin.Context) {
 	var validAccounts, invalidAccounts []InterfaceAccount
 	for _, account := range newAccounts {
 		// Check @hcmut.edu.vn, role and dupplicated
-		if contains(emailSet, account.Email) || contains(idSet, account.Ms) || CheckEmailAndRole(account.Email, account.Role) {
+		if contains(emailSet, account.Email) || contains(idSet, account.Ms) || !CheckEmailAndRole(account.Email, account.Role) {
 			invalidAccounts = append(invalidAccounts, account)
 		} else {
+			// Add field CreatedBy and ExpiredAt for valid account
+			account.CreatedBy = createdBy
+			account.ExpiredAt = time.Now().AddDate(5, 0, 0)
 			validAccounts = append(validAccounts, account)
 		}
 	}
-
-	// Add field createdBy and ExpiredAt for valid accounts
 
 	// Add valid accounts to database
 	if len(validAccounts) > 0 {
@@ -80,6 +85,27 @@ func HandleCreateAccount(c *gin.Context) {
 		"invalidAccounts": invalidAccounts,
 		"validAccount":    validAccounts,
 	})
+}
+
+func removeDuplicates(accounts []InterfaceAccount) []InterfaceAccount {
+	seen := make(map[string]map[string]bool) // Map store email and id has met
+	var result []InterfaceAccount
+
+	for _, account := range accounts {
+		if seen[account.Email][account.Ms] {
+			// Dupplicate, pass
+			continue
+		}
+
+		// No dupplicate, add accounts to result
+		if seen[account.Email] == nil {
+			seen[account.Email] = make(map[string]bool)
+		}
+		seen[account.Email][account.Ms] = true
+		result = append(result, account)
+	}
+
+	return result
 }
 
 func contains(slice []string, value string) bool {
