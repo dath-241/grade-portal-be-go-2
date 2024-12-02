@@ -45,15 +45,15 @@ func HandleLogin(c *gin.Context) {
 	err = collection.FindOne(context.TODO(), bson.M{"email": email}).Decode(&user)
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":  "Fail",
+			"status": "Fail",
 			"mesage": "Không lấy được thông tin người dùng trong cơ sở dữ liệu"})
 		return
 	}
 	token := helper.CreateJWT(user.ID)
 	c.SetCookie("token", token, 3600*24, "/", "", true, true)
 	c.JSON(200, gin.H{
-		"status":  "Success",
-		"token": token,
+		"status": "Success",
+		"token":  token,
 	})
 }
 
@@ -61,7 +61,7 @@ func HandleLogin(c *gin.Context) {
 func HandleLogout(c *gin.Context) {
 	c.SetCookie("token", "", 3600*24, "/", "", true, true)
 	c.JSON(http.StatusOK, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Đăng xuất thành công",
 	})
 }
@@ -84,7 +84,7 @@ func HandleCreateAdmin(c *gin.Context) {
 	}).Decode(&existingAdmin)
 	if err == nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Bảng ghi của admin này đã được lưu trong database trước đó",
 		})
 		return
@@ -98,7 +98,7 @@ func HandleCreateAdmin(c *gin.Context) {
 		"createdBy": createdBy,
 	})
 	c.JSON(http.StatusOK, gin.H{
-		"status": "Success",
+		"status":  "Success",
 		"message": "Tạo tài khoản admin thành công",
 	})
 }
@@ -112,14 +112,14 @@ func HandleProfile(c *gin.Context) {
 	err := collection.FindOne(context.TODO(), bson.M{"_id": ID}).Decode(&user)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"status": "Fail",
+			"status":  "Fail",
 			"message": "Không lấy được thông tin người dùng trong dữ liệu.",
 		})
 		return
 	}
 	//Trả kết quả
 	c.JSON(http.StatusOK, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Thành công",
 		"data":    user,
 	})
