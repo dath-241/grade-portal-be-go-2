@@ -8,6 +8,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/v2/bson"
+	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 // HandleCreateAccount xử lý việc tạo tài khoản mới.
@@ -127,7 +128,44 @@ func CheckEmailAndRole(email string, role string) bool {
 
 // HandleGetAccountByID xử lý việc lấy thông tin tài khoản theo ID.
 func HandleGetAccountByID(c *gin.Context) {
+	idParam := c.Param("id")
 
+	accountId, err := bson.ObjectIDFromHex(idParam)
+	if err != nil { // Check if idParam is valid or not
+		c.JSON(400, gin.H{
+			"status":  "Fail",
+			"message": "Invalid ID",
+		})
+		return
+	}
+
+	accountCol := models.AccountModel()
+	var account models.InterfaceAccount
+
+	// Find account in database by accountId
+	err = accountCol.FindOne(context.TODO(), bson.M{"_id": accountId}).Decode(&account)
+	if err != nil { // If there is an error when finding account
+		if err == mongo.ErrNoDocuments { // Can not find account with accountId
+			c.JSON(400, gin.H{
+				"status":  "Fail",
+				"message": "Can not find account",
+			})
+			return
+		}
+		// Another error when using database
+		c.JSON(500, gin.H{
+			"status":  "Fail",
+			"message": "Internal server error",
+		})
+		return
+	}
+
+	// No error, find account successfully, return that account data
+	c.JSON(200, gin.H{
+		"status":  "success",
+		"message": "Find account successfully",
+		"data":    account,
+	})
 }
 
 // HandleGetTeacherAccounts xử lý việc lấy thông tin tất cả tài khoản giáo viên
