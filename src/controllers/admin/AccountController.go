@@ -168,12 +168,79 @@ func HandleGetAccountByID(c *gin.Context) {
 	})
 }
 
-// HandleGetTeacherAccounts xử lý việc lấy thông tin tất cả tài khoản giáo viên
+// HandleGetTeacherAccounts xử lý việc lấy thông tin tất cả tài khoản giáo viên hoặc theo id
 func HandleGetTeacherAccounts(c *gin.Context) {
+	accountCol := models.AccountModel()
 
+	query := c.Query("ms")
+
+	if query == "" { // Get all teacher accounts
+		var teachers []models.InterfaceAccount
+		// Retriev database
+		cursor, err := accountCol.Find(context.TODO(), bson.M{"role": "teacher"})
+
+		if err != nil { // If there is an error when finding account
+			if err == mongo.ErrNoDocuments {
+				c.JSON(400, gin.H{ // There are no teacher accounts database
+					"status":  "Fail",
+					"message": "Can not find account",
+				})
+				return
+			}
+			// Another error when using database
+			c.JSON(500, gin.H{
+				"status":  "Fail",
+				"message": "Internal server error",
+			})
+			return
+		}
+
+		// Decoding cursor
+		if err := cursor.All(context.TODO(), &teachers); err != nil {
+			c.JSON(500, gin.H{
+				"status":  "Fail",
+				"message": "Error decoding account",
+			})
+			return
+		}
+
+		// There is no error
+		c.JSON(200, gin.H{
+			"status":  "Success",
+			"message": "Find all teacher accounts successfully",
+			"data":    teachers,
+		})
+
+	} else { // Get teacher account by `ms`
+		var teacher models.InterfaceAccount
+		err := accountCol.FindOne(context.TODO(), bson.M{"role": "teacher", "ms": query}).Decode(&teacher)
+
+		if err != nil { // If there is an error when finding account
+			if err == mongo.ErrNoDocuments {
+				c.JSON(400, gin.H{ // There are no teacher account with ms database
+					"status":  "Fail",
+					"message": "Can not find teacher account with ms",
+				})
+				return
+			}
+			// Another error when using database
+			c.JSON(500, gin.H{
+				"status":  "Fail",
+				"message": "Internal server error",
+			})
+			return
+		}
+
+		// Maybe there is no error
+		c.JSON(200, gin.H{
+			"status":  "Success",
+			"message": "Find teacher account by ID successfully",
+			"data":    teacher,
+		})
+	}
 }
 
-// HandleGetStudentAccounts xử lý việc lấy thông tin tất cả tài khoản sinh viên
+// HandleGetStudentAccounts xử lý việc lấy thông tin tất cả tài khoản sinh viên hoặc theo id
 func HandleGetStudentAccounts(c *gin.Context) {
 
 }
