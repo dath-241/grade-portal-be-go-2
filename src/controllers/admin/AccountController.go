@@ -19,7 +19,7 @@ func HandleCreateAccount(c *gin.Context) {
 
 	// Check if the body of the request is valid
 	if err := c.ShouldBindJSON(&newAccounts); err != nil {
-		c.JSON(400, gin.H{
+		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  "Fail",
 			"message": "Invalid data",
 		})
@@ -36,7 +36,7 @@ func HandleCreateAccount(c *gin.Context) {
 	cusor, err := accountCol.Find(context.TODO(), bson.M{})
 
 	if err != nil { // Error when retrieve database
-		c.JSON(500, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  "Fail",
 			"message": "Error when retrieve on database",
 		})
@@ -44,7 +44,7 @@ func HandleCreateAccount(c *gin.Context) {
 	}
 
 	if err := cusor.All(context.TODO(), &existedAccounts); err != nil {
-		c.JSON(500, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  "Fail",
 			"message": "Error decoding account",
 		})
@@ -75,14 +75,14 @@ func HandleCreateAccount(c *gin.Context) {
 	if len(validAccounts) > 0 {
 		_, err := accountCol.InsertMany(context.TODO(), validAccounts)
 		if err != nil {
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Error when creating account",
 			})
 			return
 		}
 	}
-	c.JSON(200, gin.H{
+	c.JSON(http.StatusOK, gin.H{
 		"status":          "success",
 		"invalidAccounts": invalidAccounts,
 		"validAccount":    validAccounts,
@@ -133,7 +133,7 @@ func HandleGetAccountByID(c *gin.Context) {
 
 	accountId, err := bson.ObjectIDFromHex(idParam)
 	if err != nil { // Check if idParam is valid or not
-		c.JSON(400, gin.H{
+		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  "Fail",
 			"message": "Invalid ID",
 		})
@@ -147,14 +147,14 @@ func HandleGetAccountByID(c *gin.Context) {
 	err = accountCol.FindOne(context.TODO(), bson.M{"_id": accountId}).Decode(&account)
 	if err != nil { // If there is an error when finding account
 		if err == mongo.ErrNoDocuments { // Can not find account with accountId
-			c.JSON(400, gin.H{
+			c.JSON(http.StatusNotFound, gin.H{
 				"status":  "Fail",
 				"message": "Can not find account",
 			})
 			return
 		}
 		// Another error when using database
-		c.JSON(500, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  "Fail",
 			"message": "Internal server error",
 		})
@@ -162,7 +162,7 @@ func HandleGetAccountByID(c *gin.Context) {
 	}
 
 	// No error, find account successfully, return that account data
-	c.JSON(200, gin.H{
+	c.JSON(http.StatusOK, gin.H{
 		"status":  "success",
 		"message": "Find account successfully",
 		"data":    account,
@@ -182,14 +182,14 @@ func HandleGetTeacherAccounts(c *gin.Context) {
 
 		if err != nil { // If there is an error when finding account
 			if err == mongo.ErrNoDocuments {
-				c.JSON(400, gin.H{ // There are no teacher accounts database
+				c.JSON(http.StatusNotFound, gin.H{ // There are no teacher accounts database
 					"status":  "Fail",
 					"message": "Can not find account",
 				})
 				return
 			}
 			// Another error when using database
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Internal server error",
 			})
@@ -198,7 +198,7 @@ func HandleGetTeacherAccounts(c *gin.Context) {
 
 		// Decoding cursor
 		if err := cursor.All(context.TODO(), &teachers); err != nil {
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Error decoding account",
 			})
@@ -206,7 +206,7 @@ func HandleGetTeacherAccounts(c *gin.Context) {
 		}
 
 		// There is no error
-		c.JSON(200, gin.H{
+		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
 			"message": "Find all teacher accounts successfully",
 			"data":    teachers,
@@ -218,14 +218,14 @@ func HandleGetTeacherAccounts(c *gin.Context) {
 
 		if err != nil { // If there is an error when finding account
 			if err == mongo.ErrNoDocuments {
-				c.JSON(400, gin.H{ // There are no teacher account with ms database
+				c.JSON(http.StatusNotFound, gin.H{ // There are no teacher account with ms database
 					"status":  "Fail",
 					"message": "Can not find teacher account with ms",
 				})
 				return
 			}
 			// Another error when using database
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Internal server error",
 			})
@@ -233,7 +233,7 @@ func HandleGetTeacherAccounts(c *gin.Context) {
 		}
 
 		// Maybe there is no error
-		c.JSON(200, gin.H{
+		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
 			"message": "Find teacher account by ID successfully",
 			"data":    teacher,
@@ -253,14 +253,14 @@ func HandleGetStudentAccounts(c *gin.Context) {
 
 		if err != nil {
 			if err == mongo.ErrNoDocuments {
-				c.JSON(400, gin.H{
+				c.JSON(http.StatusNotFound, gin.H{
 					"status":  "Fail",
 					"message": "Can not find student account with ms",
 				})
 				return
 			}
 
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Internal server error",
 			})
@@ -268,14 +268,14 @@ func HandleGetStudentAccounts(c *gin.Context) {
 		}
 
 		if err := cursor.All(context.TODO(), &students); err != nil {
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Error decoding account",
 			})
 			return
 		}
 
-		c.JSON(200, gin.H{
+		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
 			"message": "Find student account by ID successfully",
 			"data":    students,
@@ -286,20 +286,20 @@ func HandleGetStudentAccounts(c *gin.Context) {
 
 		if err != nil {
 			if err == mongo.ErrNoDocuments {
-				c.JSON(400, gin.H{
+				c.JSON(http.StatusNotFound, gin.H{
 					"status":  "Fail",
 					"message": "Can not find student account with ms",
 				})
 				return
 			}
 
-			c.JSON(500, gin.H{
+			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
 				"message": "Internal server error",
 			})
 			return
 		}
-		c.JSON(200, gin.H{
+		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
 			"message": "Find student account by ID successfully",
 			"data":    student,
