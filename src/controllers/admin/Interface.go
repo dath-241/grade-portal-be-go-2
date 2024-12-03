@@ -33,7 +33,7 @@ type InterfaceAdminController struct {
 
 type InterfaceClass struct {
 	Semester      string   `json:"semester"`
-	Name          string   `json:"name"` 
+	Name          string   `json:"name"`
 	CourseId      string   `json:"course_id"`
 	ListStudentMs []string `json:"listStudent_ms"`
 	TeacherId     string   `json:"teacher_id"`
@@ -41,7 +41,7 @@ type InterfaceClass struct {
 }
 type InterfaceChangeClassController struct {
 	Semester  string `json:"semester"`
-	Name      string `json:"name" ` 
+	Name      string `json:"name" `
 	CourseId  any    `json:"course_id" bson:"course_id"`
 	TeacherId any    `json:"teacher_id" bson:"teacher_id"`
 	UpdatedBy any    `json:"updatedBy" bson:"updatedBy"`

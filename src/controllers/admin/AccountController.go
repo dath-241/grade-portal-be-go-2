@@ -124,3 +124,18 @@ func CheckEmailAndRole(email string, role string) bool {
 	}
 	return false
 }
+
+// HandleGetAccountByID xử lý việc lấy thông tin tài khoản theo ID.
+func HandleGetAccountByID(c *gin.Context) {
+
+}
+
+// HandleGetTeacherAccounts xử lý việc lấy thông tin tất cả tài khoản giáo viên
+func HandleGetTeacherAccounts(c *gin.Context) {
+
+}
+
+// HandleGetStudentAccounts xử lý việc lấy thông tin tất cả tài khoản sinh viên
+func HandleGetStudentAccounts(c *gin.Context) {
+
+}
