@@ -2,6 +2,8 @@ package routes_admin
 
 import (
 	"github.com/gin-gonic/gin"
+
+	controller_admin "Go2/controllers/admin"
 )
 
 // AccountRoute thiết lập các route cho tài khoản
@@ -19,8 +21,8 @@ func AccountRoute(r *gin.RouterGroup) {
 	r.GET("/student", controller_admin.HandleGetStudentAccounts)
 
 	// Delete account by ID
-	// r.DELETE("/delete/:id", controller_admin.HandleDeleteAccount)
+	r.DELETE("/delete/:id", controller_admin.HandleDeleteAccount)
 
 	// Update account by ID
-	// r.PATCH("/change/:id", controller_admin.HandleUpdateAccount)
+	r.PATCH("/change/:id", controller_admin.HandleUpdateAccount)
 }

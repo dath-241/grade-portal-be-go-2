@@ -3,6 +3,7 @@ package controller_admin
 import (
 	"Go2/models"
 	"context"
+	"net/http"
 	"strings"
 	"time"
 
@@ -312,7 +313,7 @@ func HandleDeleteAccount(c *gin.Context) {
 	accountID, err := bson.ObjectIDFromHex(idParam)
 
 	if err != nil {
-		c.JSON(400, gin.H{
+		c.JSON(http.StatusNotFound, gin.H{
 			"status":  "Fail",
 			"message": "Can not find ID",
 		})
@@ -321,18 +322,78 @@ func HandleDeleteAccount(c *gin.Context) {
 
 	// Delete
 	collection := models.AccountModel()
-	_, err = collection.DeleteOne(context.TODO(), bson.M{"_id": accountID})
+	result, err := collection.DeleteOne(context.TODO(), bson.M{"_id": accountID})
 	if err != nil {
-		c.JSON(400, gin.H{
+		c.JSON(http.StatusInternalServerError, gin.H{
 			"status":  "Fail",
 			"message": "Can not delete this account",
 		})
 		return
 	}
 
-	c.JSON(200, gin.H{
+	if result.DeletedCount == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"status":  "Fail",
+			"message": "Can not find account with id",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
 		"status":  "Success",
 		"message": "Delete account successfully",
 	})
+}
 
+func HandleUpdateAccount(c *gin.Context) {
+	idParam := c.Param("id")
+	createdBy, _ := c.Get("ID")
+	accountId, err := bson.ObjectIDFromHex(idParam)
+
+	if err != nil { // id is invalid
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "Fail",
+			"message": "Invalid id",
+		})
+		return
+	}
+
+	var updatedAccont InterfaceAccount
+	if err := c.ShouldBindJSON(&updatedAccont); err != nil { // Body request is invalid
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "Fail",
+			"message": "Invalid data",
+		})
+		return
+	}
+
+	updatedAccont.CreatedBy = createdBy // CreatedBy -> UpdatedBy
+	acccountCol := models.AccountModel()
+
+	// Update that account
+	filter := bson.M{"_id": accountId}
+	updateData := bson.M{"$set": updatedAccont}
+	result, err := acccountCol.UpdateOne(context.TODO(), filter, updateData)
+
+	if err != nil { // Error when update in database
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"status":  "Fail",
+			"message": "Error when updating account",
+		})
+		return
+	}
+
+	if result.MatchedCount == 0 { // Can not find account with that id
+		c.JSON(http.StatusNotFound, gin.H{
+			"status":  "Fail",
+			"message": "Can not find account with id",
+		})
+		return
+	}
+
+	// May be there is no error left
+	c.JSON(http.StatusOK, gin.H{
+		"status":  "Success",
+		"message": "Update account successfully",
+	})
 }
