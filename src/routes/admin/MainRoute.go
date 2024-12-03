@@ -2,7 +2,6 @@ package routes_admin
 
 import (
 	"Go2/config"
-	middlewares_admin "Go2/middlewares/admin"
 
 	"github.com/gin-gonic/gin"
 )
@@ -16,7 +15,7 @@ func MainRoute(r *gin.Engine) {
 
 	// Tạo nhóm route yêu cầu xác thực
 	protectedGroup := r.Group(prefixAdmin)
-	protectedGroup.Use(middlewares_admin.HandleRequireAuth)
+	// protectedGroup.Use(middlewares_admin.HandleRequireAuth)
 
 	// Các route yêu cầu đăng nhập
 	// ResultRoute(protectedGroup.Group("/result"))   // Route cho bảng điểm
