@@ -27,7 +27,7 @@
 
 | STT | Họ và Tên           | MSSV    | Vai Trò       | Github                                                     |
 | --- | ------------------- | ------- | ------------- |------------                                                |
-| 1   | Chu Minh Tâm        | 2213009 | Product Owner |Không có do bị mất nick github                              |
+| 1   | Chu Minh Tâm        | 2213009 | Product Owner |[inHansZone](https://github.com/inHansZone)                           |
 | 2   | Nguyễn Trọng Kha    | 2211417 | Developer     |[KhaLeopard](https://github.com/Nguyentrongkha2k4)          |
 | 3   | Nguyễn Tiến Phát    | 2212527 | Developer     |[Nguyen Tien Phat](https://github.com/nguyentienphat2904)   |
 | 4   | Nguyễn Ngọc Diệu Hà | 2210846 | Developer     |[HANND04](https://github.com/HANND04)                       |
