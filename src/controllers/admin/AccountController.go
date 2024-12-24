@@ -14,109 +14,65 @@ import (
 
 // HandleCreateAccount xử lý việc tạo tài khoản mới.
 func HandleCreateAccount(c *gin.Context) {
-	createdBy, _ := c.Get("ID") // Get creator's ID
+	createdBy, _ := c.Get("ID")
+	//Binding dữ liệu
 	var newAccounts []InterfaceAccount
-
-	// Check if the body of the request is valid
 	if err := c.ShouldBindJSON(&newAccounts); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
+		c.JSON(400, gin.H{
 			"status":  "Fail",
-			"message": "Invalid data",
-		})
+			"message": "Dữ liệu yêu cầu không hợp lệ"})
 		return
 	}
-
-	// Remove dupplicate object with ID and Email in newAccounts
-	newAccounts = removeDuplicates(newAccounts)
-
-	// Check dupplicate
-	accountCol := models.AccountModel()
-	var existedAccounts []models.InterfaceAccount
-
-	cusor, err := accountCol.Find(context.TODO(), bson.M{})
-
-	if err != nil { // Error when retrieve database
-		c.JSON(http.StatusInternalServerError, gin.H{
+	//Lấy dữ liệu account để kiểm tra dupplicate
+	accountCollection := models.AccountModel()
+	var existingAccounts []models.InterfaceAccount
+	cursor, err := accountCollection.Find(context.TODO(), bson.M{})
+	if err != nil {
+		c.JSON(500, gin.H{
 			"status":  "Fail",
-			"message": "Error when retrieve on database",
-		})
+			"message": "Lỗi khi lấy tài khoản từ cơ sở dữ liệu"})
 		return
 	}
-
-	if err := cusor.All(context.TODO(), &existedAccounts); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
+	//giải mã dữ liệu từ con trỏ sang kết quả
+	if err := cursor.All(context.TODO(), &existingAccounts); err != nil {
+		c.JSON(500, gin.H{
 			"status":  "Fail",
-			"message": "Error decoding account",
-		})
+			"message": "Lỗi khi giải mã tài khoản"})
 		return
 	}
-
-	// Arrays to store dupplicating email and id
-	var emailSet, idSet []string
-	for _, account := range existedAccounts {
-		emailSet = append(emailSet, account.Email)
-		idSet = append(idSet, account.Ms)
+	//Tạo map để check email và mã số có bị trùng hay không
+	existingMap := make(map[string]bool)
+	var validAccounts []InterfaceAccount
+	var invalidAccounts []InterfaceAccount
+	for _, account := range existingAccounts {
+		existingMap[account.Email] = true
+		existingMap[account.Ms] = true
 	}
-	// Classify valid and invalid accounts
-	var validAccounts, invalidAccounts []InterfaceAccount
-	for _, account := range newAccounts {
-		// Check @hcmut.edu.vn, role and dupplicated
-		if contains(emailSet, account.Email) || contains(idSet, account.Ms) || !CheckEmailAndRole(account.Email, account.Role) {
-			invalidAccounts = append(invalidAccounts, account)
+	//Kiểm tra email và role của tài khoản mới đúng định dạng và loại bỏ các tài khoản bị trùng.
+	for _, newAccount := range newAccounts {
+		if !existingMap[newAccount.Email] && !existingMap[newAccount.Ms] && CheckEmailAndRole(newAccount.Email, newAccount.Role) {
+			newAccount.CreatedBy = createdBy
+			newAccount.ExpiredAt = time.Now().AddDate(5, 0, 0)
+			validAccounts = append(validAccounts, newAccount)
 		} else {
-			// Add field CreatedBy and ExpiredAt for valid account
-			account.CreatedBy = createdBy
-			account.ExpiredAt = time.Now().AddDate(5, 0, 0)
-			validAccounts = append(validAccounts, account)
+			invalidAccounts = append(invalidAccounts, newAccount)
 		}
 	}
-
-	// Add valid accounts to database
+	//Thêm tài khoản khả dụng vào cơ sở dữ liệu
 	if len(validAccounts) > 0 {
-		_, err := accountCol.InsertMany(context.TODO(), validAccounts)
+		_, err := accountCollection.InsertMany(context.TODO(), validAccounts)
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{
+			c.JSON(500, gin.H{
 				"status":  "Fail",
-				"message": "Error when creating account",
-			})
+				"message": "Lỗi khi tạo tài khoản."})
 			return
 		}
 	}
-	c.JSON(http.StatusOK, gin.H{
-		"status":          "success",
+	c.JSON(200, gin.H{
+		"status":          "Success",
 		"invalidAccounts": invalidAccounts,
-		"validAccount":    validAccounts,
+		"validAccounts":   validAccounts,
 	})
-}
-
-func removeDuplicates(accounts []InterfaceAccount) []InterfaceAccount {
-	seen := make(map[string]map[string]bool) // Map store email and id has met
-	var result []InterfaceAccount
-
-	for _, account := range accounts {
-		if seen[account.Email][account.Ms] {
-			// Dupplicate, pass
-			continue
-		}
-
-		// No dupplicate, add accounts to result
-		if seen[account.Email] == nil {
-			seen[account.Email] = make(map[string]bool)
-		}
-		seen[account.Email][account.Ms] = true
-		result = append(result, account)
-	}
-
-	return result
-}
-
-func contains(slice []string, value string) bool {
-	for _, v := range slice {
-		if v == value {
-			return true
-		}
-	}
-	return false
 }
 
 // CheckEmailAndRole kiểm tra đuôi email và role
@@ -130,270 +86,224 @@ func CheckEmailAndRole(email string, role string) bool {
 // HandleGetAccountByID xử lý việc lấy thông tin tài khoản theo ID.
 func HandleGetAccountByID(c *gin.Context) {
 	idParam := c.Param("id")
-
-	accountId, err := bson.ObjectIDFromHex(idParam)
-	if err != nil { // Check if idParam is valid or not
-		c.JSON(http.StatusBadRequest, gin.H{
+	//Kiểm tra accountID đúng định dạng
+	accountID, err := bson.ObjectIDFromHex(idParam)
+	if err != nil {
+		c.JSON(400, gin.H{
 			"status":  "Fail",
-			"message": "Invalid ID",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
 	}
 
-	accountCol := models.AccountModel()
+	accountCollection := models.AccountModel()
 	var account models.InterfaceAccount
-
-	// Find account in database by accountId
-	err = accountCol.FindOne(context.TODO(), bson.M{"_id": accountId}).Decode(&account)
-	if err != nil { // If there is an error when finding account
-		if err == mongo.ErrNoDocuments { // Can not find account with accountId
-			c.JSON(http.StatusNotFound, gin.H{
+	err = accountCollection.FindOne(context.TODO(), bson.M{"_id": accountID}).Decode(&account)
+	if err != nil {
+		if err == mongo.ErrNoDocuments {
+			c.JSON(404, gin.H{
 				"status":  "Fail",
-				"message": "Can not find account",
-			})
+				"message": "Không tìm thấy tài khoản"})
 			return
 		}
-		// Another error when using database
-		c.JSON(http.StatusInternalServerError, gin.H{
+		c.JSON(500, gin.H{
 			"status":  "Fail",
-			"message": "Internal server error",
-		})
+			"message": "Lỗi khi lấy tài khoản từ cơ sở dữ liệu"})
 		return
 	}
 
-	// No error, find account successfully, return that account data
-	c.JSON(http.StatusOK, gin.H{
-		"status":  "success",
-		"message": "Find account successfully",
+	c.JSON(200, gin.H{
+		"status":  "Success",
+		"message": "Tìm tài khoản thành công",
 		"data":    account,
 	})
 }
 
-// HandleGetTeacherAccounts xử lý việc lấy thông tin tất cả tài khoản giáo viên hoặc theo id
+// HandleGetTeacherAccounts xử lý việc lấy thông tin tài khoản giáo viên.
 func HandleGetTeacherAccounts(c *gin.Context) {
-	accountCol := models.AccountModel()
-
+	accountCollection := models.AccountModel()
 	query := c.Query("ms")
-
-	if query == "" { // Get all teacher accounts
+	// Lấy tất cả giáo viên
+	if query == "" {
 		var teachers []models.InterfaceAccount
-		// Retriev database
-		cursor, err := accountCol.Find(context.TODO(), bson.M{"role": "teacher"})
-
-		if err != nil { // If there is an error when finding account
+		cursor, err := accountCollection.Find(context.TODO(), bson.M{"role": "teacher"})
+		if err != nil {
+			//Không có giảng viên trong cơ sở dữ liệu
 			if err == mongo.ErrNoDocuments {
-				c.JSON(http.StatusNotFound, gin.H{ // There are no teacher accounts database
+				c.JSON(404, gin.H{
 					"status":  "Fail",
-					"message": "Can not find account",
+					"message": "Không có tài khoản nào trong cơ sở dữ liệu",
 				})
 				return
 			}
-			// Another error when using database
-			c.JSON(http.StatusInternalServerError, gin.H{
+			// Lấy dữ liệu bị lỗi
+			c.JSON(500, gin.H{
 				"status":  "Fail",
-				"message": "Internal server error",
-			})
+				"message": "Lỗi khi lấy dữ liệu từ cơ sở dữ liệu"})
 			return
 		}
-
-		// Decoding cursor
+		// giải mã từ con trỏ sang kết quả
 		if err := cursor.All(context.TODO(), &teachers); err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{
+			c.JSON(500, gin.H{
 				"status":  "Fail",
-				"message": "Error decoding account",
-			})
+				"message": "Lỗi khi giải mã tài khoản."})
 			return
 		}
-
-		// There is no error
-		c.JSON(http.StatusOK, gin.H{
+		// trả về kết quả tìm được
+		c.JSON(200, gin.H{
 			"status":  "Success",
-			"message": "Find all teacher accounts successfully",
+			"message": "Tìm tài khoản thành công",
 			"data":    teachers,
 		})
-
-	} else { // Get teacher account by `ms`
+		return
+	} else {
+		// Lấy giáo viên theo mã số
 		var teacher models.InterfaceAccount
-		err := accountCol.FindOne(context.TODO(), bson.M{"role": "teacher", "ms": query}).Decode(&teacher)
-
-		if err != nil { // If there is an error when finding account
+		err := accountCollection.FindOne(context.TODO(), bson.M{"ms": query}).Decode(&teacher)
+		if err != nil {
+			//Không tồn tại giáo viên với mã số đã nhập
 			if err == mongo.ErrNoDocuments {
-				c.JSON(http.StatusNotFound, gin.H{ // There are no teacher account with ms database
+				c.JSON(404, gin.H{
 					"status":  "Fail",
-					"message": "Can not find teacher account with ms",
-				})
+					"message": "Không tìm thấy tài khoản"})
 				return
 			}
-			// Another error when using database
-			c.JSON(http.StatusInternalServerError, gin.H{
+			// Lấy dữ liệu bị lỗi
+			c.JSON(500, gin.H{
 				"status":  "Fail",
-				"message": "Internal server error",
-			})
+				"message": "Lỗi khi lấy tài khoản từ cơ sở dữ liệu"})
 			return
 		}
-
-		// Maybe there is no error
+		// trả về kết quả tìm được
 		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
-			"message": "Find teacher account by ID successfully",
+			"message": "Tìm tài khoản thành công",
 			"data":    teacher,
 		})
+		return
 	}
 }
 
-// HandleGetStudentAccounts xử lý việc lấy thông tin tất cả tài khoản sinh viên hoặc theo id
+// HandleGetStudentAccounts xử lý việc lấy thông tin tài khoản sinh viên.
 func HandleGetStudentAccounts(c *gin.Context) {
-	accountCol := models.AccountModel()
-
+	accountCollection := models.AccountModel()
 	query := c.Query("ms")
-
+	// Lấy tất cả sinh viên
 	if query == "" {
 		var students []models.InterfaceAccount
-		cursor, err := accountCol.Find(context.TODO(), bson.M{"role": "student"})
-
+		cursor, err := accountCollection.Find(context.TODO(), bson.M{"role": "student"})
 		if err != nil {
+			//Không có sinh vien trong cơ sở dữ liệu
 			if err == mongo.ErrNoDocuments {
-				c.JSON(http.StatusNotFound, gin.H{
+				c.JSON(404, gin.H{
 					"status":  "Fail",
-					"message": "Can not find student account with ms",
-				})
+					"message": "Không có tài khoản nào trong cơ sở dữ liệu"})
 				return
 			}
-
-			c.JSON(http.StatusInternalServerError, gin.H{
+			//Lấy dữ liệu bị lỗi
+			c.JSON(500, gin.H{
 				"status":  "Fail",
-				"message": "Internal server error",
-			})
+				"message": "Lỗi khi lấy dữ liệu từ cơ sở dữ liệu"})
 			return
 		}
-
+		//Giải mã từ con trỏ sang kết quả
 		if err := cursor.All(context.TODO(), &students); err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{
-				"status":  "Fail",
-				"message": "Error decoding account",
-			})
+			c.JSON(500, gin.H{
+				"status": "Fail",
+				"mesage": "Lỗi khi giải mã tài khoản"})
 			return
 		}
-
-		c.JSON(http.StatusOK, gin.H{
+		//Trả kết quả về
+		c.JSON(200, gin.H{
 			"status":  "Success",
-			"message": "Find student account by ID successfully",
+			"message": "Tìm tài khoản thành công",
 			"data":    students,
 		})
 	} else {
+		// Lấy sinh viên theo mã số
 		var student models.InterfaceAccount
-		err := accountCol.FindOne(context.TODO(), bson.M{"role": "student", "ms": query}).Decode(&student)
-
+		err := accountCollection.FindOne(context.TODO(), bson.M{"ms": query}).Decode(&student)
 		if err != nil {
+
 			if err == mongo.ErrNoDocuments {
 				c.JSON(http.StatusNotFound, gin.H{
 					"status":  "Fail",
-					"message": "Can not find student account with ms",
-				})
+					"message": "Không tìm thấy tài khoản"})
 				return
 			}
-
 			c.JSON(http.StatusInternalServerError, gin.H{
 				"status":  "Fail",
-				"message": "Internal server error",
-			})
+				"message": "Lỗi khi lấy tài khoản"})
 			return
 		}
 		c.JSON(http.StatusOK, gin.H{
 			"status":  "Success",
-			"message": "Find student account by ID successfully",
+			"message": "Tìm thấy tài khoản thành công",
 			"data":    student,
 		})
 	}
 }
 
-// Delete account
+// HandleDeleteAccount xử lý việc xóa tài khoản.
 func HandleDeleteAccount(c *gin.Context) {
 	idParam := c.Param("id")
+	//Kiểm tra định dạng ID
 	accountID, err := bson.ObjectIDFromHex(idParam)
-
 	if err != nil {
-		c.JSON(http.StatusNotFound, gin.H{
+		c.JSON(400, gin.H{
 			"status":  "Fail",
-			"message": "Can not find ID",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
 	}
-
-	// Delete
-	collection := models.AccountModel()
-	result, err := collection.DeleteOne(context.TODO(), bson.M{"_id": accountID})
+	//Xóa tài khoản
+	accountCollection := models.AccountModel()
+	_, err = accountCollection.DeleteOne(context.TODO(), bson.M{"_id": accountID})
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
+		c.JSON(500, gin.H{
 			"status":  "Fail",
-			"message": "Can not delete this account",
+			"message": "Lỗi khi xóa tài khoản",
 		})
 		return
 	}
-
-	if result.DeletedCount == 0 {
-		c.JSON(http.StatusNotFound, gin.H{
-			"status":  "Fail",
-			"message": "Can not find account with id",
-		})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{
+	//Trả kết quả
+	c.JSON(200, gin.H{
 		"status":  "Success",
-		"message": "Delete account successfully",
+		"message": "Xóa tài khoản thành công",
 	})
 }
 
+// HandleUpdateAccount xử lý việc cập nhật thông tin tài khoản.
 func HandleUpdateAccount(c *gin.Context) {
 	idParam := c.Param("id")
 	createdBy, _ := c.Get("ID")
-	accountId, err := bson.ObjectIDFromHex(idParam)
-
-	if err != nil { // id is invalid
-		c.JSON(http.StatusBadRequest, gin.H{
+	accountID, err := bson.ObjectIDFromHex(idParam)
+	if err != nil {
+		c.JSON(400, gin.H{
 			"status":  "Fail",
-			"message": "Invalid id",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
 	}
-
-	var updatedAccont InterfaceAccount
-	if err := c.ShouldBindJSON(&updatedAccont); err != nil { // Body request is invalid
-		c.JSON(http.StatusBadRequest, gin.H{
+	var updatedAccount InterfaceAccount
+	if err := c.ShouldBindJSON(&updatedAccount); err != nil {
+		c.JSON(400, gin.H{
 			"status":  "Fail",
-			"message": "Invalid data",
+			"message": "Dữ liệu yêu cầu không hợp lệ"})
+		return
+	}
+	updatedAccount.CreatedBy = createdBy
+	accountCollection := models.AccountModel()
+	_, err = accountCollection.UpdateOne(context.TODO(), bson.M{"_id": accountID}, bson.M{"$set": updatedAccount})
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":  "Fail",
+			"message": "Lỗi khi cập nhật tài khoản vào cơ sở dữ liệu",
 		})
 		return
 	}
-
-	updatedAccont.CreatedBy = createdBy // CreatedBy -> UpdatedBy
-	acccountCol := models.AccountModel()
-
-	// Update that account
-	filter := bson.M{"_id": accountId}
-	updateData := bson.M{"$set": updatedAccont}
-	result, err := acccountCol.UpdateOne(context.TODO(), filter, updateData)
-
-	if err != nil { // Error when update in database
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"status":  "Fail",
-			"message": "Error when updating account",
-		})
-		return
-	}
-
-	if result.MatchedCount == 0 { // Can not find account with that id
-		c.JSON(http.StatusNotFound, gin.H{
-			"status":  "Fail",
-			"message": "Can not find account with id",
-		})
-		return
-	}
-
-	// May be there is no error left
-	c.JSON(http.StatusOK, gin.H{
+	c.JSON(200, gin.H{
 		"status":  "Success",
-		"message": "Update account successfully",
+		"message": "Cập nhật tài khoản thành công",
 	})
 }

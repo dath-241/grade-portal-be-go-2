@@ -1,33 +1,47 @@
-## CÁCH HOẠT ĐỘNG
-### Index.html
-- Chạy file `index.html`, chọn đăng nhập (Lưu ý chọn email có đuôi @hcmut.edu.vn)
-- Bật DevTools và chọn `Application` -> Ấn vào oauth2 sẽ hiện lên id_token ở dưới.
-![index.html](img/id_token.png)
-- Copy id_token đó và dán vào phần `body: JSON.stringify({ idToken: "..."` của file `index.html`.
-![](img/html.png)
+<a id="readme-top"></a>
 
-## Khởi chạy server
-- Chạy MongoDB Compass -> Connection string nằm bên trong file `.env`
-### Cách 1 : Chạy bằng docker 
-- Khởi động Docker Desktop
-- Build image bằng lệnh : `docker build -t go2:latest .`
-  - Nếu build lỗi thì thử sửa bằng cách vào `cd ~/.docker` -> Vào file `config.json` -> Sửa `credsStored `thành `credStored`
-- Chạy lệnh sau rồi vào localhost:8080: `docker run -d -p 8080:8080 --name go2 --env-file .env go2:latest`
-### Cách 2 : Chạy bằng AIR
-#### AIR giúp auto build sau khi code có chỉnh sửa mà không cần chạy lại lệnh go run main.go
-- Chạy lệnh `go mod download`
-- Chạy lệnh `air`
-- Nếu ko chạy được thì thử lệnh sau :
-  - `export PATH=$PATH:$HOME/go/bin`
-- Server chạy trên localhost:8080/
+# ĐỒ ÁN TỔNG HỢP HK241
 
-### Test Feature bằng Postman Agent
-- Truy cập trang `https://web.postman.co/`
-- Import file `postman_api_collection.json` 
-- Tải Postman Agent theo hướng dẫn -> Khởi động Postman
-- Toàn bộ API + Function + Data cần thiết đều đã nằm bên trong.
-  - Đối với Login thì cần gửi vào body idToken đã lấy được sau khi đăng nhập bằng oauth ở trang index.html
-![postman-agent](img/postman-agent.png)
-  - Tất cả những hàm còn lại đều cần Authorization (`Bearer token`) (được tạo ra từ JWT_SECRET + idToken) để phân role cho người dùng 
-  - Phần token copy idToken vào
-![bearer token](img/bearer-token.png)
+### TÊN NHÓM :  ≽^• GO GO GO • ྀི≼
+# Hướng dẫn sử dụng
+## Cài đặt dự án
+### Tải mã 
+```bash
+git clone https://github.com/dath-241/grade-portal-be-go-2.git
+cd grade-portal-be-go-2.git
+```
+### Thiết lập biến môi trường
+Bạn có thể tự tạo file .env trong folder và điền các đường dẫn tài nguyên cần sử dụng theo định dạng: 
+```bash
+MONGO_URL=<mongodb+srv>
+PORT=8080
+YOUR_CLIENT_ID=<Your client ID>
+JWT_SECRET=<JWT Secret>
+```
+## Chạy dự án
+### Không dùng docker
+Nếu bạn không dùng docker bạn cần tải các dependencies sau:
+```bash
+go mod download
+go install github.com/air-verse/air@latest
+```
+Sau khi chạy xong, bạn mở terminal của folder grade-portal-be-go-2 và thực hiện lệnh:
+```bash
+cd src
+air
+```
+Bạn chờ hệ thống build và run đến khi hiện 2 dòng chữ sau là thành công:
+```bash
+2024/12/08 00:25:54 Connected to MongoDB
+Server đang chạy trên cổng 8080
+```
+### Nếu bạn sử dụng docker và docker compose
+Bạn có thể cài docker ([tại đây](https://docs.docker.com/get-docker/)) và docker compose ([tại đây](https://docs.docker.com/compose/install/))
+Sau khi cấu hình môi trường, bạn có thể sử dụng lệnh sau để build và chạy dự án:
+```bash
+docker compose up --build -d
+```
+## Kiểm tra ứng dụng
+Bạn có thể check health bằng cách vào trình duyệt và truy cập đường dẫn [localhost:8080](localhost:8080).
+</br>
+**Good Luck!**

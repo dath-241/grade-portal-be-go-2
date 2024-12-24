@@ -40,19 +40,19 @@ type InterfaceClass struct {
 	UpdatedBy     any      `json:"updatedBy" bson:"updatedBy"`
 }
 type InterfaceChangeClassController struct {
-	Semester  string `json:"semester"`
-	Name      string `json:"name" `
-	CourseId  any    `json:"course_id" bson:"course_id"`
-	TeacherId any    `json:"teacher_id" bson:"teacher_id"`
+	Semester  string `json:"semester,omitempty"`
+	Name      string `json:"name,omitempty" `
+	CourseId  any    `json:"course_id,omitempty" bson:"course_id,omitempty"`
+	TeacherId any    `json:"teacher_id,omitempty" bson:"teacher_id,omitempty"`
 	UpdatedBy any    `json:"updatedBy" bson:"updatedBy"`
 }
 
 type InterfaceAccount struct {
-	Email     string    `json:"email" bson:"email"`
-	Name      string    `json:"name" bson:"name"`
-	Ms        string    `json:"ms" bson:"ms"`
-	Faculty   string    `json:"faculty" bson:"faculty"`
-	Role      string    `json:"role" bson:"role"`
+	Email     string    `json:"email,omitempty" bson:"email,omitempty"`
+	Name      string    `json:"name,omitempty" bson:"name,omitempty"`
+	Ms        string    `json:"ms,omitempty" bson:"ms,omitempty"`
+	Faculty   string    `json:"faculty,omitempty" bson:"faculty,omitempty"`
+	Role      string    `json:"role,omitempty" bson:"role,omitempty"`
 	CreatedBy any       `json:"createdBy" bson:"createdBy"`
 	ExpiredAt time.Time `json:"expiredAt" bson:"expiredAt"`
 }

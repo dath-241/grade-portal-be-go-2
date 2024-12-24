@@ -11,6 +11,7 @@ import (
 	"cloud.google.com/go/auth/credentials/idtoken"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/v2/bson"
+	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 // HandleLogin xử lý việc đăng nhập.
@@ -44,9 +45,15 @@ func HandleLogin(c *gin.Context) {
 	var user models.InterfaceAdmin
 	err = collection.FindOne(context.TODO(), bson.M{"email": email}).Decode(&user)
 	if err != nil {
+		if err == mongo.ErrNoDocuments{
+			c.JSON(404, gin.H{
+        "status":  "Fail",
+        "message": "Tài khoản không tồn tại"})
+      return
+		}
 		c.JSON(500, gin.H{
-			"status": "Fail",
-			"mesage": "Không lấy được thông tin người dùng trong cơ sở dữ liệu"})
+			"status":  "Fail",
+			"mesage": "Lỗi lấy dữ liệu từ server database."})
 		return
 	}
 	token := helper.CreateJWT(user.ID)
@@ -90,13 +97,20 @@ func HandleCreateAdmin(c *gin.Context) {
 		return
 	}
 	//Thêm admin và cơ sở dữ liệu
-	collection.InsertOne(context.TODO(), bson.M{
+	_, err = collection.InsertOne(context.TODO(), bson.M{
 		"email":     data.Email,
 		"name":      data.Name,
 		"faculty":   data.Faculty,
 		"ms":        data.Ms,
 		"createdBy": createdBy,
 	})
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+      "status":  "Fail",
+      "message": "Lỗi khi tạo tài khoản admin.",
+    })
+    return
+	}
 	c.JSON(http.StatusOK, gin.H{
 		"status":  "Success",
 		"message": "Tạo tài khoản admin thành công",
@@ -105,7 +119,12 @@ func HandleCreateAdmin(c *gin.Context) {
 
 // HandleProfile xử lý việc lấy thông tin tài khoản admin.
 func HandleProfile(c *gin.Context) {
-	ID, _ := c.Get("ID")
+	ID, exist := c.Get("ID")
+	if !exist {
+		c.JSON(400, gin.H{"status": "Fail",
+								"message": "ID not found in context"})
+    return
+	}
 	//Lấy thông tin admin từ cơ sở dữ liệu
 	collection := models.AdminModel()
 	var user models.InterfaceAdmin

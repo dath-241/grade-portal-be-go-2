@@ -25,7 +25,6 @@ func ValidateDataAdmin(c *gin.Context) {
 		c.JSON(400, gin.H{
 			"status":    "Fail",
 			"message": "Dữ liệu không hợp lệ",
-			"data":    data,
 		})
 		c.Abort()
 		return

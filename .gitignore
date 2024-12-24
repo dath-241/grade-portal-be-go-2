@@ -3,3 +3,4 @@ actions-runner/
 src/note.txt
 src/tmp/
 tmp/
+.DS_Store

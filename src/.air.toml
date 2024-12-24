@@ -6,7 +6,7 @@ tmp_dir = "tmp"
   bin = "tmp/main.exe"  
   cmd = "go build -o tmp/main.exe ."  
   include_ext = ["go"]  
-  exclude_dir = ["tmp", ".github", ".vscode", "actions-runner", "Git"] 
+  exclude_dir = ["tmp", ".github", ".vscode", "actions-runner", "Git"] #
   watch_dir = ["." ]
 
 [log]

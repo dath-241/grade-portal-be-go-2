@@ -1,0 +1,248 @@
+[2024-12-01 16:27:34Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'Credentials': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'Runner': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.runner'
+[2024-12-01 16:27:34Z INFO Listener] Runner is built for OSX (Arm64) - osx-arm64.
+[2024-12-01 16:27:34Z INFO Listener] RuntimeInformation: Darwin 24.2.0 Darwin Kernel Version 24.2.0: Fri Nov 15 18:56:30 PST 2024; root:xnu-11215.61.2.501.1~1/RELEASE_ARM64_T6030.
+[2024-12-01 16:27:34Z INFO Listener] Version: 2.321.0
+[2024-12-01 16:27:34Z INFO Listener] Commit: e249007931b7c8e857797fa259c167f0bd4f997a
+[2024-12-01 16:27:34Z INFO Listener] Culture: en-US
+[2024-12-01 16:27:34Z INFO Listener] UI Culture: en-US
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO Listener] Validating directory permissions for: '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO CommandLineParser] Parse
+[2024-12-01 16:27:34Z INFO CommandLineParser] Parsing 1 args
+[2024-12-01 16:27:34Z INFO CommandLineParser] parsing argument
+[2024-12-01 16:27:34Z INFO CommandLineParser] HasArgs: False
+[2024-12-01 16:27:34Z INFO CommandLineParser] Adding Command: run
+[2024-12-01 16:27:34Z INFO Listener] Arguments parsed
+[2024-12-01 16:27:34Z INFO Runner] ExecuteCommand
+[2024-12-01 16:27:34Z INFO ConfigurationStore] currentAssemblyLocation: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin/Runner.Listener.dll
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] binPath: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] RootFolder: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'Runner': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.runner'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] ConfigFilePath: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.runner
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'Credentials': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] CredFilePath: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'MigratedCredentials': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_migrated'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] MigratedCredFilePath: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_migrated
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'Service': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.service'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] ServiceConfigFilePath: /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.service
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'help': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'version': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'commit': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'check': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Command 'configure': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Command 'remove': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Command 'warmup': 'False'
+[2024-12-01 16:27:34Z INFO ConfigurationManager] LoadSettings
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured()
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured: True
+[2024-12-01 16:27:34Z INFO ConfigurationManager] Is configured: True
+[2024-12-01 16:27:34Z INFO ConfigurationStore] Read setting file: 316 chars
+[2024-12-01 16:27:34Z INFO ConfigurationManager] Settings Loaded
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsServiceConfigured()
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsServiceConfigured: False
+[2024-12-01 16:27:34Z INFO CommandSettings] Command 'run': 'True'
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured()
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured: True
+[2024-12-01 16:27:34Z INFO ConfigurationManager] Is configured: True
+[2024-12-01 16:27:34Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2024-12-01 16:27:34Z INFO Runner] Set runner startup type - Manual
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'once': 'False'
+[2024-12-01 16:27:34Z INFO CommandSettings] Flag 'once': 'False'
+[2024-12-01 16:27:34Z INFO Runner] RunAsync
+[2024-12-01 16:27:34Z INFO ConfigurationManager] LoadSettings
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured()
+[2024-12-01 16:27:34Z INFO ConfigurationStore] IsConfigured: True
+[2024-12-01 16:27:34Z INFO ConfigurationManager] Is configured: True
+[2024-12-01 16:27:34Z INFO ConfigurationManager] Settings Loaded
+[2024-12-01 16:27:34Z INFO MessageListener] {
+  "AgentId": 23,
+  "AgentName": "MacBook-Pro-cua-Minh",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus3.actions.githubusercontent.com/w55GNj1vEeFmjTkbS3NJtWUKX0oBbmxnZi0t8zVE35yDL3A2FL/",
+  "GitHubUrl": "https://github.com/dath-241/grade-portal-be-go-2",
+  "WorkFolder": "_work"
+}
+[2024-12-01 16:27:34Z INFO MessageListener] Loading Credentials
+[2024-12-01 16:27:34Z INFO ConfigurationStore] HasCredentials()
+[2024-12-01 16:27:34Z INFO ConfigurationStore] stored True
+[2024-12-01 16:27:34Z INFO CredentialManager] GetCredentialProvider
+[2024-12-01 16:27:34Z INFO CredentialManager] Creating type OAuth
+[2024-12-01 16:27:34Z INFO CredentialManager] Creating credential type: OAuth
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:27:34Z INFO HostContext] Well known directory 'Root': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner'
+[2024-12-01 16:27:34Z INFO HostContext] Well known config file 'RSACredentials': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams'
+[2024-12-01 16:27:34Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:27:34Z INFO MessageListener] Attempt to create session.
+[2024-12-01 16:27:34Z INFO MessageListener] Connecting to the Runner Server...
+[2024-12-01 16:27:34Z INFO RunnerServer] EstablishVssConnection
+[2024-12-01 16:27:34Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2024-12-01 16:27:34Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-12-01 16:27:34Z INFO RunnerServer] EstablishVssConnection
+[2024-12-01 16:27:34Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-12-01 16:27:34Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-12-01 16:27:34Z INFO RunnerServer] EstablishVssConnection
+[2024-12-01 16:27:34Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2024-12-01 16:27:34Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-12-01 16:27:35Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-12-01 16:27:35Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-12-01 16:27:35Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-12-01 16:27:35Z INFO MessageListener] VssConnection created
+[2024-12-01 16:27:35Z INFO Terminal] WRITE LINE: 
+[2024-12-01 16:27:35Z INFO Terminal] WRITE LINE: 
+[2024-12-01 16:27:36Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:27:36Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:27:37Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2024-12-01 16:27:37Z INFO MessageListener] Session created.
+[2024-12-01 16:27:37Z INFO Terminal] WRITE LINE: Current runner version: '2.321.0'
+[2024-12-01 16:27:37Z INFO Terminal] WRITE LINE: 2024-12-01 16:27:37Z: Listening for Jobs
+[2024-12-01 16:27:37Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2024-12-01 16:27:37Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:27:38Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2024-12-01 16:29:48Z INFO MessageListener] Message '4160361983756668484' received from session '9e2dbcc6-99e4-4bb7-9dee-be924a6f4ce2'.
+[2024-12-01 16:29:48Z INFO ConfigurationStore] HasCredentials()
+[2024-12-01 16:29:48Z INFO ConfigurationStore] stored True
+[2024-12-01 16:29:48Z INFO CredentialManager] GetCredentialProvider
+[2024-12-01 16:29:48Z INFO CredentialManager] Creating type OAuth
+[2024-12-01 16:29:48Z INFO CredentialManager] Creating credential type: OAuth
+[2024-12-01 16:29:48Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:29:48Z INFO ActionsRunServer] EstablishVssConnection
+[2024-12-01 16:29:48Z INFO ActionsRunServer] Establish connection with 100 seconds timeout.
+[2024-12-01 16:29:48Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2024-12-01 16:29:49Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2024-12-01 16:29:49Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:29:49Z INFO RSAFileKeyManager] Loading RSA key parameters from file /Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/.credentials_rsaparams
+[2024-12-01 16:29:50Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2024-12-01 16:29:51Z INFO JobDispatcher] Job request 23 for plan b0e7c320-844f-45e1-afe6-f34baee439c5 job e07742bd-189a-5079-918b-43f8b2f94b89 received.
+[2024-12-01 16:29:51Z INFO JobDispatcher] Pull OrchestrationId b0e7c320-844f-45e1-afe6-f34baee439c5.deploy.__default from JWT claims
+[2024-12-01 16:29:51Z INFO MessageListener] Received job status event. JobState: Busy
+[2024-12-01 16:29:51Z INFO MessageListener] _getMessagesTokenSource is already disposed.
+[2024-12-01 16:29:51Z INFO Terminal] WRITE LINE: 2024-12-01 16:29:51Z: Running job: deploy
+[2024-12-01 16:29:51Z INFO JobDispatcher] Start renew job request 23 for job e07742bd-189a-5079-918b-43f8b2f94b89.
+[2024-12-01 16:29:52Z INFO JobDispatcher] Successfully renew job request 23, job is valid till 12/1/2024 4:39:52 PM
+[2024-12-01 16:29:52Z INFO HostContext] Well known directory 'Bin': '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper] Starting process:
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   File name: '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin/Runner.Worker'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Arguments: 'spawnclient 150 153'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Working directory: '/Users/minhtam/Desktop/grade-portal-be-go-2/actions-runner/bin'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'True'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper]   High priority process: 'True'
+[2024-12-01 16:29:52Z INFO ProcessInvokerWrapper] Process started with process id 56847, waiting for process exit.
+[2024-12-01 16:29:52Z INFO JobDispatcher] Send job request message to worker for job e07742bd-189a-5079-918b-43f8b2f94b89.
+[2024-12-01 16:29:52Z INFO ProcessChannel] Sending message of length 26053, with hash '04fcb368b298214a7a1b96c1a8296f015adf341be49aa5a3d874c1c3545493ad'
+[2024-12-01 16:29:52Z INFO JobNotification] Entering JobStarted Notification
+[2024-12-01 16:29:52Z INFO JobNotification] Entering StartMonitor
+[2024-12-01 16:30:52Z INFO JobDispatcher] Successfully renew job request 23, job is valid till 12/1/2024 4:40:52 PM
+[2024-12-01 16:31:52Z INFO JobDispatcher] Successfully renew job request 23, job is valid till 12/1/2024 4:41:52 PM
+[2024-12-01 16:32:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-12-01 16:32:03Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2024-12-01 16:32:03Z INFO ProcessInvokerWrapper] Finished process 56847 with exit code 102, and elapsed time 00:02:10.7825378.
+[2024-12-01 16:32:03Z INFO JobDispatcher] Worker finished for job e07742bd-189a-5079-918b-43f8b2f94b89. Code: 102
+[2024-12-01 16:32:03Z INFO JobDispatcher] finish job request for job e07742bd-189a-5079-918b-43f8b2f94b89 with result: Failed
+[2024-12-01 16:32:03Z INFO Terminal] WRITE LINE: 2024-12-01 16:32:03Z: Job deploy completed with result: Failed
+[2024-12-01 16:32:03Z INFO JobDispatcher] Stop renew job request for job e07742bd-189a-5079-918b-43f8b2f94b89.
+[2024-12-01 16:32:03Z INFO JobDispatcher] job renew has been cancelled, stop renew job request 23.
+[2024-12-01 16:32:03Z INFO JobNotification] Entering JobCompleted Notification
+[2024-12-01 16:32:03Z INFO JobNotification] Entering EndMonitor
+[2024-12-01 16:32:03Z INFO MessageListener] Received job status event. JobState: Online
+[2024-12-01 16:34:17Z INFO Terminal] WRITE LINE: Exiting...
+[2024-12-01 16:34:17Z INFO ConfigurationStore] IsServiceConfigured()
+[2024-12-01 16:34:17Z INFO ConfigurationStore] IsServiceConfigured: False
+[2024-12-01 16:34:17Z INFO HostContext] Runner will be shutdown for UserCancelled
+[2024-12-01 16:34:17Z WARN GitHubActionsService] GET request to https://broker.actions.githubusercontent.com/message?sessionId=9e2dbcc6-99e4-4bb7-9dee-be924a6f4ce2&status=Online&runnerVersion=2.321.0&os=macOS&architecture=ARM64&disableUpdate=false has been cancelled.
+[2024-12-01 16:34:17Z ERR  BrokerServer] Catch exception during request
+[2024-12-01 16:34:17Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Operation canceled.
+ ---> System.Net.Sockets.SocketException (89): Operation canceled
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpRequestMessage message, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at Sdk.WebApi.WebApi.RawHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Uri requestUri, HttpContent content, IEnumerable`1 queryParameters, Boolean readErrorBody, Object userState, CancellationToken cancellationToken)
+   at GitHub.Actions.RunService.WebApi.BrokerHttpClient.GetRunnerMessageAsync(Nullable`1 sessionId, String runnerVersion, Nullable`1 status, String os, String architecture, Nullable`1 disableUpdate, CancellationToken cancellationToken)
+   at GitHub.Runner.Common.BrokerServer.<>c__DisplayClass7_0.<<GetRunnerMessageAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at GitHub.Runner.Common.RunnerService.RetryRequest[T](Func`1 func, CancellationToken cancellationToken, Int32 maxRetryAttemptsCount, Func`2 shouldRetry)
+[2024-12-01 16:34:17Z ERR  BrokerServer] #####################################################
+[2024-12-01 16:34:17Z ERR  BrokerServer] System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Operation canceled.
+ ---> System.Net.Sockets.SocketException (89): Operation canceled
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithNtAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean isProxyAuth, HttpConnection connection, HttpConnectionPool connectionPool, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.AuthenticationHelper.SendWithAuthAsync(HttpRequestMessage request, Uri authUri, Boolean async, ICredentials credentials, Boolean preAuthenticate, Boolean isProxyAuth, Boolean doRequestAuth, HttpConnectionPool pool, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at GitHub.Services.Common.RawHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+[2024-12-01 16:34:17Z ERR  BrokerServer] #####################################################
+[2024-12-01 16:34:17Z ERR  BrokerServer] System.IO.IOException: Unable to read data from the transport connection: Operation canceled.
+ ---> System.Net.Sockets.SocketException (89): Operation canceled
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[2024-12-01 16:34:17Z ERR  BrokerServer] #####################################################
+[2024-12-01 16:34:17Z ERR  BrokerServer] System.Net.Sockets.SocketException (89): Operation canceled
+[2024-12-01 16:34:17Z WARN BrokerServer] Back off 12.895 seconds before next retry. 4 attempt left.
+[2024-12-01 16:34:17Z INFO MessageListener] Get next message has been cancelled.
+[2024-12-01 16:34:17Z INFO JobDispatcher] Shutting down JobDispatcher. Make sure all WorkerDispatcher has finished.
+[2024-12-01 16:34:17Z INFO JobDispatcher] Ensure WorkerDispatcher for job e07742bd-189a-5079-918b-43f8b2f94b89 run to finish, cancel any running job.
+[2024-12-01 16:34:17Z INFO JobDispatcher] Job request e07742bd-189a-5079-918b-43f8b2f94b89 processed succeed.
+[2024-12-01 16:34:17Z INFO Runner] Deleting Runner Session...
+[2024-12-01 16:34:17Z INFO Listener] Runner execution been cancelled.

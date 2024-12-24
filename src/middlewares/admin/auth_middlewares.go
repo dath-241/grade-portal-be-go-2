@@ -2,6 +2,7 @@ package middlewares_admin
 
 import (
 	"Go2/helper"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -25,7 +26,7 @@ func HandleRequireAuth(c *gin.Context) {
     } else {
         c.JSON(401, gin.H{
             "status": "Fail",
-            "message": "Header Authorization không hợp lệ"})
+            "message": "Token không hợp lệ"})
         c.Abort()
         return
     }
@@ -38,6 +39,7 @@ func HandleRequireAuth(c *gin.Context) {
 		c.Abort()
 		return
 	}
+    fmt.Println(Claims.ID)
 	c.Set("ID", Claims.ID)
 	c.Next()
 

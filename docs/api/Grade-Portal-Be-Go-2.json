@@ -1,0 +1,3529 @@
+{
+	"info": {
+		"_postman_id": "3aea1210-2b09-4c3d-8640-2f3a1c085a26",
+		"name": "Grade-Portal-Be-Go-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36162297"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "index",
+					"item": [
+						{
+							"name": "LoginController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGRlMTZkNmZiZWRhYzllM2I4ZDAwYSIsImV4cCI6MTczMDk2MDMxM30.AvlDrhMIFES-A2kJ6lkrv8EAnTRYbARc486m1eIDfh8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUpg\"\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/login",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUpg\"\r\n\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/login",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzAwMX0.TBmW5XJCmbgacbMOhbUT7kzA8Ew9Xx8bYfF3VL6JvXQ; Path=/; Max-Age=86400; HttpOnly; Secure"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:10:01 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "179"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"Success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzAwMX0.TBmW5XJCmbgacbMOhbUT7kzA8Ew9Xx8bYfF3VL6JvXQ\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUp\"\r\n\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/login",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:10:25 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "53"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token không hợp lệ\",\n    \"status\": \"Fail\"\n}"
+								}
+							]
+						},
+						{
+							"name": "LogoutController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/logout",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/logout",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "token=; Path=/; Max-Age=86400; HttpOnly; Secure"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:11:19 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "59"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Đăng xuất thành công\",\n    \"status\": \"Success\"\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/logout",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:11:40 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "64"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Người dùng chưa đăng nhập\",\n    \"status\": \"Fail\"\n}"
+								}
+							]
+						},
+						{
+							"name": "CreateAdminController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\t    \r\n    \"email\": \"admintest@hcmut.edu.vn\" ,\r\n\t\"name\" :  \"admintest\" ,  \r\n\t\"faculty\": \"DDT\"  , \r\n\t\"ms\":      \"19202021\" \r\n    //nhập giá trị vào \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/create",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\t    \r\n    \"email\": \"admintest@hcmut.edu.vn\" ,\r\n\t\"name\" :  \"admintest\" ,  \r\n\t\"faculty\": \"DDT\"  , \r\n\t\"ms\":      \"19202021\" \r\n    //nhập giá trị vào \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/create",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:13:00 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tạo tài khoản admin thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "ProfileController",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/profile",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/profile",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:13:18 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "226"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"ID\": \"6749bde782c0c465f12d5d11\",\n        \"Email\": \"kha.nguyentrong@hcmut.edu.vn\",\n        \"Name\": \"Nguyễn Trọng Kha\",\n        \"Ms\": \"2211417\",\n        \"Faculty\": \"KHMT\",\n        \"CreatedBy\": \"000000000000000000000000\"\n    },\n    \"message\": \"Thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "AccountCreateController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"email\": \"student1@hcmut.edu.vn\",\r\n        \"name\": \"student1\",\r\n        \"ms\": \"2000000\",\r\n        \"faculty\": \"BDCN\",\r\n        \"role\": \"student\"\r\n    },\r\n    {\r\n        \"email\": \"teacher1@hcmut.edu.vn\",\r\n        \"name\": \"teacher1\",\r\n        \"ms\": \"1111111\",\r\n        \"faculty\": \"BDCN\",\r\n        \"role\": \"teacher\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/create",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"email\": \"studenttest@hcmut.edu.vn\",\r\n        \"name\": \"studenttest\",\r\n        \"ms\": \"1800189\",\r\n        \"faculty\": \"BDCN\",\r\n        \"role\": \"student\"\r\n    },\r\n    {\r\n        \"email\": \"teachertest@hcmut.edu.vn\",\r\n        \"name\": \"teachertest\",\r\n        \"ms\": \"4123213\",\r\n        \"faculty\": \"BDCN\",\r\n        \"role\": \"teacher\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/create",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:15:44 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "449"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"invalidAccounts\": null,\n    \"status\": \"Success\",\n    \"validAccounts\": [\n        {\n            \"email\": \"studenttest@hcmut.edu.vn\",\n            \"name\": \"studenttest\",\n            \"ms\": \"1800189\",\n            \"faculty\": \"BDCN\",\n            \"role\": \"student\",\n            \"createdBy\": \"6749bde782c0c465f12d5d11\",\n            \"expiredAt\": \"2029-11-30T14:15:43.9237077+07:00\"\n        },\n        {\n            \"email\": \"teachertest@hcmut.edu.vn\",\n            \"name\": \"teachertest\",\n            \"ms\": \"4123213\",\n            \"faculty\": \"BDCN\",\n            \"role\": \"teacher\",\n            \"createdBy\": \"6749bde782c0c465f12d5d11\",\n            \"expiredAt\": \"2029-11-30T14:15:43.9237077+07:00\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "TeacherAccountGet",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/teacher",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"teacher"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/teacher",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"teacher"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:13:42 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "951"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa006\",\n            \"Email\": \"anh.hoang04k22@hcmut.edu.vn\",\n            \"Name\": \"ANH HOÀNG TRUNG\",\n            \"Ms\": \"2210001\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"teacher\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa005\",\n            \"Email\": \"thuanle@hcmut.edu.vn\",\n            \"Name\": \"THUẬN LÊ ĐÌNH\",\n            \"Ms\": \"2210000\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"teacher\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"67307b348e77d2a6ec61b4ee\",\n            \"Email\": \"trang.lambk22@hcmut.edu.vn\",\n            \"Name\": \"TRANG LÂM MỸ\",\n            \"Ms\": \"2213549\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"teacher\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"674a83d59d65503d01c2b597\",\n            \"Email\": \"teacher1@hcmut.edu.vn\",\n            \"Name\": \"teacher1\",\n            \"Ms\": \"1111111\",\n            \"Faculty\": \"BDCN\",\n            \"Role\": \"teacher\",\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"ExpiredAt\": \"2029-11-30T03:17:41.024Z\"\n        }\n    ],\n    \"message\": \"Tìm tài khoản thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "StudentAccountGet",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/student",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"student"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/student",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"student"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:16:54 GMT"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa007\",\n            \"Email\": \"anh.phamviet241103@hcmut.edu.vn\",\n            \"Name\": \"ANH PHẠM VIỆT\",\n            \"Ms\": \"2210002\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa010\",\n            \"Email\": \"dang.nguyen2210737cs@hcmut.edu.vn\",\n            \"Name\": \"ĐĂNG NGUYỄN HUỲNH HẢI\",\n            \"Ms\": \"2210011\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa011\",\n            \"Email\": \"doan.nguyencogang@hcmut.edu.vn\",\n            \"Name\": \"ĐOÀN NGUYỄN VĂN\",\n            \"Ms\": \"2210012\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa012\",\n            \"Email\": \"duc.tranthd52@hcmut.edu.vn\",\n            \"Name\": \"ĐỨC TRẦN HUY\",\n            \"Ms\": \"2210013\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00c\",\n            \"Email\": \"danh.nguyenhoang@hcmut.edu.vn\",\n            \"Name\": \"DANH NGUYỄN HOÀNG\",\n            \"Ms\": \"2210007\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00a\",\n            \"Email\": \"can.phunghcmut2k4@hcmut.edu.vn\",\n            \"Name\": \"CẬN PHÙNG XƯƠNG\",\n            \"Ms\": \"2210005\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa016\",\n            \"Email\": \"hien.lengoc2004@hcmut.edu.vn\",\n            \"Name\": \"HIỀN LÊ NGỌC\",\n            \"Ms\": \"2210017\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00d\",\n            \"Email\": \"duy.thai2210535@hcmut.edu.vn\",\n            \"Name\": \"DUY THÁI THÀNH\",\n            \"Ms\": \"2210008\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00e\",\n            \"Email\": \"dat.le2210683@hcmut.edu.vn\",\n            \"Name\": \"ĐẠT LÊ THÀNH\",\n            \"Ms\": \"2210009\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00f\",\n            \"Email\": \"dat.nguyenquoc22itbk@hcmut.edu.vn\",\n            \"Name\": \"ĐẠT NGUYỄN QUỐC\",\n            \"Ms\": \"2210010\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01a\",\n            \"Email\": \"huy.sam12092004@hcmut.edu.vn\",\n            \"Name\": \"HUY SAM GIA\",\n            \"Ms\": \"2210021\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01c\",\n            \"Email\": \"kiet.letuan@hcmut.edu.vn\",\n            \"Name\": \"Lê Tuấn Kiệt\",\n            \"Ms\": \"2211756\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa014\",\n            \"Email\": \"hao.quachqkh9104cs@hcmut.edu.vn\",\n            \"Name\": \"HÀO QUÁCH KHẢI\",\n            \"Ms\": \"2210015\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01e\",\n            \"Email\": \"khai.trantien1922@hcmut.edu.vn\",\n            \"Name\": \"KHẢI TRẦN TIẾN\",\n            \"Ms\": \"2210025\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01f\",\n            \"Email\": \"khang.tran@hcmut.edu.vn\",\n            \"Name\": \"KHANG TRẦN MINH\",\n            \"Ms\": \"2210026\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa013\",\n            \"Email\": \"ha.nguyennd2308@hcmut.edu.vn\",\n            \"Name\": \"HÀ NGUYỄN NGỌC DIỆU\",\n            \"Ms\": \"2210014\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa009\",\n            \"Email\": \"bang.nguyendinh@hcmut.edu.vn\",\n            \"Name\": \"BẰNG NGUYỄN ĐINH\",\n            \"Ms\": \"2210004\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa015\",\n            \"Email\": \"han.lehoangngoc@hcmut.edu.vn\",\n            \"Name\": \"HÂN LÊ HOÀNG NGỌC\",\n            \"Ms\": \"2210016\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa021\",\n            \"Email\": \"khiem.nguyenduyen@hcmut.edu.vn\",\n            \"Name\": \"KHIÊM NGUYỄN GIA\",\n            \"Ms\": \"2210028\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa022\",\n            \"Email\": \"khoa.lebku@hcmut.edu.vn\",\n            \"Name\": \"KHOA LÊ ĐĂNG\",\n            \"Ms\": \"2210029\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa008\",\n            \"Email\": \"bach.ngoshadow@hcmut.edu.vn\",\n            \"Name\": \"BÁCH NGÔ QUANG\",\n            \"Ms\": \"2210003\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa023\",\n            \"Email\": \"khoa.nguyen47245@hcmut.edu.vn\",\n            \"Name\": \"KHOA NGUYỄN ĐĂNG\",\n            \"Ms\": \"2210030\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa017\",\n            \"Email\": \"hoang.nguyenthanh0201@hcmut.edu.vn\",\n            \"Name\": \"HOÀNG NGUYỄN THANH\",\n            \"Ms\": \"2210018\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa018\",\n            \"Email\": \"huan.nguyenme2211144@hcmut.edu.vn\",\n            \"Name\": \"HUÂN NGUYỄN TRỊNH NGỌC\",\n            \"Ms\": \"2210019\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa00b\",\n            \"Email\": \"tam.chu2213009cs@hcmut.edu.vn\",\n            \"Name\": \"Chu Minh Tâm\",\n            \"Ms\": \"2213009\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa019\",\n            \"Email\": \"huy.lehuynh2004@hcmut.edu.vn\",\n            \"Name\": \"HUY LÊ HUỲNH\",\n            \"Ms\": \"2210020\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01b\",\n            \"Email\": \"thai.lydznhatlop2k4@hcmut.edu.vn\",\n            \"Name\": \"Lý Vĩnh Thái\",\n            \"Ms\": \"2213104\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa01d\",\n            \"Email\": \"nhan.nguyentrung295@hcmut.edu.vn\",\n            \"Name\": \"Nguyễn Trung Nhân\",\n            \"Ms\": \"2212372\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa020\",\n            \"Email\": \"khanh.nguyenhuu267@hcmut.edu.vn\",\n            \"Name\": \"KHÁNH NGUYỄN HỮU\",\n            \"Ms\": \"2210027\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa025\",\n            \"Email\": \"lai.nguyenhmt1@hcmut.edu.vn\",\n            \"Name\": \"LÁI NGUYỄN VĂN\",\n            \"Ms\": \"2210032\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa024\",\n            \"Email\": \"khoa.nguyen2211621@hcmut.edu.vn\",\n            \"Name\": \"KHOA NGUYỄN ĐĂNG\",\n            \"Ms\": \"2210031\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa028\",\n            \"Email\": \"le.nguyenlam@hcmut.edu.vn\",\n            \"Name\": \"LÊ NGUYỄN LÂM\",\n            \"Ms\": \"2210035\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02e\",\n            \"Email\": \"manh.lequang@hcmut.edu.vn\",\n            \"Name\": \"MẠNH LÊ QUANG\",\n            \"Ms\": \"2210041\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02d\",\n            \"Email\": \"le.vantuankhmt@hcmut.edu.vn\",\n            \"Name\": \"LÊ VĂN TUẤN\",\n            \"Ms\": \"2210040\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa026\",\n            \"Email\": \"lam.nguyen2221@hcmut.edu.vn\",\n            \"Name\": \"LAM NGUYỄN ĐÌNH\",\n            \"Ms\": \"2210033\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02f\",\n            \"Email\": \"moc.nguyen@hcmut.edu.vn\",\n            \"Name\": \"MỘC NGUYỄN THỊ LÝ\",\n            \"Ms\": \"2210042\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa032\",\n            \"Email\": \"nhi.nguyenthaithanh@hcmut.edu.vn\",\n            \"Name\": \"NHI NGUYỄN THÁI\",\n            \"Ms\": \"2210045\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa029\",\n            \"Email\": \"le.ngocmanh2212031@hcmut.edu.vn\",\n            \"Name\": \"LÊ NGỌC MẠNH\",\n            \"Ms\": \"2210036\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b85b8226ae67ef9aaa027\",\n            \"Email\": \"lam.nguyen@hcmut.edu.vn\",\n            \"Name\": \"LÂM NGUYỄN TRÍ\",\n            \"Ms\": \"2210034\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa030\",\n            \"Email\": \"nghia.nguyenle@hcmut.edu.vn\",\n            \"Name\": \"NGHĨA NGUYỄN LÊ\",\n            \"Ms\": \"2210043\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02b\",\n            \"Email\": \"le.quanghai2212055@hcmut.edu.vn\",\n            \"Name\": \"LÊ QUANG HẢI\",\n            \"Ms\": \"2210038\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02c\",\n            \"Email\": \"le.trongcanh@hcmut.edu.vn\",\n            \"Name\": \"LÊ TRỌNG CẢNH\",\n            \"Ms\": \"2210039\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa02a\",\n            \"Email\": \"le.phuctruong0103@hcmut.edu.vn\",\n            \"Name\": \"LÊ PHÚC TRƯỜNG\",\n            \"Ms\": \"2210037\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa034\",\n            \"Email\": \"phat.nguyencong@hcmut.edu.vn\",\n            \"Name\": \"PHÁT NGUYỄN CÔNG\",\n            \"Ms\": \"2210047\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa031\",\n            \"Email\": \"ngoc.tranthithu@hcmut.edu.vn\",\n            \"Name\": \"NGỌC TRẦN THỊ\",\n            \"Ms\": \"2210044\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa035\",\n            \"Email\": \"phat.tranhoai@hcmut.edu.vn\",\n            \"Name\": \"PHÁT TRẦN HOÀI\",\n            \"Ms\": \"2210048\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa037\",\n            \"Email\": \"phuong.nguyenhoai@hcmut.edu.vn\",\n            \"Name\": \"PHƯƠNG NGUYỄN HOÀI\",\n            \"Ms\": \"2210050\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa036\",\n            \"Email\": \"phat.tranminh@hcmut.edu.vn\",\n            \"Name\": \"PHÁT TRẦN MINH\",\n            \"Ms\": \"2210049\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa038\",\n            \"Email\": \"quang.lecong@hcmut.edu.vn\",\n            \"Name\": \"QUANG LÊ CÔNG\",\n            \"Ms\": \"2210051\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa033\",\n            \"Email\": \"nhat.nguyen@hcmut.edu.vn\",\n            \"Name\": \"NHẬT NGUYỄN\",\n            \"Ms\": \"2210046\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa039\",\n            \"Email\": \"quoc.nguyen@hcmut.edu.vn\",\n            \"Name\": \"QUỐC NGUYỄN TRUNG\",\n            \"Ms\": \"2210052\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03b\",\n            \"Email\": \"thao.vuvan@hcmut.edu.vn\",\n            \"Name\": \"THẢO VŨ VĂN\",\n            \"Ms\": \"2210054\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa040\",\n            \"Email\": \"tien.nguyenviet@hcmut.edu.vn\",\n            \"Name\": \"TIẾN NGUYỄN VIỆT\",\n            \"Ms\": \"2210059\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03d\",\n            \"Email\": \"thanh.nguyenhoc@hcmut.edu.vn\",\n            \"Name\": \"THÀNH NGUYỄN HỌC\",\n            \"Ms\": \"2210056\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03e\",\n            \"Email\": \"thai.trankhoa@hcmut.edu.vn\",\n            \"Name\": \"THÁI TRẦN KHOA\",\n            \"Ms\": \"2210057\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa043\",\n            \"Email\": \"thai.lydznhatlop2k4@hcmut.edu.vn\",\n            \"Name\": \"THAI LY VINH\",\n            \"Ms\": \"2210062\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"67307aac8e77d2a6ec61b4ec\",\n            \"Email\": \"thu.dangnm@hcmut.edu.vn\",\n            \"Name\": \"THƯ ĐẶNG NGUYỄN MINH\",\n            \"Ms\": \"2320015\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03c\",\n            \"Email\": \"thai.nguyenhuu@hcmut.edu.vn\",\n            \"Name\": \"THÁI NGUYỄN HỮU\",\n            \"Ms\": \"2210055\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"67307b708e77d2a6ec61b4ef\",\n            \"Email\": \"tuan.kimnhat@hcmut.edu.vn\",\n            \"Name\": \"TUẤN KIM NHẬT\",\n            \"Ms\": \"2213771\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"67307baa8e77d2a6ec61b4f0\",\n            \"Email\": \"bang.nguyendinh@hcmut.edu.vn\",\n            \"Name\": \"BẰNG NGUYỄN ĐINH\",\n            \"Ms\": \"2210298\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"6730638d8e77d2a6ec61b4d1\",\n            \"Email\": \"thang.nguyen1302@hcmut.edu.vn\",\n            \"Name\": \"NGUYỄN HỮU THẮNG\",\n            \"Ms\": \"2220001\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"000000000000000000000000\",\n            \"ExpiredAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": \"6732dc58a02555ced3be6afb\",\n            \"Email\": \"le.ngocm11@hcmut.edu.vn\",\n            \"Name\": \"LÊ NGỌC MẠNH\",\n            \"Ms\": \"22126\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"6730d7a884648a9d5ba4d2ed\",\n            \"ExpiredAt\": \"2029-11-12T04:40:56.151Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03a\",\n            \"Email\": \"son.nguyenhong@hcmut.edu.vn\",\n            \"Name\": \"SƠN NGUYỄN HỒNG\",\n            \"Ms\": \"2210053\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"67445565099e245922d1f218\",\n            \"Email\": \"tam.chu2213009cs@hcmut.edu.vn\",\n            \"Name\": \"Chu Minh Tâm\",\n            \"Ms\": \"2213009\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"000000000000000000000000\",\n            \"ExpiredAt\": \"0001-01-01T00:00:00Z\"\n        },\n        {\n            \"ID\": \"6744547fa524d5ff5c7b3f2a\",\n            \"Email\": \"phong.tranphongtran@hcmut.edu.vn\",\n            \"Name\": \"Trần Thang Phong\",\n            \"Ms\": \"2212571\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"67445441a524d5ff5c7b3f25\",\n            \"Email\": \"tam.chu2213009cs@hcmut.edu.vn\",\n            \"Name\": \"Chu Minh Tâm\",\n            \"Ms\": \"2213009\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"673064728e77d2a6ec61b4d2\",\n            \"Email\": \"thang.nguyen1302@hcmut.edu.vn\",\n            \"Name\": \"THẮNG NGUYỄN HỮU\",\n            \"Ms\": \"2220001\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"67307a548e77d2a6ec61b4eb\",\n            \"Email\": \"khoa.nguyen47245@hcmut.edu.vn\",\n            \"Name\": \"KHOA NGUYỄN ĐĂNG\",\n            \"Ms\": \"2211618\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa03f\",\n            \"Email\": \"tien.nguyenhoang@hcmut.edu.vn\",\n            \"Name\": \"TIẾN NGUYỄN HOÀNG\",\n            \"Ms\": \"2210058\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa041\",\n            \"Email\": \"toan.lehuu@hcmut.edu.vn\",\n            \"Name\": \"TOÀN LÊ HỮU\",\n            \"Ms\": \"2210060\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"672b8605226ae67ef9aaa042\",\n            \"Email\": \"tu.tranminh@hcmut.edu.vn\",\n            \"Name\": \"TÚ TRẦN MINH\",\n            \"Ms\": \"2210061\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"ExpiredAt\": \"2029-11-06T15:06:45.956Z\"\n        },\n        {\n            \"ID\": \"6749cfdaf2873c0c6c5fa7e0\",\n            \"Email\": \"kha.nguyentrong@hcmut.edu.vn\",\n            \"Name\": \"Nguyễn Trọng Kha\",\n            \"Ms\": \"2211417\",\n            \"Faculty\": \"KHMT\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"ExpiredAt\": \"2029-11-29T14:29:46.037Z\"\n        },\n        {\n            \"ID\": \"674a83d59d65503d01c2b596\",\n            \"Email\": \"student1@hcmut.edu.vn\",\n            \"Name\": \"student1\",\n            \"Ms\": \"2000000\",\n            \"Faculty\": \"BDCN\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"ExpiredAt\": \"2029-11-30T03:17:41.024Z\"\n        },\n        {\n            \"ID\": \"674a8d4d9d65503d01c2b598\",\n            \"Email\": \"student2@hcmut.edu.vn\",\n            \"Name\": \"student2\",\n            \"Ms\": \"1900000\",\n            \"Faculty\": \"BDCN\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"ExpiredAt\": \"2029-11-30T03:58:05.357Z\"\n        },\n        {\n            \"ID\": \"674abb9f9d65503d01c2b59b\",\n            \"Email\": \"studenttest@hcmut.edu.vn\",\n            \"Name\": \"studenttest\",\n            \"Ms\": \"1800189\",\n            \"Faculty\": \"BDCN\",\n            \"Role\": \"student\",\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"ExpiredAt\": \"2029-11-30T07:15:43.923Z\"\n        }\n    ],\n    \"message\": \"Tìm thấy tài khoản thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "AccountGetById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"672b85b8226ae67ef9aaa006"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"672b85b8226ae67ef9aaa006"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:13:56 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "296"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"ID\": \"672b85b8226ae67ef9aaa006\",\n        \"Email\": \"anh.hoang04k22@hcmut.edu.vn\",\n        \"Name\": \"ANH HOÀNG TRUNG\",\n        \"Ms\": \"2210001\",\n        \"Faculty\": \"KHMT\",\n        \"Role\": \"teacher\",\n        \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n        \"ExpiredAt\": \"2029-11-06T15:05:28.186Z\"\n    },\n    \"message\": \"Tìm tài khoản thành công.\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "DeletedAccountController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/delete/67193b292a9a34cfa293841c",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"delete",
+										"67193b292a9a34cfa293841c"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/delete/674a8d4d9d65503d01c2b599",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"delete",
+												"674a8d4d9d65503d01c2b599"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 06:59:20 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Xóa tài khoản thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "ChangeAccountController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Le Van A\",\r\n    \"faculty\": \"KTHH\",\r\n    \"role\": \"teacher\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"account",
+										"change",
+										"674a8d4d9d65503d01c2b599"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Le Van A\",\r\n    \"faculty\": \"KTHH\",\r\n    \"role\": \"teacher\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"account",
+												"change",
+												"674a8d4d9d65503d01c2b599"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:18:58 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cập nhật tài khoản thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "class",
+					"item": [
+						{
+							"name": "CreateClass",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"semester\":       \"HK242\",\r\n    \"name\":           \"L01\",\r\n    \"course_id\":      \"672b86fd226ae67ef9aaa045\",\r\n    \"listStudent_ms\": [\r\n        \"2222222\",\r\n        \"2210011\",\r\n        \"2210012\",\r\n        \"2211417\",\r\n        \"12112322313100000\"\r\n    ],\r\n    \"teacher_id\":     \"672b85b8226ae67ef9aaa006\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/create",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"semester\":       \"HK242\",\r\n    \"name\":           \"L01\",\r\n    \"course_id\":      \"672b86fd226ae67ef9aaa045\",\r\n    \"listStudent_ms\": [\r\n        \"2222222\",\r\n        \"2210011\",\r\n        \"2210012\",\r\n        \"2211417\",\r\n        \"12112322313100000\"\r\n    ],\r\n    \"teacher_id\":     \"672b85b8226ae67ef9aaa006\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/create",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:27:02 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tạo lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetAllClassesByAccountID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"account",
+										"672b85b8226ae67ef9aaa007"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "TeacherAccount",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa005",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"account",
+												"672b85b8226ae67ef9aaa005"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:19:55 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1691"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"6744928c7ac9374bba79314d\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"000000000000000000000000\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"6732e83c95f2243e7eeb497e\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n            \"UpdatedBy\": \"672b865f226ae67ef9aaa044\"\n        },\n        {\n            \"ID\": \"67375642ec72767cfd44630c\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L03\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": null,\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"6730d78984648a9d5ba4d2ec\",\n            \"UpdatedBy\": \"6730d78984648a9d5ba4d2ec\"\n        },\n        {\n            \"ID\": \"672b87af226ae67ef9aaa047\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L01\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\",\n                \"2210003\",\n                \"2210004\",\n                \"2210005\",\n                \"2210006\",\n                \"2210007\",\n                \"2210008\",\n                \"2210009\",\n                \"2210010\",\n                \"2210011\",\n                \"2210012\",\n                \"2210013\",\n                \"2210014\",\n                \"2210015\",\n                \"2210016\",\n                \"2210017\",\n                \"2210018\",\n                \"2210019\",\n                \"2210020\",\n                \"2213104\",\n                \"2210022\",\n                \"2210023\",\n                \"2210024\",\n                \"2210025\",\n                \"2210026\",\n                \"2210027\",\n                \"2210028\",\n                \"2210029\",\n                \"2210030\",\n                \"2210031\",\n                \"2210032\",\n                \"2210033\",\n                \"2210034\",\n                \"2210035\",\n                \"2210036\",\n                \"2210037\",\n                \"2210038\",\n                \"2210039\",\n                \"2210040\",\n                \"2210041\",\n                \"2210042\",\n                \"2210043\",\n                \"2210044\",\n                \"2210045\",\n                \"2210046\",\n                \"2210047\",\n                \"2210048\",\n                \"2210049\",\n                \"2210050\",\n                \"2210051\",\n                \"2210052\",\n                \"2210053\",\n                \"2210054\",\n                \"2210055\",\n                \"2210056\",\n                \"2210057\",\n                \"2210058\",\n                \"2210059\",\n                \"2210060\",\n                \"2210061\",\n                \"2212571\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"UpdatedBy\": \"670de16d6fbedac9e3b8d00a\"\n        }\n    ],\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								},
+								{
+									"name": "StudentAccount",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"account",
+												"672b85b8226ae67ef9aaa007"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:21:34 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1768"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"6744928c7ac9374bba79314d\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"000000000000000000000000\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"67375815ec72767cfd44630d\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L04\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\",\n                \"2210003\",\n                \"2210004\",\n                \"2210005\",\n                \"2210006\",\n                \"2210007\",\n                \"2210008\"\n            ],\n            \"TeacherId\": \"67307b348e77d2a6ec61b4ee\",\n            \"CreatedBy\": \"6730d78984648a9d5ba4d2ec\",\n            \"UpdatedBy\": \"6730d78984648a9d5ba4d2ec\"\n        },\n        {\n            \"ID\": \"6732e83c95f2243e7eeb497e\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n            \"UpdatedBy\": \"672b865f226ae67ef9aaa044\"\n        },\n        {\n            \"ID\": \"672b87af226ae67ef9aaa047\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L01\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\",\n                \"2210003\",\n                \"2210004\",\n                \"2210005\",\n                \"2210006\",\n                \"2210007\",\n                \"2210008\",\n                \"2210009\",\n                \"2210010\",\n                \"2210011\",\n                \"2210012\",\n                \"2210013\",\n                \"2210014\",\n                \"2210015\",\n                \"2210016\",\n                \"2210017\",\n                \"2210018\",\n                \"2210019\",\n                \"2210020\",\n                \"2213104\",\n                \"2210022\",\n                \"2210023\",\n                \"2210024\",\n                \"2210025\",\n                \"2210026\",\n                \"2210027\",\n                \"2210028\",\n                \"2210029\",\n                \"2210030\",\n                \"2210031\",\n                \"2210032\",\n                \"2210033\",\n                \"2210034\",\n                \"2210035\",\n                \"2210036\",\n                \"2210037\",\n                \"2210038\",\n                \"2210039\",\n                \"2210040\",\n                \"2210041\",\n                \"2210042\",\n                \"2210043\",\n                \"2210044\",\n                \"2210045\",\n                \"2210046\",\n                \"2210047\",\n                \"2210048\",\n                \"2210049\",\n                \"2210050\",\n                \"2210051\",\n                \"2210052\",\n                \"2210053\",\n                \"2210054\",\n                \"2210055\",\n                \"2210056\",\n                \"2210057\",\n                \"2210058\",\n                \"2210059\",\n                \"2210060\",\n                \"2210061\",\n                \"2212571\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"UpdatedBy\": \"670de16d6fbedac9e3b8d00a\"\n        }\n    ],\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetClassByClassID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"672b87af226ae67ef9aaa047"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"672b87af226ae67ef9aaa047"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:27:54 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "929"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"ID\": \"672b87af226ae67ef9aaa047\",\n        \"Semester\": \"HK233\",\n        \"Name\": \"L01\",\n        \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n        \"ListStudentMs\": [\n            \"2210001\",\n            \"2210002\",\n            \"2210003\",\n            \"2210004\",\n            \"2210005\",\n            \"2210006\",\n            \"2210007\",\n            \"2210008\",\n            \"2210009\",\n            \"2210010\",\n            \"2210011\",\n            \"2210012\",\n            \"2210013\",\n            \"2210014\",\n            \"2210015\",\n            \"2210016\",\n            \"2210017\",\n            \"2210018\",\n            \"2210019\",\n            \"2210020\",\n            \"2213104\",\n            \"2210022\",\n            \"2210023\",\n            \"2210024\",\n            \"2210025\",\n            \"2210026\",\n            \"2210027\",\n            \"2210028\",\n            \"2210029\",\n            \"2210030\",\n            \"2210031\",\n            \"2210032\",\n            \"2210033\",\n            \"2210034\",\n            \"2210035\",\n            \"2210036\",\n            \"2210037\",\n            \"2210038\",\n            \"2210039\",\n            \"2210040\",\n            \"2210041\",\n            \"2210042\",\n            \"2210043\",\n            \"2210044\",\n            \"2210045\",\n            \"2210046\",\n            \"2210047\",\n            \"2210048\",\n            \"2210049\",\n            \"2210050\",\n            \"2210051\",\n            \"2210052\",\n            \"2210053\",\n            \"2210054\",\n            \"2210055\",\n            \"2210056\",\n            \"2210057\",\n            \"2210058\",\n            \"2210059\",\n            \"2210060\",\n            \"2210061\",\n            \"2212571\"\n        ],\n        \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n        \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n        \"UpdatedBy\": \"670de16d6fbedac9e3b8d00a\"\n    },\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetClassByCourseID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"course",
+										"672b86fd226ae67ef9aaa045"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"course",
+												"672b86fd226ae67ef9aaa045"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:23:09 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2010"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"6744928c7ac9374bba79314d\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"000000000000000000000000\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"67375815ec72767cfd44630d\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L04\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\",\n                \"2210003\",\n                \"2210004\",\n                \"2210005\",\n                \"2210006\",\n                \"2210007\",\n                \"2210008\"\n            ],\n            \"TeacherId\": \"67307b348e77d2a6ec61b4ee\",\n            \"CreatedBy\": \"6730d78984648a9d5ba4d2ec\",\n            \"UpdatedBy\": \"6730d78984648a9d5ba4d2ec\"\n        },\n        {\n            \"ID\": \"6732e83c95f2243e7eeb497e\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L02\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n            \"UpdatedBy\": \"672b865f226ae67ef9aaa044\"\n        },\n        {\n            \"ID\": \"67375642ec72767cfd44630c\",\n            \"Semester\": \"HK241\",\n            \"Name\": \"L03\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": null,\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"6730d78984648a9d5ba4d2ec\",\n            \"UpdatedBy\": \"6730d78984648a9d5ba4d2ec\"\n        },\n        {\n            \"ID\": \"672b87af226ae67ef9aaa047\",\n            \"Semester\": \"HK233\",\n            \"Name\": \"L01\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\",\n                \"2210003\",\n                \"2210004\",\n                \"2210005\",\n                \"2210006\",\n                \"2210007\",\n                \"2210008\",\n                \"2210009\",\n                \"2210010\",\n                \"2210011\",\n                \"2210012\",\n                \"2210013\",\n                \"2210014\",\n                \"2210015\",\n                \"2210016\",\n                \"2210017\",\n                \"2210018\",\n                \"2210019\",\n                \"2210020\",\n                \"2213104\",\n                \"2210022\",\n                \"2210023\",\n                \"2210024\",\n                \"2210025\",\n                \"2210026\",\n                \"2210027\",\n                \"2210028\",\n                \"2210029\",\n                \"2210030\",\n                \"2210031\",\n                \"2210032\",\n                \"2210033\",\n                \"2210034\",\n                \"2210035\",\n                \"2210036\",\n                \"2210037\",\n                \"2210038\",\n                \"2210039\",\n                \"2210040\",\n                \"2210041\",\n                \"2210042\",\n                \"2210043\",\n                \"2210044\",\n                \"2210045\",\n                \"2210046\",\n                \"2210047\",\n                \"2210048\",\n                \"2210049\",\n                \"2210050\",\n                \"2210051\",\n                \"2210052\",\n                \"2210053\",\n                \"2210054\",\n                \"2210055\",\n                \"2210056\",\n                \"2210057\",\n                \"2210058\",\n                \"2210059\",\n                \"2210060\",\n                \"2210061\",\n                \"2212571\"\n            ],\n            \"TeacherId\": \"672b85b8226ae67ef9aaa005\",\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"UpdatedBy\": \"670de16d6fbedac9e3b8d00a\"\n        }\n    ],\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "DeleteClassController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"delete",
+										"67375642ec72767cfd44630c"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"delete",
+												"67375642ec72767cfd44630c"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:28:30 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Xóa lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "AddStudentsToCourseHandler",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"class_id\": \"67375642ec72767cfd44630c\",\r\n    \"listStudent_ms\": [\"1242112\", \"12313112\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/add",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"add"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"class_id\": \"67375642ec72767cfd44630c\",\r\n    \"listStudent_ms\": [\"1242112\", \"12313112\"]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/add",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"add"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:29:16 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "79"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Thêm học sinh vào lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "ChangeClassController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"semester\":       \"HK241\",\r\n    \"name\":           \"L15\",\r\n    \"course_id\":      \"672b86fd226ae67ef9aaa045\",\r\n    \"teacher_id\":     \"67307b348e77d2a6ec61b4ee\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"class",
+										"change",
+										"67375815ec72767cfd44630d"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"semester\":       \"HK241\",\r\n    \"name\":           \"L15\",\r\n    \"course_id\":      \"672b86fd226ae67ef9aaa045\",\r\n    \"teacher_id\":     \"67307b348e77d2a6ec61b4ee\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"class",
+												"change",
+												"67375815ec72767cfd44630d"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:31:35 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cập nhật lớp học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "course",
+					"item": [
+						{
+							"name": "CreateCourse",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"DBS\",\r\n    \"desc\": \"Mon nay de 10 diem\",\r\n    \"credit\": 4,\r\n    \"bt\": 10,\r\n    \"tn\": 10,\r\n    \"btl\": 10,\r\n    \"gk\": 20,\r\n    \"ck\": 50,\r\n    \"ms\": \"CO3019\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/course/create",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"course",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"DBS\",\r\n    \"desc\": \"Mon nay de 10 diem\",\r\n    \"credit\": 4,\r\n    \"bt\": 10,\r\n    \"tn\": 10,\r\n    \"btl\": 10,\r\n    \"gk\": 20,\r\n    \"ck\": 50,\r\n    \"ms\": \"CO3019\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/course/create",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"course",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:35:48 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tạo khóa học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetCourseByCourseID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"course",
+										"674ac0549d65503d01c2b59e"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"course",
+												"674ac0549d65503d01c2b59e"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:37:20 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "269"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"ID\": \"674ac0549d65503d01c2b59e\",\n        \"MS\": \"CO3019\",\n        \"Credit\": 4,\n        \"Name\": \"DBS\",\n        \"Desc\": \"Mon nay de 10 diem\",\n        \"HS\": [\n            10,\n            10,\n            10,\n            20,\n            50\n        ],\n        \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n        \"UpdatedBy\": \"000000000000000000000000\"\n    },\n    \"message\": \"Lấy môn học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GetAllCourseController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/course/all",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"course",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/course/all",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"course",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:37:52 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1097"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"ID\": \"672b86fd226ae67ef9aaa045\",\n            \"MS\": \"CO3103\",\n            \"Credit\": 1,\n            \"Name\": \"Đồ án công nghệ phần mềm\",\n            \"Desc\": \"Giúp bạn có 1 kiến thức thú dị :)))\",\n            \"HS\": [\n                10,\n                20,\n                0,\n                20,\n                50\n            ],\n            \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"6730cf4ee13cf54ebe00f3cf\",\n            \"MS\": \"CO3102\",\n            \"Credit\": 4,\n            \"Name\": \"cấu trúc dữ liệu và ảo thuật\",\n            \"Desc\": \"DSA dễ ẹc à\",\n            \"HS\": [\n                10,\n                20,\n                0,\n                20,\n                50\n            ],\n            \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"67402cd60b5857d63f8d3425\",\n            \"MS\": \"CO3005\",\n            \"Credit\": 4,\n            \"Name\": \" Nguyên lý ngôn ngữ lập trình\",\n            \"Desc\": \"Giúp bạn có 1 kiến thức thú dị\",\n            \"HS\": [\n                10,\n                10,\n                20,\n                10,\n                50\n            ],\n            \"CreatedBy\": \"672db00b93c4a520bbe321f4\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        },\n        {\n            \"ID\": \"674ac0549d65503d01c2b59e\",\n            \"MS\": \"CO3019\",\n            \"Credit\": 4,\n            \"Name\": \"DBS\",\n            \"Desc\": \"Mon nay de 10 diem\",\n            \"HS\": [\n                10,\n                10,\n                10,\n                20,\n                50\n            ],\n            \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n            \"UpdatedBy\": \"000000000000000000000000\"\n        }\n    ],\n    \"message\": \"Lấy ra tất cả khóa học thành công\",\n    \"semester\": {\n        \"CURRENT\": \"HK241\",\n        \"NEXT\": \"HK242\",\n        \"PREV\": \"HK233\"\n    },\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "DeleteCourseController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"course",
+										"delete",
+										"674ac0549d65503d01c2b59e"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"course",
+												"delete",
+												"674ac0549d65503d01c2b59e"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:38:18 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "62"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Xóa khóa học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "UpdateCourseController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ms\": \"CO3001\",\r\n    \"credit\": 3,\r\n    \"name\": \"Cong nghe phan mem\",\r\n    \"desc\": \"Mon nay lay 10 diem\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"course",
+										"change",
+										"6730cf4ee13cf54ebe00f3cf"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ms\": \"CO3001\",\r\n    \"credit\": 3,\r\n    \"name\": \"Cong nghe phan mem\",\r\n    \"desc\": \"Mon nay lay 10 diem\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"course",
+												"change",
+												"6730cf4ee13cf54ebe00f3cf"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:40:14 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "70"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cập nhật khóa học thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result",
+					"item": [
+						{
+							"name": "GetResultScoreController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"result",
+										"672b87af226ae67ef9aaa047"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"result",
+												"672b87af226ae67ef9aaa047"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:41:52 GMT"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"ID\": \"6730da8cb8b2e2dee4666a1c\",\n        \"Semester\": \"HK233\",\n        \"SCORE\": [\n            {\n                \"MSSV\": \"2210000\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 8,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210001\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 10,\n                    \"CK\": 10\n                }\n            },\n            {\n                \"MSSV\": \"2210002\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210003\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210004\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210005\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210006\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210007\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210008\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210009\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210010\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210011\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210012\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210013\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210014\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210015\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210016\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210017\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210018\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210019\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210020\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 3\n                }\n            },\n            {\n                \"MSSV\": \"2213104\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210022\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210023\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210024\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210025\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210026\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210027\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210028\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210029\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210030\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210031\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210032\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210033\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210034\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210035\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210036\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210037\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210038\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210039\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210040\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210041\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210042\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210043\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210044\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210045\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210046\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210047\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210048\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210049\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210050\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210051\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210052\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210053\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210054\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210055\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210056\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210057\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210058\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210059\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210060\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2210061\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            },\n            {\n                \"MSSV\": \"2212571\",\n                \"Data\": {\n                    \"BT\": null,\n                    \"TN\": null,\n                    \"BTL\": null,\n                    \"GK\": 0,\n                    \"CK\": 0\n                }\n            }\n        ],\n        \"ClassID\": \"672b87af226ae67ef9aaa047\",\n        \"CourseID\": \"672b86fd226ae67ef9aaa045\",\n        \"ExpiredAt\": \"2025-05-10T16:08:44.496Z\",\n        \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n        \"UpdatedBy\": \"672b865f226ae67ef9aaa044\"\n    },\n    \"message\": \"Lấy bảng điểm thành công.\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "ResultScoreController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2215555\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 7.5],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2212372\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/result/create",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"result",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2215555\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 7.5],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2212372\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/result/create",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"result",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:43:12 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "73"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cập nhật bảng điểm thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "HOF",
+					"item": [
+						{
+							"name": "UpdateHallOfFameController",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/HOF/update",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"HOF",
+										"update"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/HOF/update",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"HOF",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:44:38 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cập nhật Hall Of Fame thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "getAllHallOfFame",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL_ADMIN}}/HOF/all",
+									"host": [
+										"{{BASE_URL_ADMIN}}"
+									],
+									"path": [
+										"HOF",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_ADMIN}}/HOF/all",
+											"host": [
+												"{{BASE_URL_ADMIN}}"
+											],
+											"path": [
+												"HOF",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 30 Nov 2024 07:45:05 GMT"
+										},
+										{
+											"key": "Content-Length",
+											"value": "530"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"semester\": \"HK233\",\n        \"tier\": [\n            {\n                \"course_id\": \"6730cf4ee13cf54ebe00f3cf\",\n                \"data\": [\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 8.383333\n                    },\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 7.7666664\n                    }\n                ]\n            },\n            {\n                \"course_id\": \"672b86fd226ae67ef9aaa045\",\n                \"data\": [\n                    {\n                        \"mssv\": \"2210001\",\n                        \"dtb\": 7\n                    },\n                    {\n                        \"mssv\": \"2210000\",\n                        \"dtb\": 1.6\n                    },\n                    {\n                        \"mssv\": \"2210020\",\n                        \"dtb\": 1.5\n                    },\n                    {\n                        \"mssv\": \"2212571\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210061\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210060\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210059\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210058\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210057\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210056\",\n                        \"dtb\": 0\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": \"Lấy hall of fame thành công\",\n    \"status\": \"Success\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "index",
+							"item": [
+								{
+									"name": "LoginController",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUpg\",\r\n    \"role\": \"student\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/login",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "StudentLogin",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUpg\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/login",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTE3NX0.R-dfrgo4eUUjivcdhpQrIjQq8j8KT2xTi7EiP_DnDUc; Path=/; Max-Age=86400; HttpOnly"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:46:15 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "196"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"role\": \"student\",\n    \"status\": \"Success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTE3NX0.R-dfrgo4eUUjivcdhpQrIjQq8j8KT2xTi7EiP_DnDUc\"\n}"
+										}
+									]
+								},
+								{
+									"name": "LogoutController",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/logout",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"logout"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AccountController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTM3ZWI0NjA0NDFlZmI1NzZhMTk0YiIsImV4cCI6MTczMDk4MDgyNX0.7Cdz1UFLS4qdAal_yLU8XsHfBmGz2SeXYeBh1gyQtCY",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/info",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"info"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "StudentInfo",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/info",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"info"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:46:50 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "257"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"6749cfdaf2873c0c6c5fa7e0\",\n        \"Email\": \"kha.nguyentrong@hcmut.edu.vn\",\n        \"Name\": \"Nguyễn Trọng Kha\",\n        \"Ms\": \"2211417\",\n        \"Faculty\": \"KHMT\",\n        \"Role\": \"student\",\n        \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n        \"ExpiredAt\": \"2029-11-29T14:29:46.037Z\"\n    },\n    \"status\": \"success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "getTeacherById",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"674a83d59d65503d01c2b597"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"674a83d59d65503d01c2b597"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 13:28:46 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "104"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"Name\": \"teacher1\",\n        \"Email\": \"teacher1@hcmut.edu.vn\"\n    },\n    \"message\": \"Thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "class",
+							"item": [
+								{
+									"name": "ClassDetailController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/class/account",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"class",
+												"account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/class/account",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"class",
+														"account"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:50:06 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "172"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"ID\": \"674abe469d65503d01c2b59d\",\n            \"Semester\": \"HK242\",\n            \"Name\": \"L01\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"TeacherId\": \"672b85b8226ae67ef9aaa006\"\n        }\n    ],\n    \"status\": \"Success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "ClassAccountController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"class",
+												"674abe469d65503d01c2b59d"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"class",
+														"674abe469d65503d01c2b59d"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:50:54 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "369"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"674abe469d65503d01c2b59d\",\n        \"Semester\": \"HK242\",\n        \"Name\": \"L01\",\n        \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n        \"ListStudentMs\": [\n            \"2222222\",\n            \"2210011\",\n            \"2210012\",\n            \"2211417\",\n            \"12112322313100000\"\n        ],\n        \"TeacherId\": \"672b85b8226ae67ef9aaa006\",\n        \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n        \"UpdatedBy\": \"6749bde782c0c465f12d5d11\"\n    },\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "course",
+							"item": [
+								{
+									"name": "getCourseById",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"course",
+												"672b86fd226ae67ef9aaa045"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"course",
+														"672b86fd226ae67ef9aaa045"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 13:31:07 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "328"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"672b86fd226ae67ef9aaa045\",\n        \"MS\": \"CO3103\",\n        \"Credit\": 1,\n        \"Name\": \"Đồ án công nghệ phần mềm\",\n        \"Desc\": \"Giúp bạn có 1 kiến thức thú dị :)))\",\n        \"HS\": [\n            10,\n            20,\n            0,\n            20,\n            50\n        ],\n        \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n        \"UpdatedBy\": \"000000000000000000000000\"\n    },\n    \"message\": \"Lấy môn học thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "result",
+							"item": [
+								{
+									"name": "ResultController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"result",
+												"getmark",
+												"CO3103-242"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "SuccessButNoResult",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"result",
+														"getmark",
+														"CO3103-242"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:00:40 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "58"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Không có bảng điểm\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "GetAllResult",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/result/getmark",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"result",
+												"getmark"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/result/getmark",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"result",
+														"getmark"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:54:58 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "71"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": null,\n    \"message\": \"Lấy điểm thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "HOF",
+							"item": [
+								{
+									"name": "getAllHallOfFame",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/HOF/all",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"HOF",
+												"all"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/HOF/all",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"HOF",
+														"all"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:01:27 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "530"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"semester\": \"HK233\",\n        \"tier\": [\n            {\n                \"course_id\": \"6730cf4ee13cf54ebe00f3cf\",\n                \"data\": [\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 8.383333\n                    },\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 7.7666664\n                    }\n                ]\n            },\n            {\n                \"course_id\": \"672b86fd226ae67ef9aaa045\",\n                \"data\": [\n                    {\n                        \"mssv\": \"2210001\",\n                        \"dtb\": 7\n                    },\n                    {\n                        \"mssv\": \"2210000\",\n                        \"dtb\": 1.6\n                    },\n                    {\n                        \"mssv\": \"2210020\",\n                        \"dtb\": 1.5\n                    },\n                    {\n                        \"mssv\": \"2212571\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210061\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210060\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210059\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210058\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210057\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210056\",\n                        \"dtb\": 0\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": \"Lấy hall of fame thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Teacher",
+					"item": [
+						{
+							"name": "index",
+							"item": [
+								{
+									"name": "LoginController",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiYUYwQTZPYXNfNWJqa1VYanBmakxMQSIsIm5vbmNlIjoiMTc2NzkxODIwODEzOTQ1MDIzNjkxNDM4MzIzMTc0MjQzNjMzMTA3NjM0MjM2MDI0NTEiLCJuYmYiOjE3MzI5NTQwMDYsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1NDMwNiwiZXhwIjoxNzMyOTU3OTA2LCJqdGkiOiI2NTAzNDAwNGY4NmIwN2UxNzczZGM3MDMyNmFiNWUwZDAxZTk2ZDcwIn0.IqxRLS82kavpIx98tTlOVX_dvdlwf9BqC6_KOHHUyVF9ZIuStrU7bKq7_vR7ppooIkmx7zNYn1EKDM_668kX_jCK-kQScnwhQDMknVFR0WLH5ncd4kq99hCR-ClYcXqVsBC6nnODV9LIdZoA87QaiWkHuc3COZJslGklmyt8ANG2fiQ6EfprAgmQRYGM_KGrz05NokhCzbX4JqmONr1OrvAQmf4Gkrs8wBGUKOXEAMuIQmSAmCfUR9bkhTxYorHEUt3BJaOJF-kDV8QxXvdULnJc2BIF85bLbrx4qfQdsrzazGIgJty6ta-vbRRaNGjr5Lj5eIiSy0_9VJRko2iQ6A\"\r\n,\r\n    \"role\": \"teacher\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/login",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "StudentLogin",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IjM2MjgyNTg2MDExMTNlNjU3NmE0NTMzNzM2NWZlOGI4OTczZDE2NzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4OTIzODg4MzI3ODUtMDBsN2pzc3FxcDd1ZzB2bGl0amZjZHNnOTMzZnVpYTcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTMzMzQzNTA0OTk5NjM5MzU0MTciLCJoZCI6ImhjbXV0LmVkdS52biIsImVtYWlsIjoia2hhLm5ndXllbnRyb25nQGhjbXV0LmVkdS52biIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiOHZoVmNwejhVdHluVVdPNDBZYmRoUSIsIm5vbmNlIjoiMzMxOTMwNzQwODMzNjkyNzkyMjMzMDIxODU2Mjg3MjMxNzkxNTk1MjMxOTMxMDgxMTIiLCJuYmYiOjE3MzI5NTAyODMsIm5hbWUiOiJLSEEgTkdVWeG7hE4gVFLhu4xORyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKNHRFOUxxWFpWSXQ1WDdzOFFNLVVFWlVHYmFmRERXdnl4eHBUT0x2S25mY01aPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IktIQSIsImZhbWlseV9uYW1lIjoiTkdVWeG7hE4gVFLhu4xORyIsImlhdCI6MTczMjk1MDU4MywiZXhwIjoxNzMyOTU0MTgzLCJqdGkiOiJhZGZiYTc4ZGVkMzQ5Y2Y0ZTJhZDY2N2UyZDk4NzNlNThmYzY2ZjJkIn0.HOq6YiIFlvKXpzfmdOQYTcGwye7yR70Ee9kIFQQzXQNUl4YcPcVCC7BKmhngJeU6ijWDZ62BAmoPd7tMegNeBKutHDN2c4-ANo3olFcNqIvI-m13RaU1l_m8JP3RMqkAG-rPd64Psg3MzRvormnqVuGybBXbPLMP1ysjZoAL8TD-oyNrynOHWvbWumlSkH90W79isxyf7UHEPr10F95f3sSgNed4l2LARirMYxLyufmHK6KvbjFNRe6aUrUyIByXOyXctsJr81pftabb1iaE_Q9FX6inOcQZqIah7ECkQjJhhdhmkTJa6RZmyiLscClMJckJIlx8Sc0JrUxDdxCUpg\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/login",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Set-Cookie",
+													"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTE3NX0.R-dfrgo4eUUjivcdhpQrIjQq8j8KT2xTi7EiP_DnDUc; Path=/; Max-Age=86400; HttpOnly"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 07:46:15 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "196"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"role\": \"student\",\n    \"status\": \"Success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTE3NX0.R-dfrgo4eUUjivcdhpQrIjQq8j8KT2xTi7EiP_DnDUc\"\n}"
+										}
+									]
+								},
+								{
+									"name": "LogoutController",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/logout",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"logout"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AccountController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/info",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"info"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "TeacherInfo",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/info",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"info"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:12:18 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "240"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"674ac897440b66d1866e3386\",\n        \"Email\": \"kha.nguyentrong@hcmut.edu.vn\",\n        \"Name\": \"kha\",\n        \"Ms\": \"2211418\",\n        \"Faculty\": \"KHMT\",\n        \"Role\": \"teacher\",\n        \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n        \"ExpiredAt\": \"2029-11-30T08:11:03.907Z\"\n    },\n    \"status\": \"success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "class",
+							"item": [
+								{
+									"name": "ClassDetailController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/class/account",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"class",
+												"account"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/class/account",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"class",
+														"account"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:18:59 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "280"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": [\n        {\n            \"ID\": \"6732e83c95f2243e7eeb497e\",\n            \"Semester\": \"\",\n            \"Name\": \"\",\n            \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n            \"ListStudentMs\": [\n                \"2210001\",\n                \"2210002\"\n            ],\n            \"TeacherId\": \"674ac897440b66d1866e3386\",\n            \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n            \"UpdatedBy\": \"6749bde782c0c465f12d5d11\"\n        }\n    ],\n    \"status\": \"Success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "ClassAccountController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"class",
+												"6732e83c95f2243e7eeb497e"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"class",
+														"6732e83c95f2243e7eeb497e"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:20:00 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "321"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"6732e83c95f2243e7eeb497e\",\n        \"Semester\": \"\",\n        \"Name\": \"\",\n        \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n        \"ListStudentMs\": [\n            \"2210001\",\n            \"2210002\"\n        ],\n        \"TeacherId\": \"674ac897440b66d1866e3386\",\n        \"CreatedBy\": \"672b865f226ae67ef9aaa044\",\n        \"UpdatedBy\": \"6749bde782c0c465f12d5d11\"\n    },\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "course",
+							"item": [
+								{
+									"name": "getCourseById",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"course",
+														"672b86fd226ae67ef9aaa045"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 13:31:07 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "328"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"672b86fd226ae67ef9aaa045\",\n        \"MS\": \"CO3103\",\n        \"Credit\": 1,\n        \"Name\": \"Đồ án công nghệ phần mềm\",\n        \"Desc\": \"Giúp bạn có 1 kiến thức thú dị :)))\",\n        \"HS\": [\n            10,\n            20,\n            0,\n            20,\n            50\n        ],\n        \"CreatedBy\": \"670de16d6fbedac9e3b8d00a\",\n        \"UpdatedBy\": \"000000000000000000000000\"\n    },\n    \"message\": \"Lấy môn học thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "result",
+							"item": [
+								{
+									"name": "CreateResultScoreController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2210001\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 7.5],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2210002\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/result/create",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"result",
+												"create"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2210001\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 7.5],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2210002\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/result/create",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"result",
+														"create"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:48:21 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "73"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Cập nhật bảng điểm thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "GetResultByClassId",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"result",
+												"6732e83c95f2243e7eeb497e"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"result",
+														"6732e83c95f2243e7eeb497e"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:58:16 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "460"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"ID\": \"674ad1556527ef3caf7c37af\",\n        \"Semester\": \"HK233\",\n        \"SCORE\": [\n            {\n                \"MSSV\": \"2210001\",\n                \"Data\": {\n                    \"BT\": [\n                        8.5,\n                        9,\n                        9\n                    ],\n                    \"TN\": [\n                        7,\n                        6.5,\n                        8\n                    ],\n                    \"BTL\": [\n                        8,\n                        7.5\n                    ],\n                    \"GK\": 7.5,\n                    \"CK\": 8\n                }\n            },\n            {\n                \"MSSV\": \"2210002\",\n                \"Data\": {\n                    \"BT\": [\n                        9,\n                        9.5,\n                        8.5\n                    ],\n                    \"TN\": [\n                        8,\n                        7.5,\n                        9\n                    ],\n                    \"BTL\": [\n                        8.5,\n                        9\n                    ],\n                    \"GK\": 8,\n                    \"CK\": 8.5\n                }\n            }\n        ],\n        \"ClassID\": \"6732e83c95f2243e7eeb497e\",\n        \"CourseID\": \"672b86fd226ae67ef9aaa045\",\n        \"ExpiredAt\": \"2025-05-30T08:48:21.478Z\",\n        \"CreatedBy\": \"674ac897440b66d1866e3386\",\n        \"UpdatedBy\": \"674ac897440b66d1866e3386\"\n    },\n    \"status\": \"Success\"\n}"
+										}
+									]
+								},
+								{
+									"name": "ResultPatchController",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2210001\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 9],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2210002\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/result/change",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"result",
+												"change"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"score\": [\r\n        {\r\n            \"MMSV\": \"2210001\",\r\n            \"Data\": {\r\n                \"BT\": [8.5, 9.0, 9],\r\n                \"TN\": [7.0, 6.5, 8.0],\r\n                \"BTL\": [8.0, 7.5],\r\n                \"GK\": 7.5,\r\n                \"CK\": 8.0\r\n            }\r\n        },\r\n        {\r\n            \"MMSV\": \"2210002\",\r\n            \"Data\": {\r\n                \"BT\": [9.0, 9.5, 8.5],\r\n                \"TN\": [8.0, 7.5, 9.0],\r\n                \"BTL\": [8.5, 9.0],\r\n                \"GK\": 8.0,\r\n                \"CK\": 8.5\r\n            }\r\n        }\r\n    ],\r\n    \"class_id\": \"6732e83c95f2243e7eeb497e\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/result/change",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"result",
+														"change"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 08:55:08 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "57"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Thay đổi thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "HOF",
+							"item": [
+								{
+									"name": "getAllHallOfFame",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL_CLIENT}}/HOF/all",
+											"host": [
+												"{{BASE_URL_CLIENT}}"
+											],
+											"path": [
+												"HOF",
+												"all"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{BASE_URL_CLIENT}}/HOF/all",
+													"host": [
+														"{{BASE_URL_CLIENT}}"
+													],
+													"path": [
+														"HOF",
+														"all"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Date",
+													"value": "Sat, 30 Nov 2024 09:01:22 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "530"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"data\": {\n        \"semester\": \"HK233\",\n        \"tier\": [\n            {\n                \"course_id\": \"6730cf4ee13cf54ebe00f3cf\",\n                \"data\": [\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 8.383333\n                    },\n                    {\n                        \"mssv\": \"\",\n                        \"dtb\": 7.7666664\n                    }\n                ]\n            },\n            {\n                \"course_id\": \"672b86fd226ae67ef9aaa045\",\n                \"data\": [\n                    {\n                        \"mssv\": \"2210001\",\n                        \"dtb\": 7\n                    },\n                    {\n                        \"mssv\": \"2210000\",\n                        \"dtb\": 1.6\n                    },\n                    {\n                        \"mssv\": \"2210020\",\n                        \"dtb\": 1.5\n                    },\n                    {\n                        \"mssv\": \"2212571\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210061\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210060\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210059\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210058\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210057\",\n                        \"dtb\": 0\n                    },\n                    {\n                        \"mssv\": \"2210056\",\n                        \"dtb\": 0\n                    }\n                ]\n            }\n        ]\n    },\n    \"message\": \"Lấy hall of fame thành công\",\n    \"status\": \"Success\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL_ADMIN",
+			"value": "http://localhost:8080/admin/api",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL_CLIENT",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}

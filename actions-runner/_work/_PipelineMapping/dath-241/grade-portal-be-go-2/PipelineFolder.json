@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "dath-241/grade-portal-be-go-2",
+  "pipelineDirectory": "grade-portal-be-go-2",
+  "workspaceDirectory": "grade-portal-be-go-2/grade-portal-be-go-2",
+  "repositories": {
+    "dath-241/grade-portal-be-go-2": {
+      "repositoryPath": "grade-portal-be-go-2/grade-portal-be-go-2",
+      "lastRunOn": "12/01/2024 23:22:59 +07:00"
+    }
+  },
+  "lastRunOn": "12/01/2024 23:43:29 +07:00"
+}
