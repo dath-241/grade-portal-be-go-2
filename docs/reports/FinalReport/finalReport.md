@@ -87,9 +87,11 @@
 ---
 
 # Sơ đồ thành phần
-
-![alt text](img/component.png)
-
+<p align="center">
+  <img src="img/component.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 1: Component Diagram</i>
+</p>
 
 ### Các thành phần chính
 - View: Giao diện sinh viên, giảng viên và admin, lớp học, khóa học và danh sách sinh viên có điểm số cao nhất. Riêng admin có giao diện tạo mới, sửa, xóa tài khoản, lớp học, khóa học. Khi người dùng gửi yêu cầu từ giao diện sẽ gọi đến dịch vụ ở lớp dưới.
@@ -100,7 +102,101 @@ Database: Chứa các dữ liệu "tài khoản", "lớp học", "khóa học", 
 ---
 
 ### Thiết kế CSDL
-![alt text](img/erd.jpg)
+<p align="center">
+  <img src="img/erd.jpg" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 2: EERD</i>
+</p>
+
 
 1. Trong layered architecture, database sẽ là lớp ở dưới cùng và sẽ chịu trách nhiệm lưu trữ toàn bộ data và xử lý chúng. Các dữ liệu của ứng dụng sẽ  được lưu trữ tại đây và các thao tác như search, insert, update and delete sẽ được thực hiện thường xuyên để thao tác với dữ liệu thông qua hệ quản trị cơ sở dữ liệu.
 2. Đối với đồ án lần này, nhóm sẽ sử dụng kiến trúc lớp với database layer lưu trữ dữ liệu bằng MongoDB, một hệ cơ sở dữ liệu NoSQL, các kiểu thực thể cần thiết sẽ có các thuộc tính như trên hình.
+### Usecase Diagram
+#### Whole System
+<p align="center">
+  <img src="img/whole-sys.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 3: Usecase toàn bộ hệ thống</i>
+</p>
+
+#### Quản trị viên
+##### Quản lý người dùng
+<p align="center">
+  <img src="img/QTV-QLND.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 4: Usecase quản lý người dùng</i>
+</p>
+
+| Use-case ID     | UC-1                                                        |
+|-------------------|---------------------------------------------------------------------------|
+| Use-case name     | Quản lý người dùng                                                        |
+| Actor             | Quản trị viên                                                             |
+| Description       | Quản trị viên quản lý tài khoản sinh viên, giảng viên cũng như quản trị viên khác |
+| Preconditions     | Đang đăng nhập với vai trò là quản trị viên                                                            | 
+| Normal Flow       | 1. Quản trị viên chọn quản lý tài khoản </br>  2. Quản trị viên có thể chọn thêm tài khoản, xem chi tiết 1 tài khoản, chỉnh sửa 1 tài khoản và xóa 1 tài khoảng bất kì.                                                        |
+| Exceptions        | Không có                                                            |
+
+
+##### Quản lý lớp học
+<p align="center">
+  <img src="img/QTV-QLLH.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 5: Usecase quản lý lớp học của quản trị viên</i>
+</p>
+
+| Use-case ID     | UC-2                                                        |
+|-------------------|---------------------------------------------------------------------------|
+| Use-case name     | Quản lý lớp học của quản trị viên                                                        |
+| Actor             | Quản trị viên                                                             |
+| Description       | Quản trị viên quản lý lớp học |
+| Preconditions     | Đang đăng nhập với vai trò là quản trị viên                                                             | 
+| Normal Flow       | 1. Quản trị viên chọn quản lý lớp học </br>  2. Quản trị viên có thể chọn thêm lớp học, xem chi tiết 1 lớp học, chỉnh sửa 1 lớp học, thêm sinh viên vào lớp, phân bổ giảng viên quản lý và xóa 1 lớp học bất kì.                                                        |
+| Exceptions        | Không có                                                            |
+
+##### Quản lý khóa học
+<p align="center">
+  <img src="img/QTV-QLKH.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 6: Usecase quản lý khóa học</i>
+</p>
+
+| Use-case ID     | UC-3                                                        |
+|-------------------|---------------------------------------------------------------------------|
+| Use-case name     | Quản lý khóa học                                                       |
+| Actor             | Quản trị viên                                                             |
+| Description       | Quản trị viên quản lý khóa học |
+| Preconditions     | Đang đăng nhập với vai trò là quản trị viên                                                             | 
+| Normal Flow       | 1. Quản trị viên chọn quản lý khóa học </br>  2. Quản trị viên có thể chọn thêm khóa học, xem chi tiết 1 khóa học, chỉnh sửa 1 khóa học và xóa 1 lớp học bất kì.                                                        |
+| Exceptions        | Không có                                                            |
+
+#### Giảng viên
+<p align="center">
+  <img src="img/GV-QLLH.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 7: Usecase quản lý lớp học của giảng viên</i>
+</p>
+
+| Use-case ID     | UC-4                                                        |
+|-------------------|---------------------------------------------------------------------------|
+| Use-case name     | Quản lý lớp học của giảng viên                                                        |
+| Actor             | Giảng viên                                                             |
+| Description       | Giảng viên quản lý lớp học do mình phụ trách|
+| Preconditions     | Đang đăng nhập với vai trò là giảng viên                                                            | 
+| Normal Flow       | 1. Giảng viên chọn quản lý lớp học của mình </br>  2. Giảng viên có thể chọn xem thông tin chi tiết lớp học, xem điểm lớp học và cập nhật điểm cho lớp học.                                                        |
+| Exceptions        | Không có                                                            |
+
+#### Sinh viên
+<p align="center">
+  <img src="img/SV-UC.png" alt="SV-UC Diagram">
+  <br>
+  <i>Hình 8: Usecase xem thông tin lớp học</i>
+</p>
+
+| Use-case ID     | UC-5                                                        |
+|-------------------|---------------------------------------------------------------------------|
+| Use-case name     | Xem thông tin lớp học                                                        |
+| Actor             | Sinh viên                                                             |
+| Description       | Sinh viên xem thông tin lớp học mà mình tham gia|
+| Preconditions     | Đang đăng nhập với vai trò là sinh viên                                                            | 
+| Normal Flow       | 1. Sinh chọn xem lớp học của mình </br>  2. Sinh có thể chọn xem thông tin chi tiết lớp học, xem tên và email giảng viên phụ trách lớp đó và xem điểm của mình.                                                        |
+| Exceptions        | Không có                                                            |
