@@ -22,7 +22,7 @@ routes
 ### **AuthRoute**
 - `POST /admin/api/login` - `HandleLogin()`: Xử lý đăng nhập.
 - `POST /admin/api/logout` - `HandleRequireAuth()`, `HandleLogout()`: Xử lý đăng xuất, yêu cầu xác thực.
-- `POST /admin/api/create` - `HandleRequireAuth()`, `ValidateDataAdmin()`, `HandleCreateAdmin()`: Tạo admin mới, yêu cầu xác thực, và kiểm tra dữ liệu.
+- `POST /admin/api/create` - `HandleRequireAuth()`, `ValidateAdminData()`, `HandleCreateAdmin()`: Tạo admin mới, yêu cầu xác thực, và kiểm tra dữ liệu.
 - `GET /admin/api/profile` - `HandleRequireAuth()`, `HandleProfile()`: Lấy thông tin profile của admin, yêu cầu xác thực.
 
 ### **AccountRoute**
@@ -67,7 +67,7 @@ routes
 ### **AccountRoute**
 - `POST /api/login` - `HandleLogin()`: Đăng nhập.
 - `POST /api/logout` - `RequireUser()`, `HandleLogout()`: Đăng xuất, yêu cầu người dùng xác thực.
-- `GET /api/info` - `RequireUser()`, `HandleAccount()`: Lấy thông tin tài khoản người dùng, yêu cầu xác thực.
+- `GET /api/info` - `RequireUser()`, `HandleGetAccount()`: Lấy thông tin tài khoản người dùng, yêu cầu xác thực.
 - `GET /api/:id` - `HandleGetInfoByID()`: Lấy thông tin tài khoản theo ID.
 
 ### **ClassRoute**

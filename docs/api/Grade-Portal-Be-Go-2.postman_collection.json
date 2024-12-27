@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "3aea1210-2b09-4c3d-8640-2f3a1c085a26",
+		"_postman_id": "4a6c77ff-d307-4e9c-9959-97236ac13923",
 		"name": "Grade-Portal-Be-Go-2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "36162297"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38191136"
 	},
 	"item": [
 		{
@@ -13,17 +13,13 @@
 					"name": "index",
 					"item": [
 						{
-							"name": "LoginController",
+							"name": "Login",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGRlMTZkNmZiZWRhYzllM2I4ZDAwYSIsImV4cCI6MTczMDk2MDMxM30.AvlDrhMIFES-A2kJ6lkrv8EAnTRYbARc486m1eIDfh8",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MGRlMTZkNmZiZWRhYzllM2I4ZDAwYSIsImV4cCI6MTczMDk2MDMxM30.AvlDrhMIFES-A2kJ6lkrv8EAnTRYbARc486m1eIDfh8"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -36,15 +32,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/login",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"login"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/login"
 							},
 							"response": [
 								{
@@ -61,15 +49,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/login",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"login"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/login"
 									},
 									"status": "OK",
 									"code": 200,
@@ -109,15 +89,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/login",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"login"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/login"
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -142,29 +114,17 @@
 							]
 						},
 						{
-							"name": "LogoutController",
+							"name": "Logout",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/logout",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"logout"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/logout"
 							},
 							"response": [
 								{
@@ -172,15 +132,7 @@
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/logout",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"logout"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/logout"
 									},
 									"status": "OK",
 									"code": 200,
@@ -211,15 +163,7 @@
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/logout",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"logout"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/logout"
 									},
 									"status": "Unauthorized",
 									"code": 401,
@@ -244,17 +188,13 @@
 							]
 						},
 						{
-							"name": "CreateAdminController",
+							"name": "CreateAdmin",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -267,15 +207,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/create",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"create"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/create"
 							},
 							"response": [
 								{
@@ -292,15 +224,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/create",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/create"
 									},
 									"status": "OK",
 									"code": 200,
@@ -325,20 +249,16 @@
 							]
 						},
 						{
-							"name": "ProfileController",
+							"name": "Profile",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -351,15 +271,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/profile",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"profile"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/profile"
 							},
 							"response": [
 								{
@@ -367,24 +279,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/profile",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"profile"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/profile"
 									},
 									"status": "OK",
 									"code": 200,
@@ -414,17 +309,13 @@
 					"name": "account",
 					"item": [
 						{
-							"name": "AccountCreateController",
+							"name": "AccountCreate",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -437,16 +328,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/create",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"create"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/create"
 							},
 							"response": [
 								{
@@ -463,16 +345,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/create",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/create"
 									},
 									"status": "OK",
 									"code": 200,
@@ -501,26 +374,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/teacher",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"teacher"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/teacher"
 							},
 							"response": [
 								{
@@ -528,16 +388,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/teacher",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"teacher"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/teacher"
 									},
 									"status": "OK",
 									"code": 200,
@@ -566,26 +417,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/student",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"student"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/student"
 							},
 							"response": [
 								{
@@ -593,16 +431,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/student",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"student"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/student"
 									},
 									"status": "OK",
 									"code": 200,
@@ -634,13 +463,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -653,16 +478,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"672b85b8226ae67ef9aaa006"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006"
 							},
 							"response": [
 								{
@@ -670,25 +486,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"672b85b8226ae67ef9aaa006"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/672b85b8226ae67ef9aaa006"
 									},
 									"status": "OK",
 									"code": 200,
@@ -713,31 +511,17 @@
 							]
 						},
 						{
-							"name": "DeletedAccountController",
+							"name": "DeletedAccount",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAyMDUyM30.FBUPusr133QV0FRDCtUEYMIacAFHFihs0PyY9Ae-thA"
+									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/delete/67193b292a9a34cfa293841c",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"delete",
-										"67193b292a9a34cfa293841c"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/delete/67193b292a9a34cfa293841c"
 							},
 							"response": [
 								{
@@ -745,17 +529,7 @@
 									"originalRequest": {
 										"method": "DELETE",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/delete/674a8d4d9d65503d01c2b599",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"delete",
-												"674a8d4d9d65503d01c2b599"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/delete/674a8d4d9d65503d01c2b599"
 									},
 									"status": "OK",
 									"code": 200,
@@ -780,17 +554,13 @@
 							]
 						},
 						{
-							"name": "ChangeAccountController",
+							"name": "ChangeAccount",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "PATCH",
 								"header": [],
@@ -803,17 +573,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"account",
-										"change",
-										"674a8d4d9d65503d01c2b599"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599"
 							},
 							"response": [
 								{
@@ -830,17 +590,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"account",
-												"change",
-												"674a8d4d9d65503d01c2b599"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/account/change/674a8d4d9d65503d01c2b599"
 									},
 									"status": "OK",
 									"code": 200,
@@ -874,13 +624,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -893,16 +639,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/create",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"create"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/create"
 							},
 							"response": [
 								{
@@ -919,16 +656,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/create",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/create"
 									},
 									"status": "OK",
 									"code": 200,
@@ -960,13 +688,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -979,17 +703,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"account",
-										"672b85b8226ae67ef9aaa007"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007"
 							},
 							"response": [
 								{
@@ -997,26 +711,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa005",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"account",
-												"672b85b8226ae67ef9aaa005"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa005"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1043,26 +738,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"account",
-												"672b85b8226ae67ef9aaa007"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/account/672b85b8226ae67ef9aaa007"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1091,26 +767,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"672b87af226ae67ef9aaa047"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047"
 							},
 							"response": [
 								{
@@ -1118,16 +781,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"672b87af226ae67ef9aaa047"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/672b87af226ae67ef9aaa047"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1159,13 +813,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
@@ -1178,17 +828,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"course",
-										"672b86fd226ae67ef9aaa045"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045"
 							},
 							"response": [
 								{
@@ -1196,26 +836,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"course",
-												"672b86fd226ae67ef9aaa045"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/course/672b86fd226ae67ef9aaa045"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1240,31 +861,17 @@
 							]
 						},
 						{
-							"name": "DeleteClassController",
+							"name": "DeleteClass",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"delete",
-										"67375642ec72767cfd44630c"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c"
 							},
 							"response": [
 								{
@@ -1272,17 +879,7 @@
 									"originalRequest": {
 										"method": "DELETE",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"delete",
-												"67375642ec72767cfd44630c"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/delete/67375642ec72767cfd44630c"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1311,13 +908,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "PATCH",
 								"header": [],
@@ -1330,16 +923,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/add",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"add"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/add"
 							},
 							"response": [
 								{
@@ -1356,16 +940,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/add",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"add"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/add"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1390,17 +965,13 @@
 							]
 						},
 						{
-							"name": "ChangeClassController",
+							"name": "ChangeClass",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "PATCH",
 								"header": [],
@@ -1413,17 +984,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"class",
-										"change",
-										"67375815ec72767cfd44630d"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d"
 							},
 							"response": [
 								{
@@ -1440,17 +1001,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"class",
-												"change",
-												"67375815ec72767cfd44630d"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/class/change/67375815ec72767cfd44630d"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1484,13 +1035,9 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -1503,16 +1050,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/course/create",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"course",
-										"create"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/course/create"
 							},
 							"response": [
 								{
@@ -1529,16 +1067,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/course/create",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"course",
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/course/create"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1567,26 +1096,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"course",
-										"674ac0549d65503d01c2b59e"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e"
 							},
 							"response": [
 								{
@@ -1594,16 +1110,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"course",
-												"674ac0549d65503d01c2b59e"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/course/674ac0549d65503d01c2b59e"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1628,30 +1135,17 @@
 							]
 						},
 						{
-							"name": "GetAllCourseController",
+							"name": "GetAllCourse",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/course/all",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"course",
-										"all"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/course/all"
 							},
 							"response": [
 								{
@@ -1659,16 +1153,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/course/all",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"course",
-												"all"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/course/all"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1693,31 +1178,17 @@
 							]
 						},
 						{
-							"name": "DeleteCourseController",
+							"name": "DeleteCourse",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"course",
-										"delete",
-										"674ac0549d65503d01c2b59e"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e"
 							},
 							"response": [
 								{
@@ -1725,17 +1196,7 @@
 									"originalRequest": {
 										"method": "DELETE",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"course",
-												"delete",
-												"674ac0549d65503d01c2b59e"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/course/delete/674ac0549d65503d01c2b59e"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1760,17 +1221,13 @@
 							]
 						},
 						{
-							"name": "UpdateCourseController",
+							"name": "UpdateCourse",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "PATCH",
 								"header": [],
@@ -1783,17 +1240,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"course",
-										"change",
-										"6730cf4ee13cf54ebe00f3cf"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf"
 							},
 							"response": [
 								{
@@ -1810,17 +1257,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"course",
-												"change",
-												"6730cf4ee13cf54ebe00f3cf"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/course/change/6730cf4ee13cf54ebe00f3cf"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1850,30 +1287,17 @@
 					"name": "result",
 					"item": [
 						{
-							"name": "GetResultScoreController",
+							"name": "GetResultScore",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"result",
-										"672b87af226ae67ef9aaa047"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047"
 							},
 							"response": [
 								{
@@ -1881,16 +1305,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"result",
-												"672b87af226ae67ef9aaa047"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/result/672b87af226ae67ef9aaa047"
 									},
 									"status": "OK",
 									"code": 200,
@@ -1915,17 +1330,13 @@
 							]
 						},
 						{
-							"name": "ResultScoreController",
+							"name": "ResultScore",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -1938,16 +1349,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/result/create",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"result",
-										"create"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/result/create"
 							},
 							"response": [
 								{
@@ -1964,16 +1366,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/result/create",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"result",
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/result/create"
 									},
 									"status": "OK",
 									"code": 200,
@@ -2003,17 +1396,13 @@
 					"name": "HOF",
 					"item": [
 						{
-							"name": "UpdateHallOfFameController",
+							"name": "UpdateHallOfFame",
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "POST",
 								"header": [],
@@ -2026,16 +1415,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/HOF/update",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"HOF",
-										"update"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/HOF/update"
 							},
 							"response": [
 								{
@@ -2052,16 +1432,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/HOF/update",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"HOF",
-												"update"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/HOF/update"
 									},
 									"status": "OK",
 									"code": 200,
@@ -2090,26 +1461,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4",
-											"type": "string"
-										}
-									]
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDliZGU3ODJjMGM0NjVmMTJkNWQxMSIsImV4cCI6MTczMzAzNzEzNn0.VqR1JtoboM7gFcroVi3EftQF9JVoA0oBvZYPLq7hrE4"
+									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "{{BASE_URL_ADMIN}}/HOF/all",
-									"host": [
-										"{{BASE_URL_ADMIN}}"
-									],
-									"path": [
-										"HOF",
-										"all"
-									]
-								}
+								"url": "{{BASE_URL_ADMIN}}/HOF/all"
 							},
 							"response": [
 								{
@@ -2117,16 +1475,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_ADMIN}}/HOF/all",
-											"host": [
-												"{{BASE_URL_ADMIN}}"
-											],
-											"path": [
-												"HOF",
-												"all"
-											]
-										}
+										"url": "{{BASE_URL_ADMIN}}/HOF/all"
 									},
 									"status": "OK",
 									"code": 200,
@@ -2164,7 +1513,7 @@
 							"name": "index",
 							"item": [
 								{
-									"name": "LoginController",
+									"name": "Login",
 									"request": {
 										"method": "POST",
 										"header": [],
@@ -2177,15 +1526,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/login",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"login"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/login"
 									},
 									"response": [
 										{
@@ -2202,15 +1543,7 @@
 														}
 													}
 												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/login",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"login"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/login"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2239,46 +1572,26 @@
 									]
 								},
 								{
-									"name": "LogoutController",
+									"name": "Logout",
 									"request": {
 										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/logout",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"logout"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/logout"
 									},
 									"response": []
 								},
 								{
-									"name": "AccountController",
+									"name": "Account",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTM3ZWI0NjA0NDFlZmI1NzZhMTk0YiIsImV4cCI6MTczMDk4MDgyNX0.7Cdz1UFLS4qdAal_yLU8XsHfBmGz2SeXYeBh1gyQtCY",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MTM3ZWI0NjA0NDFlZmI1NzZhMTk0YiIsImV4cCI6MTczMDk4MDgyNX0.7Cdz1UFLS4qdAal_yLU8XsHfBmGz2SeXYeBh1gyQtCY"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/info",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"info"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/info"
 									},
 									"response": [
 										{
@@ -2292,24 +1605,7 @@
 														"type": "text"
 													}
 												],
-												"body": {
-													"mode": "raw",
-													"raw": "",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/info",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"info"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/info"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2341,13 +1637,9 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
@@ -2360,15 +1652,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"674a83d59d65503d01c2b597"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597"
 									},
 									"response": [
 										{
@@ -2376,24 +1660,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"body": {
-													"mode": "raw",
-													"raw": "",
-													"options": {
-														"raw": {
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"674a83d59d65503d01c2b597"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/674a83d59d65503d01c2b597"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2423,30 +1690,17 @@
 							"name": "class",
 							"item": [
 								{
-									"name": "ClassDetailController",
+									"name": "ClassDetail",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/class/account",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"class",
-												"account"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/class/account"
 									},
 									"response": [
 										{
@@ -2454,16 +1708,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/class/account",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"class",
-														"account"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/class/account"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2488,30 +1733,17 @@
 									]
 								},
 								{
-									"name": "ClassAccountController",
+									"name": "ClassAccount",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"class",
-												"674abe469d65503d01c2b59d"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d"
 									},
 									"response": [
 										{
@@ -2519,16 +1751,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"class",
-														"674abe469d65503d01c2b59d"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/class/674abe469d65503d01c2b59d"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2551,6 +1774,14 @@
 											"body": "{\n    \"data\": {\n        \"ID\": \"674abe469d65503d01c2b59d\",\n        \"Semester\": \"HK242\",\n        \"Name\": \"L01\",\n        \"CourseId\": \"672b86fd226ae67ef9aaa045\",\n        \"ListStudentMs\": [\n            \"2222222\",\n            \"2210011\",\n            \"2210012\",\n            \"2211417\",\n            \"12112322313100000\"\n        ],\n        \"TeacherId\": \"672b85b8226ae67ef9aaa006\",\n        \"CreatedBy\": \"6749bde782c0c465f12d5d11\",\n        \"UpdatedBy\": \"6749bde782c0c465f12d5d11\"\n    },\n    \"message\": \"Lấy lớp học thành công\",\n    \"status\": \"Success\"\n}"
 										}
 									]
+								},
+								{
+									"name": "ClassCount",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
 								}
 							]
 						},
@@ -2562,26 +1793,13 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"course",
-												"672b86fd226ae67ef9aaa045"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045"
 									},
 									"response": [
 										{
@@ -2589,16 +1807,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"course",
-														"672b86fd226ae67ef9aaa045"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2628,31 +1837,17 @@
 							"name": "result",
 							"item": [
 								{
-									"name": "ResultController",
+									"name": "GetResultByID",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"result",
-												"getmark",
-												"CO3103-242"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242"
 									},
 									"response": [
 										{
@@ -2660,17 +1855,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"result",
-														"getmark",
-														"CO3103-242"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/result/getmark/CO3103-242"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2699,26 +1884,13 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/result/getmark",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"result",
-												"getmark"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/result/getmark"
 									},
 									"response": [
 										{
@@ -2726,16 +1898,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/result/getmark",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"result",
-														"getmark"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/result/getmark"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2769,26 +1932,13 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDljZmRhZjI4NzNjMGM2YzVmYTdlMCIsImV4cCI6MTczMzAzOTM5NH0.cWSKxGd0gTOwAH6aAyKe1Z6eTdiUX-QscXvcwYYMzyc"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/HOF/all",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"HOF",
-												"all"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/HOF/all"
 									},
 									"response": [
 										{
@@ -2796,16 +1946,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/HOF/all",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"HOF",
-														"all"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/HOF/all"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2840,7 +1981,7 @@
 							"name": "index",
 							"item": [
 								{
-									"name": "LoginController",
+									"name": "Login",
 									"request": {
 										"method": "POST",
 										"header": [],
@@ -2853,15 +1994,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/login",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"login"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/login"
 									},
 									"response": [
 										{
@@ -2878,15 +2011,7 @@
 														}
 													}
 												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/login",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"login"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/login"
 											},
 											"status": "OK",
 											"code": 200,
@@ -2915,46 +2040,26 @@
 									]
 								},
 								{
-									"name": "LogoutController",
+									"name": "Logout",
 									"request": {
 										"method": "POST",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/logout",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"logout"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/logout"
 									},
 									"response": []
 								},
 								{
-									"name": "AccountController",
+									"name": "Account",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/info",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"info"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/info"
 									},
 									"response": [
 										{
@@ -2962,15 +2067,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/info",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"info"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/info"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3000,30 +2097,17 @@
 							"name": "class",
 							"item": [
 								{
-									"name": "ClassDetailController",
+									"name": "ClassDetail",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/class/account",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"class",
-												"account"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/class/account"
 									},
 									"response": [
 										{
@@ -3031,16 +2115,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/class/account",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"class",
-														"account"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/class/account"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3065,30 +2140,17 @@
 									]
 								},
 								{
-									"name": "ClassAccountController",
+									"name": "ClassAccount",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"class",
-												"6732e83c95f2243e7eeb497e"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e"
 									},
 									"response": [
 										{
@@ -3096,16 +2158,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"class",
-														"6732e83c95f2243e7eeb497e"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/class/6732e83c95f2243e7eeb497e"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3138,7 +2191,8 @@
 									"name": "getCourseById",
 									"request": {
 										"method": "GET",
-										"header": []
+										"header": [],
+										"url": ""
 									},
 									"response": [
 										{
@@ -3146,16 +2200,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"course",
-														"672b86fd226ae67ef9aaa045"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/course/672b86fd226ae67ef9aaa045"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3185,17 +2230,13 @@
 							"name": "result",
 							"item": [
 								{
-									"name": "CreateResultScoreController",
+									"name": "CreateResultScore",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "POST",
 										"header": [],
@@ -3208,16 +2249,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/result/create",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"result",
-												"create"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/result/create"
 									},
 									"response": [
 										{
@@ -3234,16 +2266,7 @@
 														}
 													}
 												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/result/create",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"result",
-														"create"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/result/create"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3272,26 +2295,13 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"result",
-												"6732e83c95f2243e7eeb497e"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e"
 									},
 									"response": [
 										{
@@ -3299,16 +2309,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"result",
-														"6732e83c95f2243e7eeb497e"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/result/6732e83c95f2243e7eeb497e"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3333,17 +2334,13 @@
 									]
 								},
 								{
-									"name": "ResultPatchController",
+									"name": "ResultPatch",
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "PATCH",
 										"header": [],
@@ -3356,16 +2353,7 @@
 												}
 											}
 										},
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/result/change",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"result",
-												"change"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/result/change"
 									},
 									"response": [
 										{
@@ -3382,16 +2370,7 @@
 														}
 													}
 												},
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/result/change",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"result",
-														"change"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/result/change"
 											},
 											"status": "OK",
 											"code": 200,
@@ -3425,26 +2404,13 @@
 									"request": {
 										"auth": {
 											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ",
-													"type": "string"
-												}
-											]
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NGFjODk3NDQwYjY2ZDE4NjZlMzM4NiIsImV4cCI6MTczMzA0MDcxNH0.6T53hcG4MuC_OWm0qK4ylsp1n9maMUzg-F1FXJCm8oQ"
+											}
 										},
 										"method": "GET",
 										"header": [],
-										"url": {
-											"raw": "{{BASE_URL_CLIENT}}/HOF/all",
-											"host": [
-												"{{BASE_URL_CLIENT}}"
-											],
-											"path": [
-												"HOF",
-												"all"
-											]
-										}
+										"url": "{{BASE_URL_CLIENT}}/HOF/all"
 									},
 									"response": [
 										{
@@ -3452,16 +2418,7 @@
 											"originalRequest": {
 												"method": "GET",
 												"header": [],
-												"url": {
-													"raw": "{{BASE_URL_CLIENT}}/HOF/all",
-													"host": [
-														"{{BASE_URL_CLIENT}}"
-													],
-													"path": [
-														"HOF",
-														"all"
-													]
-												}
+												"url": "{{BASE_URL_CLIENT}}/HOF/all"
 											},
 											"status": "OK",
 											"code": 200,
