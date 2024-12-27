@@ -1,10 +1,9 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 // Sử dụng biến môi trường
-// var YOUR_REDIRECT_URI = process.env.API_URL;
-// var YOUR_CLIENT_ID = process.env.YOUR_CLIENT_ID;
-YOUR_CLIENT_ID = '836560995551-5joc9tjdcta8fvjg05tasigq09ojvpj2.apps.googleusercontent.com';
-YOUR_REDIRECT_URI = 'http://127.0.0.1:5500/src/index.html';
+var YOUR_REDIRECT_URI = process.env.API_URL;
+var YOUR_CLIENT_ID = process.env.YOUR_CLIENT_ID;
+
 // console.log(YOUR_CLIENT_ID, YOUR_REDIRECT_URI)
 // Phân tích chuỗi truy vấn để kiểm tra xem trang có yêu cầu từ máy chủ OAuth 2.0 không.
 var fragmentString = location.hash.substring(1);
