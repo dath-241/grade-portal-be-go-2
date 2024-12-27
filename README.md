@@ -93,6 +93,13 @@ Xem chi tiết trong báo cáo tổng hợp: [tại đây](docs/reports/FinalRep
 - <a href="https://docs.github.com/en"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a></br>
 ## Hướng dẫn sử dụng
 Xem hướng dẫn sử dụng: [tại đây](./docs/Guild/SETUP.md).  
+
+## CI/CD
+[Git action](https://github.com/dath-241/grade-portal-be-go-2/actions)
+
+## Deployment
+Base URL: [https://a3-grade.thuanle.me/](https://a3-grade.thuanle.me/)
+
 ## Báo cáo
 - Báo cáo tiến độ làm việc theo tuần: [tại đây](./docs/reports/Weekly).
 - Báo cáo tổng hợp: [tại đây](./docs/reports/FinalReport/finalReport.md).
