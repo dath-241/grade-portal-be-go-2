@@ -30,6 +30,7 @@ type InterfaceResult struct {
 	ExpiredAt time.Time     `bson:"expiredAt"`
 	CreatedBy bson.ObjectID `bson:"createdBy"`
 	UpdatedBy bson.ObjectID `bson:"updatedBy"`
+	Status string 					`bson:"status"`
 }
 
 func ResultScoreModel() *mongo.Collection {

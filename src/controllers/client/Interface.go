@@ -39,3 +39,15 @@ type LoginInterface struct {
 	Ms       string `json:"ms"`
 	Password string `json:"password"`
 }
+type Class4Teacher struct {
+	Semester      string   `json:"semester"`
+	Name          string   `json:"name"` 
+	CourseId      string   `json:"course_id"`
+	ListStudentMs []string `json:"listStudent_ms"`
+	CsvURL 				string   `json:"csv_url"`
+	LastModified 	string   `json:"last_mod"`
+}
+type StudentRecord struct {
+	MSSV string                   `json:"MMSV"`
+	Data InterfaceScoreController `json:"Data"`
+}

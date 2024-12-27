@@ -3,6 +3,7 @@ package controller_client
 import (
 	"Go2/models"
 	"context"
+	"fmt"
 	"strings"
 	"time"
 
@@ -28,7 +29,6 @@ func HandleResult(c *gin.Context) {
 		})
 		return
 	}
-
 	// Kiểm tra vai trò của người dùng
 	if user.Role == "teacher" {
 		c.JSON(200, gin.H{
@@ -36,8 +36,9 @@ func HandleResult(c *gin.Context) {
 			"data": result,
 		})
 		return
-	} else if user.Role == "student" {
-		for _, item := range result.SCORE {
+		} else if user.Role == "student" {
+			for _, item := range result.SCORE {
+			fmt.Println(item.MSSV)
 			if item.MSSV == user.Ms {
 				c.JSON(200, gin.H{
 					"status":  "Success",
