@@ -14,6 +14,8 @@ type InterfaceClass struct {
 	TeacherId     bson.ObjectID `bson:"teacher_id"`
 	CreatedBy     bson.ObjectID `bson:"createdBy"` 
 	UpdatedBy     bson.ObjectID `bson:"updatedBy"`
+	CsvURL 				string   			`bson:"csv_url"`
+	LastModified 	string    		`bson:"last_mod"`
 }
 type InterfaceClassStudent struct {
 	ID        bson.ObjectID `bson:"_id,omitempty"`

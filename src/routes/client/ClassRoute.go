@@ -1,9 +1,10 @@
 package routes_client
 
 import (
-    controller_client "Go2/controllers/client"
+	controller_client "Go2/controllers/client"
+	middlewares_client "Go2/middlewares/client"
 
-    "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 )
 
 // ClassRoute thiết lập các route cho việc quản lý lớp học
@@ -16,4 +17,6 @@ func ClassRoute(r *gin.RouterGroup) {
 
     // Route để đếm số lượng lớp học của một môn học
     r.GET("/count/:id", controller_client.HandleCountDocuments)
+
+    r.POST("/create", middlewares_client.RequireTeacher, controller_client.HandleAddClass)
 }
