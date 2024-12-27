@@ -409,7 +409,7 @@ func monitorAndDownload(c *gin.Context, url string, interval time.Duration, Resc
 			lastModified = modified
 			// collection.UpdateByID(context.TODO(), id, bson.M{"last_mod": lastModified})
 			// Tải và phân tích file mới
-			records, err := parseCSV(url)
+			records, err := parseCSV(classDetail.CsvURL)
 			if err != nil {
 				fmt.Println("Failed to parse CSV:", err)
 				time.Sleep(interval)
