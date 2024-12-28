@@ -200,3 +200,96 @@ Database: Chứa các dữ liệu "tài khoản", "lớp học", "khóa học", 
 | Preconditions     | Đang đăng nhập với vai trò là sinh viên                                                            | 
 | Normal Flow       | 1. Sinh chọn xem lớp học của mình </br>  2. Sinh có thể chọn xem thông tin chi tiết lớp học, xem tên và email giảng viên phụ trách lớp đó và xem điểm của mình.                                                        |
 | Exceptions        | Không có                                                            |
+### Class Diagram
+# Component Diagram
+
+## Class Diagram
+
+![Class Diagram](img/class.png)
+
+**Giải thích:**
+- **Class Account:** Lưu trữ thông tin về các tài khoản người dùng, bao gồm các thuộc tính như ID, Email, và vai trò (Sinh viên, Giảng viên, Quản trị viên).
+- **Class Admin:** Đại diện cho quản trị viên của hệ thống, có quyền quản lý và tạo mới các tài khoản người dùng, lớp học, khóa học, v.v.
+- **Class Course và Class:** Quản lý thông tin về lớp học và khóa học, bao gồm các thuộc tính như tên lớp, tên giảng viên, thông tin sinh viên, tên khóa học, và mô tả.
+- **Class Result và Score:** Lưu trữ kết quả điểm số của sinh viên, đồng thời kết nối với lớp học và khóa học để liên kết điểm số với lớp học và khóa học tương ứng.
+
+##  Công nghệ sử dụng trong dự án
+
+###  Backend: Gin (Go Framework)
+Gin Framework là nền tảng chính để xây dựng RESTful API, cung cấp:
+- Định tuyến (Routing) nhanh và hiệu quả.
+- Middleware (JWT, CORS, Logging).
+- Xử lý lỗi (Error handling) và quản lý request/response.
+
+###  Database: MongoDB
+MongoDB là cơ sở dữ liệu NoSQL lưu trữ dữ liệu dưới dạng JSON hoặc BSON. Nó được sử dụng để quản lý các thông tin:
+- Tài khoản người dùng: Email, vai trò (admin, teacher, student).
+- Lớp học và khóa học: Thông tin về lớp học, khóa học, danh sách sinh viên.
+- Kết quả học tập: Điểm số của sinh viên, dữ liệu bảng điểm.
+- Hall of Fame: Danh sách sinh viên đạt thành tích cao.
+
+###  JWT (JSON Web Token)
+JWT được sử dụng để xác thực và phân quyền người dùng:
+- Khi người dùng đăng nhập, hệ thống tạo ra một token (JWT) chứa thông tin người dùng (ID, vai trò, email).
+- Token được gửi kèm trong header của các yêu cầu để xác minh quyền truy cập.
+- Các vai trò (admin, teacher, student) sẽ quyết định quyền hạn.
+
+### Git Action
+GitHub Actions là một tính năng mạnh mẽ của GitHub, cho phép tự động hóa các workflow (quy trình làm việc) trực tiếp trong repository. Nó tích hợp CI/CD (Continuous Integration/Continuous Deployment) và các công việc tùy chỉnh khác như kiểm tra mã nguồn, triển khai ứng dụng, và quản lý tài nguyên. GitHub Actions giúp cải thiện hiệu suất phát triển phần mềm bằng cách tự động hóa các quy trình lặp lại và phức tạp.
+
+### Chức năng
+- **Tự động hóa quy trình phát triển:**
+  - Build, test, và triển khai ứng dụng mỗi khi có thay đổi mã nguồn.
+  - Hỗ trợ CI/CD để đảm bảo chất lượng sản phẩm và triển khai nhanh chóng.
+  
+- **Tích hợp và triển khai dễ dàng:**
+  - Làm việc trực tiếp với repository trên GitHub.
+  - Hỗ trợ nhiều ngôn ngữ lập trình và frameworks.
+
+- **Quy trình làm việc linh hoạt:**
+  - Tạo các workflow theo yêu cầu với tệp YAML.
+  - Cấu hình chạy theo các sự kiện (push, pull request, schedule, v.v.).
+
+## 3.5 Docker
+Docker là một công cụ mạnh mẽ giúp quản lý các ứng dụng và môi trường triển khai.
+- Docker giúp đóng gói ứng dụng và các phụ thuộc vào container, đảm bảo ứng dụng chạy nhất quán trên các môi trường khác nhau.
+- Docker giúp triển khai nhanh chóng các dịch vụ và ứng dụng mà không cần cấu hình lại môi trường hệ thống.
+- Docker Compose giúp quản lý nhiều container trong dự án, giúp dễ dàng triển khai các ứng dụng phức tạp với nhiều dịch vụ.
+
+### CORS (Cross-Origin Resource Sharing)
+- CORS được cấu hình để đảm bảo frontend có thể truy cập API từ các domain khác nhau, trong khi vẫn bảo mật hệ thống.
+  - Chỉ định các phương thức HTTP được phép (GET, POST, PUT, DELETE).
+  - Xác định danh sách các nguồn (origin) đáng tin cậy.
+## Quy trình làm việc
+
+## Milestones
+
+### Phân tích yêu cầu và thiết kế API
+- Xác định các yêu cầu chức năng và phi chức năng.
+- Phân tích và xác định các endpoint cần thiết.
+- Hoàn thành tài liệu thiết kế API (bao gồm các endpoint, mô tả, method, payload).
+
+### Phát triển API từng phần
+- Mỗi endpoint sẽ được phát triển, kiểm thử đơn vị (unit test), và tích hợp liên tục (CI/CD) trước thời hạn.
+
+### Kiểm thử và tối ưu hóa API
+- Kiểm thử chức năng (Functionality Testing).
+- Xử lý các lỗi phát sinh.
+- Tối ưu hóa hiệu suất API.
+
+### Triển khai và hoàn thiện API
+- Triển khai API lên môi trường staging và kiểm tra tích hợp cuối cùng.
+- Hoàn thành triển khai API lên môi trường production.
+
+## Report
+
+### Báo cáo
+- Các thành viên trong nhóm phải báo cáo tiến độ định kỳ vào mỗi tối thứ 7 hàng tuần, nếu có feature mới thì sẽ linh hoạt hơn và báo cáo đúng thời hạn được giao.
+  
+- Nội dung báo cáo:
+  - Nhiệm vụ đã hoàn thành.
+  - Khó khăn gặp phải trong quá trình phát triển.
+  - Góp ý và ý tưởng đóng góp mới.
+
+### Phương tiện làm việc
+- Zalo, Github, Discord
