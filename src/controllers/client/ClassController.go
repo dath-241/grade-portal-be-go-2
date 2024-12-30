@@ -6,6 +6,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"net/http"
+	"net/url"
 	"strconv"
 	"strings"
 	"time"
@@ -14,6 +15,11 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )
+
+var TIME_INTERVAL = 3 * time.Second
+var TIME_MONITOR = 10 * time.Minute
+
+
 
 // HandleTeacherClasses xử lý việc lấy danh sách lớp học của giáo viên.
 func HandleTeacherClasses(c *gin.Context) {
@@ -211,32 +217,6 @@ func HandleCountDocuments(c *gin.Context) {
 	})
 }
 
-// func HandleAddClass(c *gin.Context){
-// var newSubject Subject
-// 		if err := c.ShouldBindJSON(&newSubject); err != nil {
-// 			c.JSON(400, gin.H{"error": err.Error()})
-// 			return
-// 		}
-// 		file, err := http.Get(newSubject.CSVURL)
-// 		if err != nil {
-// 			fmt.Println("Error fetching CSV:", err)
-// 			return
-// 		}
-// 		defer file.Body.Close()
-
-// 		reader := csv.NewReader(file.Body)
-// 		records, err := reader.ReadAll()
-// 		if err != nil {
-// 			fmt.Println("Error:", err)
-// 			return
-// 		}
-// 		headers := records[0]
-// 		for _, record := range records[1:] { // Bỏ qua tiêu đề
-// 			dynamicRecord := NewDynamicRecord(record, headers)
-// 			dynamicRecords = append(dynamicRecords, *dynamicRecord)
-// 		}
-// 	}
-
 func HandleAddClass(c *gin.Context) {
 	var data Class4Teacher
 	if err := c.BindJSON(&data); err != nil {
@@ -278,23 +258,19 @@ func HandleAddClass(c *gin.Context) {
 		return
 	}
 
-	// Thêm nếu không bị trùng lặp
-	// createdBy, _ := c.Get("ID")
-	// c.JSON(200, gin.H{
-	// 	"status":  "Fail",
-	// 	"message": bson.M{
-	// 		"semester":       data.Semester,
-	// 		"name":           data.Name,
-	// 		"course_id":      courseID,
-	// 		"listStudent_ms": data.ListStudentMs,
-	// 		"teacher_id":     teacher.ID,
-	// 		"createdBy":      teacher.ID,
-	// 		"updatedBy":      teacher.ID,
-	// 		"csv_url":        data.CsvURL,
-	// 		"last_mod":       time.Now(),
-	// 	},
-	// })
-	// return
+	if isDirectLink(data.CsvURL) {
+	} else {
+		directLink, err := convertToDirectLink(data.CsvURL)
+		if err != nil {
+			c.JSON(400, gin.H{
+				"status": "fail",
+				"message": err.Error(),
+			})
+			return
+		}
+		data.CsvURL = directLink;
+	}
+	
 	resp, err := http.Head(data.CsvURL)
 	if err != nil {
 		fmt.Println("Failed to check file:", err)
@@ -325,12 +301,11 @@ func HandleAddClass(c *gin.Context) {
 		"course_id": data.CourseId,
 		"score":     dataResult.SCORE,
 		"class_id":  result.InsertedID,
-		"expiredAt": time.Now().Add(10 * time.Minute),
+		"expiredAt": time.Now().Add(TIME_MONITOR),
 		"createdBy": teacher.ID,
 		"updatedBy": teacher.ID,
 		"status": "active",
 	})
-	checkInterval := 3 * time.Second
 	fmt.Println(result.InsertedID)
 	// monitorAndDownload(c, data.CsvURL, checkInterval, collection, result.InsertedID.(primitive.ObjectID))
 	if err != nil {
@@ -340,12 +315,130 @@ func HandleAddClass(c *gin.Context) {
 		})
 		return
 	}
-	go monitorAndDownload(c, data.CsvURL, checkInterval, Rescollection, collection, Resresult.InsertedID, result.InsertedID)
+	go monitorAndDownload(c, TIME_INTERVAL, Rescollection, collection, Resresult.InsertedID, result.InsertedID)
 	c.JSON(200, gin.H{
 		"status":  "success",
 		"message": result.InsertedID,
 	})
 }
+
+func HandleUpdateClassCsvURL(c *gin.Context){
+	user, _ := c.Get("user")
+	teacher := user.(models.InterfaceAccount)
+	param := c.Param("id")
+	classID, err := bson.ObjectIDFromHex(param)
+	if err != nil {
+		c.JSON(400, gin.H{
+			"status":    "Fail",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
+		})
+		return
+	}
+	var data InterfaceChangeClassController
+	if err := c.BindJSON(&data); err != nil {
+		c.JSON(400, gin.H{
+			"status":    "Fail",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
+		})
+		return
+	}
+	fmt.Println()
+	if data.Name == "" {
+		c.JSON(400, gin.H{
+      "status":    "Fail",
+      "message": "Tên lớp không được để trống",
+    })
+    return
+	}
+	if data.Semester == "" {
+		c.JSON(400, gin.H{
+      "status":    "Fail",
+      "message": "Semester không được để trống",
+    })
+    return
+	}
+	var courseID bson.ObjectID
+	courseIDStr, _ := data.CourseId.(string)
+	if courseIDStr != "" {
+		courseID, err = bson.ObjectIDFromHex(courseIDStr)
+		if err != nil {
+			c.JSON(400, gin.H{
+				"status":    "Fail",
+				"message": "Course ID không hợp lệ",
+			})
+			return
+		}
+		data.CourseId = courseID
+	}
+	collection := models.ClassModel()
+	var class models.InterfaceClass
+
+	if err := collection.FindOne(context.TODO(), bson.M{"_id": classID}).Decode(&class); err != nil {
+		if err == mongo.ErrNoDocuments {
+      c.JSON(404, gin.H{
+        "status":    "Fail",
+        "message": "Không tìm thấy lớp học",
+      })
+      return
+    }
+    c.JSON(500, gin.H{
+      "status":    "Fail",
+      "message": "Lỗi hệ thống",
+    })
+    return
+	}
+	if (class.CourseId == courseID && class.Semester == data.Semester && class.Name == data.Name){
+
+	}else{
+		isDuplicate, err := CheckDuplicateClass(collection, data.Semester, courseID, data.Name, teacher.ID)
+		if err != nil {	
+			c.JSON(500, gin.H{
+				"status":    "Fail",
+				"message": "Lỗi khi kiểm tra dữ liệu",
+			})
+			return
+		}
+		
+		// Nếu lớp học đã tồn tại, trả về lỗi
+		if isDuplicate {
+			c.JSON(400, gin.H{
+				"status":    "Fail",
+				"message": "Lớp học đã tồn tại",
+			})
+			return
+		}
+	}
+	// Kiểm tra xem lớp học có bị trùng không
+	if isDirectLink(data.CsvURL) {
+		} else {
+			directLink, err := convertToDirectLink(data.CsvURL)
+			if err != nil {
+				c.JSON(400, gin.H{
+					"status": "fail",
+					"message": err.Error(),
+				})
+				return
+			}
+			data.CsvURL = directLink;
+		}
+	
+	// Thêm nếu không bị trùng lặp
+	_ , err = collection.UpdateOne(context.TODO(), bson.M{"_id": classID}, bson.M{"$set": data})
+	
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":    "Fail",
+			"message": "Lỗi khi cập nhật lớp học",
+		})
+		return
+	}
+	
+	c.JSON(200, gin.H{
+		"status":    "Success",
+		"message": "Cập nhật lớp học thành công",
+	})
+}
+
 
 func CheckDuplicateClass(collection *mongo.Collection, semester string, courseID bson.ObjectID, name string, teacherID bson.ObjectID) (bool, error) {
 
@@ -365,7 +458,7 @@ func CheckDuplicateClass(collection *mongo.Collection, semester string, courseID
 	return true, nil // Tìm thấy bản ghi trùng
 }
 
-func monitorAndDownload(c *gin.Context, url string, interval time.Duration, Rescollection *mongo.Collection, collection *mongo.Collection, id interface{}, classId interface{}) {
+func monitorAndDownload(c *gin.Context, interval time.Duration, Rescollection *mongo.Collection, collection *mongo.Collection, id interface{}, classId interface{}) {
 	var lastModified string
 	for {
 		var res models.InterfaceResult
@@ -378,8 +471,14 @@ func monitorAndDownload(c *gin.Context, url string, interval time.Duration, Resc
 				"message": "Loi khi lay thong tin class",
 			})
 		}
-		if res.Status == "inactive" || res.ExpiredAt.Before(time.Now()) {
+		if res.Status == "inactive" {
 			break
+		}
+		if res.ExpiredAt.Before(time.Now()){
+			Rescollection.UpdateByID(context.TODO(), res.ID, bson.M{"$set": bson.M{
+				"status":"inactive",
+			}})
+			break;
 		}
 		var classDetail models.InterfaceClass
 		err = collection.FindOne(context.TODO(), bson.M{
@@ -560,4 +659,53 @@ func parseCSV(url string) ([]StudentRecord, error) {
 	}
 
 	return studentRecords, nil
+}
+
+func convertToDirectLink(shareLink string) (string, error) {
+	if !strings.Contains(shareLink, "drive.google.com") {
+		return "", fmt.Errorf("liên kết không phải của Google Drive")
+	}
+
+	var fileID string
+	if strings.Contains(shareLink, "/file/d/") {
+		parts := strings.Split(shareLink, "/file/d/")
+		if len(parts) > 1 {
+			fileIDParts := strings.Split(parts[1], "/")
+			fileID = fileIDParts[0]
+		}
+	} else if strings.Contains(shareLink, "id=") {
+		parts := strings.Split(shareLink, "id=")
+		fileID = strings.Split(parts[1], "&")[0]
+	} else {
+		return "", fmt.Errorf("không tìm thấy ID file trong liên kết")
+	}
+
+	directLink := fmt.Sprintf("https://drive.google.com/uc?export=download&id=%s", fileID)
+	return directLink, nil
+}
+
+func isDirectLink(link string) bool {
+	// Phân tích cú pháp URL
+	parsedURL, err := url.Parse(link)
+	if err != nil {
+		return false
+	}
+
+	// Kiểm tra host có phải drive.google.com không
+	if !strings.Contains(parsedURL.Host, "drive.google.com") {
+		return false
+	}
+
+	// Kiểm tra đường dẫn và các tham số truy vấn
+	path := parsedURL.Path
+	query := parsedURL.Query()
+
+	if strings.HasPrefix(path, "/uc") {
+		// Kiểm tra tham số export=download
+		if query.Get("export") == "download" && query.Get("id") != "" {
+			return true
+		}
+	}
+
+	return false
 }

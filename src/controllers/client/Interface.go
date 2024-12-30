@@ -1,5 +1,6 @@
 package controller_client
 
+
 type InterfaceAccount struct {
 	IDToken string `json:"idToken"`
 }
@@ -40,14 +41,21 @@ type LoginInterface struct {
 	Password string `json:"password"`
 }
 type Class4Teacher struct {
-	Semester      string   `json:"semester"`
-	Name          string   `json:"name"` 
-	CourseId      string   `json:"course_id"`
-	ListStudentMs []string `json:"listStudent_ms"`
-	CsvURL 				string   `json:"csv_url"`
-	LastModified 	string   `json:"last_mod"`
+	Semester      string   `json:"semester,omitempty"`
+	Name          string   `json:"name,omitempty"`
+	CourseId      string   `json:"course_id,omitempty"`
+	ListStudentMs []string `json:"listStudent_ms,omitempty"`
+	CsvURL        string   `json:"csv_url,omitempty"`
+	LastModified  string   `json:"last_mod,omitempty"`
 }
 type StudentRecord struct {
 	MSSV string                   `json:"MMSV"`
 	Data InterfaceScoreController `json:"Data"`
+}
+
+type InterfaceChangeClassController struct {
+	Semester      string   `json:"semester,omitempty"`
+	Name          string   `json:"name,omitempty"`
+	CourseId      any  `json:"course_id,omitempty"`
+	CsvURL        string   `json:"csv_url,omitempty" bson:"csv_url,omitempty"`
 }
