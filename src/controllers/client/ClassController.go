@@ -17,7 +17,7 @@ import (
 )
 
 var TIME_INTERVAL = 3 * time.Second
-var TIME_MONITOR = 10 * time.Minute
+var TIME_MONITOR = 10 * time.Second
 
 
 
@@ -301,7 +301,8 @@ func HandleAddClass(c *gin.Context) {
 		"course_id": data.CourseId,
 		"score":     dataResult.SCORE,
 		"class_id":  result.InsertedID,
-		"expiredAt": time.Now().Add(TIME_MONITOR),
+		"monitor_valid": time.Now().Add(TIME_MONITOR),
+		"expired_at": time.Now().AddDate(0, 6, 0),
 		"createdBy": teacher.ID,
 		"updatedBy": teacher.ID,
 		"status": "active",
@@ -472,13 +473,19 @@ func monitorAndDownload(c *gin.Context, interval time.Duration, Rescollection *m
 			})
 		}
 		if res.Status == "inactive" {
-			break
+			fmt.Println("user dont want monitor csv link")
+			return;
 		}
-		if res.ExpiredAt.Before(time.Now()){
-			Rescollection.UpdateByID(context.TODO(), res.ID, bson.M{"$set": bson.M{
-				"status":"inactive",
-			}})
-			break;
+		if res.MonitorValid.Before(time.Now()){
+			_, err := Rescollection.UpdateOne(context.TODO(), bson.M{"_id": res.ID}, bson.M{"$set": bson.M{
+				"status": "inactive",
+			}},)
+			if err != nil {
+				fmt.Println("Error")
+				return;
+			}
+			fmt.Println("Time out")
+			return;
 		}
 		var classDetail models.InterfaceClass
 		err = collection.FindOne(context.TODO(), bson.M{
@@ -520,6 +527,8 @@ func monitorAndDownload(c *gin.Context, interval time.Duration, Rescollection *m
 				bson.M{"$set": bson.M{
 					"score":     records,
 					"updatedBy": classDetail.TeacherId,
+					"monitor_valid": time.Now().Add(TIME_MONITOR),
+					"expired_at": time.Now().AddDate(0, 6, 0),
 				}},
 			)
 			if err != nil {
