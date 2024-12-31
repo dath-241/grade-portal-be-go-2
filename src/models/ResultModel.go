@@ -27,10 +27,12 @@ type InterfaceResult struct {
 	} `bson:"score"`
 	ClassID   bson.ObjectID `bson:"class_id"`
 	CourseID  bson.ObjectID `bson:"course_id"`
-	ExpiredAt time.Time     `bson:"expiredAt"`
+	ExpiredAt time.Time     `bson:"expired_at"`
+	MonitorValid time.Time     `bson:"monitor_valid"`
 	CreatedBy bson.ObjectID `bson:"createdBy"`
 	UpdatedBy bson.ObjectID `bson:"updatedBy"`
 	Status string 					`bson:"status"`
+
 }
 
 func ResultScoreModel() *mongo.Collection {
