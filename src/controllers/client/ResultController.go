@@ -115,49 +115,69 @@ func HandleCreateResult(c *gin.Context) {
 }
 
 // HandlePatchResult xử lý yêu cầu cập nhật kết quả điểm
+// HandlePatchResult xử lý việc cập nhật kết quả điểm theo ID
 func HandlePatchResult(c *gin.Context) {
-	data, _ := c.Get("user")
-	user := data.(models.InterfaceAccount)
-	var dataResult InterfaceResultScoreController
-	c.BindJSON(&dataResult)
-	classID, err := bson.ObjectIDFromHex(dataResult.ClassID)
-	if err!= nil {
-		c.JSON(400, gin.H{
-      "status":    "Fail",
-      "message": "Dữ liệu yêu cầu không hợp lệ",
-    })
-    return
-	}
-	collection := models.ResultScoreModel()
-
-	// Cập nhật kết quả điểm
-	result, err := collection.UpdateOne(
-		context.TODO(),
-		bson.M{"class_id": classID},
-		bson.M{"$set": bson.M{
-			"score":     dataResult.SCORE,
-			"updatedBy": user.ID,
-		}},
-	)
+	param := c.Param("id")
+	resultID, err := bson.ObjectIDFromHex(param)
 	if err != nil {
-		c.JSON(500, gin.H{
+		c.JSON(400, gin.H{
 			"status":    "Fail",
-			"message": "Lỗi hệ thống",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
 	}
 
-	if result.MatchedCount == 0 {
+	var data models.InterfaceScore
+	if err := c.BindJSON(&data); err != nil {
 		c.JSON(400, gin.H{
 			"status":    "Fail",
-			"message": "Thay đổi không hợp lệ",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
+		})
+		return
+	}
+
+	// Tạo một bản đồ để lưu trữ các trường cần cập nhật
+	updateFields := bson.M{}
+
+	// Chỉ thêm các trường có trong yêu cầu
+	if len(data.BT) > 0 {
+		updateFields["bt"] = data.BT
+	}
+	if len(data.TN) > 0 {
+		updateFields["tn"] = data.TN
+	}
+	if len(data.BTL) > 0 {
+		updateFields["btl"] = data.BTL
+	}
+	if data.GK != 0 {
+		updateFields["gk"] = data.GK
+	}
+	if data.CK != 0 {
+		updateFields["ck"] = data.CK
+	}
+
+	// Nếu không có trường nào để cập nhật, trả về lỗi
+	if len(updateFields) == 0 {
+		c.JSON(400, gin.H{
+			"status":    "Fail",
+			"message": "Không có dữ liệu nào để cập nhật",
+		})
+		return
+	}
+
+	collection := models.ResultScoreModel()
+	_, err = collection.UpdateOne(context.TODO(), bson.M{"_id": resultID}, bson.M{"$set": updateFields})
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":    "Fail",
+			"message": "Lỗi khi cập nhật bảng điểm",
 		})
 		return
 	}
 
 	c.JSON(200, gin.H{
 		"status":    "Success",
-		"message": "Thay đổi thành công",
+		"message": "Cập nhật bảng điểm thành công",
 	})
 }
 
