@@ -716,3 +716,42 @@ func isDirectLink(link string) bool {
 
 	return false
 }
+
+func HandleDeleteClass(c *gin.Context) {
+	param := c.Param("id")
+	classID, err := bson.ObjectIDFromHex(param)
+	if err != nil {
+		c.JSON(400, gin.H{
+			"status":    "Fail",
+			"message": "Dữ liệu yêu cầu không hợp lệ",
+		})
+		return
+	}
+
+	// Xóa bảng điểm liên quan đến lớp học
+	resultCollection := models.ResultScoreModel()
+	_, err = resultCollection.DeleteMany(context.TODO(), bson.M{"class_id": classID})
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":    "Fail",
+			"message": "Lỗi khi xóa bảng điểm",
+		})
+		return
+	}
+
+	// Xóa lớp học
+	collection := models.ClassModel()
+	_, err = collection.DeleteOne(context.TODO(), bson.M{"_id": classID})
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":    "Fail",
+			"message": "Lỗi khi xóa lớp học",
+		})
+		return
+	}
+
+	c.JSON(200, gin.H{
+		"status":    "Success",
+		"message": "Xóa lớp học và bảng điểm thành công",
+	})
+}

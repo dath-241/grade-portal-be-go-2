@@ -15,7 +15,7 @@ func HandleCreateClass(c *gin.Context) {
 	var data InterfaceClass
 	if err := c.BindJSON(&data); err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu không hợp lệ",
 		})
 		return
@@ -23,7 +23,7 @@ func HandleCreateClass(c *gin.Context) {
 	courseID, err := bson.ObjectIDFromHex(data.CourseId)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Course ID không hợp lệ",
 		})
 		return
@@ -31,19 +31,19 @@ func HandleCreateClass(c *gin.Context) {
 	teacherID, err := bson.ObjectIDFromHex(data.TeacherId)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Teacher ID không hợp lệ",
 		})
 		return
 	}
-	
+
 	collection := models.ClassModel()
 
 	// Kiểm tra xem lớp học có bị trùng không
 	isDuplicate, err := CheckDuplicateClass(collection, data.Semester, courseID, data.Name, teacherID)
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi kiểm tra dữ liệu",
 		})
 		return
@@ -52,7 +52,7 @@ func HandleCreateClass(c *gin.Context) {
 	// Nếu lớp học đã tồn tại, trả về lỗi
 	if isDuplicate {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lớp học đã tồn tại",
 		})
 		return
@@ -73,7 +73,7 @@ func HandleCreateClass(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi tạo lớp học",
 		})
 		return
@@ -81,7 +81,7 @@ func HandleCreateClass(c *gin.Context) {
 
 	// Trả về kết quả thành công
 	c.JSON(200, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Tạo lớp học thành công",
 	})
 }
@@ -113,7 +113,7 @@ func CheckStudentOrTeacher(c *gin.Context, id string, mssv *string) bool { // St
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ"})
 		return false // Xử lý lỗi và trả về false
 	}
@@ -125,7 +125,7 @@ func CheckStudentOrTeacher(c *gin.Context, id string, mssv *string) bool { // St
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi hệ thống"})
 		return false // Xử lý lỗi và trả về false
 	}
@@ -140,7 +140,7 @@ func CheckStudentOrTeacher(c *gin.Context, id string, mssv *string) bool { // St
 		return true
 	} else if err := cursor.Err(); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi hệ thống."})
 		return false
 	}
@@ -156,7 +156,6 @@ func HandleGetAllClassesByAccountID(c *gin.Context) {
 	collection := models.ClassModel()
 	var mssv string
 
-
 	// Tìm tất cả lớp học mà giáo viên hoặc sinh viên với account_id tham gia
 	isStudent := CheckStudentOrTeacher(c, accountID, &mssv)
 	var filter bson.M
@@ -171,15 +170,15 @@ func HandleGetAllClassesByAccountID(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi truy xuất dữ liệu"})
 	}
 	var classes []models.InterfaceClass
 	// Đọc dữ liệu từ cursor
 	if err := cursor.All(context.TODO(), &classes); err != nil {
 		c.JSON(500, gin.H{
-				"status":    "Fail",
-				"message": "Lỗi khi giải mã tài khoản.",})
+			"status":  "Fail",
+			"message": "Lỗi khi giải mã tài khoản."})
 		return
 	}
 
@@ -187,7 +186,7 @@ func HandleGetAllClassesByAccountID(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"status":  "Success",
 		"message": "Lấy lớp học thành công",
-		"data": classes,
+		"data":    classes,
 	})
 }
 
@@ -214,7 +213,7 @@ func HandleGetClassByID(c *gin.Context) {
 			})
 		} else {
 			c.JSON(500, gin.H{
-				"status":    "Fail",
+				"status":  "Fail",
 				"message": "Lỗi khi lấy dữ liệu từ cơ sở dữ liệu",
 			})
 			return
@@ -225,7 +224,7 @@ func HandleGetClassByID(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"status":  "Success",
 		"message": "Lấy lớp học thành công",
-		"data":   class,
+		"data":    class,
 	})
 }
 
@@ -243,11 +242,11 @@ func HandleGetClassesByCourseID(c *gin.Context) {
 	collection := models.ClassModel()
 	cursor, err := collection.Find(context.TODO(), bson.M{"course_id": courseID})
 	if err != nil {
-		if err == mongo.ErrNoDocuments{
+		if err == mongo.ErrNoDocuments {
 			c.JSON(404, gin.H{
-        "status":  "Fail",
-        "message": "Không tìm thấy lớp học",
-      })
+				"status":  "Fail",
+				"message": "Không tìm thấy lớp học",
+			})
 		}
 		c.JSON(500, gin.H{
 			"status":  "Fail",
@@ -259,14 +258,14 @@ func HandleGetClassesByCourseID(c *gin.Context) {
 	// Đọc dữ liệu từ cursor
 	if err := cursor.All(context.TODO(), &classes); err != nil {
 		c.JSON(500, gin.H{
-				"status":    "Fail",
-				"message": "Lỗi khi giải mã tài khoản.",})
+			"status":  "Fail",
+			"message": "Lỗi khi giải mã tài khoản."})
 		return
 	}
 	c.JSON(200, gin.H{
 		"status":  "Success",
 		"message": "Lấy lớp học thành công",
-		"data": classes,
+		"data":    classes,
 	})
 }
 
@@ -276,7 +275,7 @@ func HandleAddStudentsToClass(c *gin.Context) {
 
 	if err := c.BindJSON(&request); err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
@@ -285,7 +284,7 @@ func HandleAddStudentsToClass(c *gin.Context) {
 	classID, err := bson.ObjectIDFromHex(request.ClassId)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
@@ -301,14 +300,14 @@ func HandleAddStudentsToClass(c *gin.Context) {
 	_, err = collection.UpdateOne(context.TODO(), filter, update)
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi thêm học sinh vào lớp học",
 		})
 		return
 	}
 
 	c.JSON(200, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Thêm học sinh vào lớp học thành công",
 	})
 }
@@ -319,7 +318,7 @@ func HandleUpdateClass(c *gin.Context) {
 	classID, err := bson.ObjectIDFromHex(param)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
@@ -327,24 +326,24 @@ func HandleUpdateClass(c *gin.Context) {
 	var data InterfaceChangeClassController
 	if err := c.BindJSON(&data); err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
 	}
 	if data.Name == "" {
 		c.JSON(400, gin.H{
-      "status":    "Fail",
-      "message": "Tên lớp không được để trống",
-    })
-    return
+			"status":  "Fail",
+			"message": "Tên lớp không được để trống",
+		})
+		return
 	}
 	if data.Semester == "" {
 		c.JSON(400, gin.H{
-      "status":    "Fail",
-      "message": "Semester không được để trống",
-    })
-    return
+			"status":  "Fail",
+			"message": "Semester không được để trống",
+		})
+		return
 	}
 	var courseID bson.ObjectID
 	courseIDStr, _ := data.CourseId.(string)
@@ -352,7 +351,7 @@ func HandleUpdateClass(c *gin.Context) {
 		courseID, err = bson.ObjectIDFromHex(courseIDStr)
 		if err != nil {
 			c.JSON(400, gin.H{
-				"status":    "Fail",
+				"status":  "Fail",
 				"message": "Course ID không hợp lệ",
 			})
 			return
@@ -364,7 +363,7 @@ func HandleUpdateClass(c *gin.Context) {
 		teacherID, err := bson.ObjectIDFromHex(teacherIDStr)
 		if err != nil {
 			c.JSON(400, gin.H{
-				"status":    "Fail",
+				"status":  "Fail",
 				"message": "Teacher ID không hợp lệ",
 			})
 			return
@@ -374,45 +373,45 @@ func HandleUpdateClass(c *gin.Context) {
 	teacherID, _ := bson.ObjectIDFromHex(teacherIDStr)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Course ID không hợp lệ",
 		})
 		return
 	}
-	
+
 	collection := models.ClassModel()
 	var class models.InterfaceClass
 
 	if err := collection.FindOne(context.TODO(), bson.M{"_id": classID}).Decode(&class); err != nil {
 		if err == mongo.ErrNoDocuments {
-      c.JSON(404, gin.H{
-        "status":    "Fail",
-        "message": "Không tìm thấy lớp học",
-      })
-      return
-    }
-    c.JSON(500, gin.H{
-      "status":    "Fail",
-      "message": "Lỗi hệ thống",
-    })
-    return
+			c.JSON(404, gin.H{
+				"status":  "Fail",
+				"message": "Không tìm thấy lớp học",
+			})
+			return
+		}
+		c.JSON(500, gin.H{
+			"status":  "Fail",
+			"message": "Lỗi hệ thống",
+		})
+		return
 	}
-	if (class.CourseId == courseID && class.Semester == data.Semester && class.Name == data.Name){
+	if class.CourseId == courseID && class.Semester == data.Semester && class.Name == data.Name {
 
-	}else{
+	} else {
 		isDuplicate, err := CheckDuplicateClass(collection, data.Semester, courseID, data.Name, teacherID)
-		if err != nil {	
+		if err != nil {
 			c.JSON(500, gin.H{
-				"status":    "Fail",
+				"status":  "Fail",
 				"message": "Lỗi khi kiểm tra dữ liệu",
 			})
 			return
 		}
-		
+
 		// Nếu lớp học đã tồn tại, trả về lỗi
 		if isDuplicate {
 			c.JSON(400, gin.H{
-				"status":    "Fail",
+				"status":  "Fail",
 				"message": "Lớp học đã tồn tại",
 			})
 			return
@@ -420,22 +419,21 @@ func HandleUpdateClass(c *gin.Context) {
 	}
 	// Kiểm tra xem lớp học có bị trùng không
 
-	
 	// Thêm nếu không bị trùng lặp
 	updatedBy, _ := c.Get("ID")
 	data.UpdatedBy = updatedBy
-	_ , err = collection.UpdateOne(context.TODO(), bson.M{"_id": classID}, bson.M{"$set": data})
-	
+	_, err = collection.UpdateOne(context.TODO(), bson.M{"_id": classID}, bson.M{"$set": data})
+
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi cập nhật lớp học",
 		})
 		return
 	}
-	
+
 	c.JSON(200, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Cập nhật lớp học thành công",
 	})
 }
@@ -446,7 +444,7 @@ func HandleDeleteClass(c *gin.Context) {
 	classID, err := bson.ObjectIDFromHex(param)
 	if err != nil {
 		c.JSON(400, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Dữ liệu yêu cầu không hợp lệ",
 		})
 		return
@@ -457,7 +455,7 @@ func HandleDeleteClass(c *gin.Context) {
 	_, err = resultCollection.DeleteMany(context.TODO(), bson.M{"class_id": classID})
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi xóa bảng điểm",
 		})
 		return
@@ -468,14 +466,14 @@ func HandleDeleteClass(c *gin.Context) {
 	_, err = collection.DeleteOne(context.TODO(), bson.M{"_id": classID})
 	if err != nil {
 		c.JSON(500, gin.H{
-			"status":    "Fail",
+			"status":  "Fail",
 			"message": "Lỗi khi xóa lớp học",
 		})
 		return
 	}
 
 	c.JSON(200, gin.H{
-		"status":    "Success",
+		"status":  "Success",
 		"message": "Xóa lớp học và bảng điểm thành công",
 	})
 }
