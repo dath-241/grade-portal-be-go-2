@@ -17,7 +17,7 @@ import (
 )
 
 var TIME_INTERVAL = 3 * time.Second
-var TIME_MONITOR = 10 * time.Second
+var TIME_MONITOR = 10 * time.Minute
 
 // HandleTeacherClasses xử lý việc lấy danh sách lớp học của giáo viên.
 func HandleTeacherClasses(c *gin.Context) {
