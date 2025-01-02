@@ -451,6 +451,19 @@ func HandleDeleteClass(c *gin.Context) {
 		})
 		return
 	}
+
+	// Xóa bảng điểm liên quan đến lớp học
+	resultCollection := models.ResultScoreModel()
+	_, err = resultCollection.DeleteMany(context.TODO(), bson.M{"class_id": classID})
+	if err != nil {
+		c.JSON(500, gin.H{
+			"status":    "Fail",
+			"message": "Lỗi khi xóa bảng điểm",
+		})
+		return
+	}
+
+	// Xóa lớp học
 	collection := models.ClassModel()
 	_, err = collection.DeleteOne(context.TODO(), bson.M{"_id": classID})
 	if err != nil {
@@ -460,8 +473,9 @@ func HandleDeleteClass(c *gin.Context) {
 		})
 		return
 	}
+
 	c.JSON(200, gin.H{
 		"status":    "Success",
-		"message": "Xóa lớp học thành công",
+		"message": "Xóa lớp học và bảng điểm thành công",
 	})
 }

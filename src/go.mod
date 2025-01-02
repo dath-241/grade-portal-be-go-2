@@ -9,6 +9,11 @@ require (
 )
 
 require (
+	github.com/kr/pretty v0.3.1 // indirect
+	github.com/rogpeppe/go-internal v1.12.0 // indirect
+)
+
+require (
 	cloud.google.com/go/auth v0.9.8
 	cloud.google.com/go/compute/metadata v0.5.2 // indirect
 	github.com/bytedance/sonic v1.12.3 // indirect

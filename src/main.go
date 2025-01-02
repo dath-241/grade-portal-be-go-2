@@ -15,7 +15,6 @@ import (
 
 func main() {
     gin.SetMode(gin.ReleaseMode)
-
     // Load các biến môi trường từ file .env
     godotenv.Load()
     config.ConnectMongoDB(os.Getenv("MONGO_URL"))
@@ -25,7 +24,7 @@ func main() {
 
     // Cấu hình CORS để hạn chế các request từ các domain khác
     app.Use(cors.New(cors.Config{
-        AllowOrigins:     []string{"http://localhost:3000", "http://localhost:8080","http://localhost:5500"},
+        AllowOrigins:     []string{"http://localhost:3000", "http://localhost:8080","http://localhost:5500","http://127.0.0.1:5500"},
         AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD", "CONNECT"},
         AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
         ExposeHeaders:    []string{"Content-Length"},

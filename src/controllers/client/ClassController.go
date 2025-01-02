@@ -19,8 +19,6 @@ import (
 var TIME_INTERVAL = 3 * time.Second
 var TIME_MONITOR = 10 * time.Second
 
-
-
 // HandleTeacherClasses xử lý việc lấy danh sách lớp học của giáo viên.
 func HandleTeacherClasses(c *gin.Context) {
 	data, _ := c.Get("user")
@@ -469,7 +467,7 @@ func monitorAndDownload(c *gin.Context, interval time.Duration, Rescollection *m
 		if err != nil {
 			c.JSON(500, gin.H{
 				"status":  "false",
-				"message": "Loi khi lay thong tin class",
+				"message": "Lỗi khi lấy thông tin class !",
 			})
 		}
 		if res.Status == "inactive" {
@@ -494,7 +492,7 @@ func monitorAndDownload(c *gin.Context, interval time.Duration, Rescollection *m
 		if err != nil {
 			c.JSON(500, gin.H{
 				"status":  "false",
-				"message": "Loi khi lay thong tin class",
+				"message": "Lỗi khi lấy thông tin class !",
 			})
 		}
 		// Gửi yêu cầu HEAD để kiểm tra thông tin file

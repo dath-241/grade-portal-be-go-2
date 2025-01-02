@@ -2,6 +2,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Go Go</title>
+  <body>
+    <div class="panel" >
+      <h1>Grade Portal Backend Go 2</h1>
+      <button onclick="sendRequest();">Login</button>
+      <pre id="userInfo"></pre>
+      <div id="idTokenContainer" style="display: none; margin-top: 20px">
+        <label for="idToken">ID Token:</label>
+        <input
+          type="text"
+          id="idToken"
+          readonly
+          style="width: 60%; padding: 5px; margin-right: 10px"
+        />
+        <button onclick="copyIdToken()">Copy</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
   <style>
     body,
     h1,
@@ -91,22 +109,5 @@
       text-align: left;
     }
   </style>
-  <body>
-    <div class="panel" >
-      <h1>Grade Portal Backend Go 2</h1>
-      <button onclick="sendRequest();">Login</button>
-      <pre id="userInfo"></pre>
-      <div id="idTokenContainer" style="display: none; margin-top: 20px">
-        <label for="idToken">ID Token:</label>
-        <input
-          type="text"
-          id="idToken"
-          readonly
-          style="width: 60%; padding: 5px; margin-right: 10px"
-        />
-        <button onclick="copyIdToken()">Copy</button>
-      </div>
-    </div>
-    <script src="main.js"></script>
-  </body>
+  
 </head>
