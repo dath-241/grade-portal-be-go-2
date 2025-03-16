@@ -57,7 +57,7 @@ Grade Portal không chỉ là một giải pháp công nghệ mà còn là một
 - `Admin`
   - Quản lý hệ thống, môn học, lớp học và phân quyền cho người dùng.
 - `Teacher`
-  - Chỉnh sửa lớp học, bảng điểm bằng cách đính kèm file CSV.
+  - Chỉnh sửa lớp học, bảng điểm bằng cách đính kèm file CSV hoặc link CSV. Hệ thống sẽ tự động monitor theo link nếu có thay đổi sẽ tự động update.
 - `Student`
   - Tra cứu điểm số các môn học trong từng học kỳ.
 - `Hall of Fame`
