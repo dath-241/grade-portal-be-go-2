@@ -13,22 +13,7 @@ import (
     "github.com/joho/godotenv"
 )
 
-func enableCors(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "https://grade-portal-service.vercel.app")
-		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
-		w.Header().Set("Access-Control-Allow-Credentials", "true")
 
-		// Nếu là request OPTIONS (preflight), trả về 200 luôn
-		if r.Method == "OPTIONS" {
-			w.WriteHeader(http.StatusOK)
-			return
-		}
-
-		next.ServeHTTP(w, r)
-	})
-}
 
 
 func main() {
@@ -42,7 +27,7 @@ func main() {
 
     // Cấu hình CORS để hạn chế các request từ các domain khác
     app.Use(cors.New(cors.Config{
-        AllowOrigins:     []string{"http://localhost:3000", "http://localhost:8080","http://localhost:5500","http://127.0.0.1:5500"},
+        AllowOrigins:     []string{"http://localhost:3000", "http://localhost:8080","http://localhost:5500","http://127.0.0.1:5500", "https://grade-portal-service.vercel.app"},
         AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD", "CONNECT"},
         AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
         ExposeHeaders:    []string{"Content-Length"},
