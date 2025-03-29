@@ -5,7 +5,7 @@ on:
 
 jobs:
   docker:
-    runs-on: self-hosted 
+    runs-on: ubuntu-latest
     steps:
         - name: Checkout code
           uses: actions/checkout@v4
@@ -30,7 +30,6 @@ jobs:
             context: ./src           # Đặt build context là thư mục src
             file: ./src/Dockerfile   # Đường dẫn đến tệp Dockerfile bên trong thư mục src
             builder: ${{ steps.buildx.outputs.name }}
-            platforms: linux/arm64   # Xây dựng image cho kiến trúc ARM64
             push: true
             tags: ${{ secrets.DOCKERHUB_USERNAME }}/grade-portal-be-go-2:latest
         # Bước 5: Kiểm tra kết quả
