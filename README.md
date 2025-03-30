@@ -29,11 +29,8 @@
 | --- | ------------------- | ------- | ------------- |------------                                                |
 | 1   | Chu Minh Tâm        | 2213009 | Product Owner |[inHansZone](https://github.com/inHansZone)                           |
 | 2   | Nguyễn Trọng Kha    | 2211417 | Developer     |[KhaLeopard](https://github.com/Nguyentrongkha2k4)          |
-| 3   | Nguyễn Tiến Phát    | 2212527 | Developer     |[Nguyen Tien Phat](https://github.com/nguyentienphat2904)   |
-| 4   | Nguyễn Ngọc Diệu Hà | 2210846 | Developer     |[HANND04](https://github.com/HANND04)                       |
-| 5   | Lê Hoàng Ngọc Hân   | 2210935 | Developer     |[inHansZone](https://github.com/inHansZone)                 |
-| 6   | Nguyễn Phúc Hưng    | 2211368 | Developer     |[Richard](https://github.com/Richard1112004)                |
-| 7   | Huỳnh Thanh Tâm     | 2213012 | Developer     |[ImNotTam](https://github.com/ImNotTam)                     |
+| 3   | Nguyễn Ngọc Diệu Hà | 2210846 | Developer     |[HANND04](https://github.com/HANND04)                       |
+| 4   | Lê Hoàng Ngọc Hân   | 2210935 | Developer     |[inHansZone](https://github.com/inHansZone)                 |
 
 ## GIỚI THIỆU DỰ ÁN
 ### Bối cảnh 
@@ -98,7 +95,7 @@ Xem hướng dẫn sử dụng: [tại đây](./docs/Guild/SETUP.md).
 [Git action](https://github.com/dath-241/grade-portal-be-go-2/actions)
 
 ## Deployment
-Base URL: [https://a3-grade.thuanle.me/](https://a3-grade.thuanle.me/)
+Link: [https://grade-portal-service.vercel.app]([https://a3-grade.thuanle.me/](https://grade-portal-service.vercel.app/)
 
 ## Báo cáo
 - Báo cáo tiến độ làm việc theo tuần: [tại đây](./docs/reports/Weekly).
