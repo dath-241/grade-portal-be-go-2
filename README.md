@@ -31,6 +31,8 @@
 | 2   | Nguyễn Trọng Kha    | 2211417 | Developer     |[KhaLeopard](https://github.com/Nguyentrongkha2k4)          |
 | 3   | Nguyễn Ngọc Diệu Hà | 2210846 | Developer     |[HANND04](https://github.com/HANND04)                       |
 | 4   | Lê Hoàng Ngọc Hân   | 2210935 | Developer     |[inHansZone](https://github.com/inHansZone)                 |
+| 5   | Nguyễn Phúc Hưng   | 2211368 | Developer     |[Richard1112004](https://github.com/Richard1112004)                 |
+| 6   | Huỳnh Thanh Tâm   | 2213012 | Developer     |[imnottam](https://github.com/imnottam)                 |
 
 ## GIỚI THIỆU DỰ ÁN
 ### Bối cảnh 
